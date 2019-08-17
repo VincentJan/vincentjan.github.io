@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="第七章 微分方程（二）一阶微分方程的种类： 可分离变量的微分方程 齐次微分方程 一阶齐次线性微分方程 一阶非齐线性微分方程 Bernoulli方程 全微分方程  一阶微分方程的解法： 可分离变量的微分方程：  形式：$$\frac{dy}{dx}=f(x,y),\quad f(x,y) = \varphi_1(x)\varphi_2(y)$$ 解法：$$\frac{dy}{dx} = f(x,y)">
+<meta name="description" content="一阶微分方程的种类： 可分离变量的微分方程 齐次微分方程 一阶齐次线性微分方程 一阶非齐线性微分方程 Bernoulli方程 全微分方程">
 <meta name="keywords" content="高数,微分方程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第七章 微分方程（二）">
 <meta property="og:url" content="http://yoursite.com/2019/08/18/第七章 微分方程（二）/index.html">
 <meta property="og:site_name" content="朝夕">
-<meta property="og:description" content="第七章 微分方程（二）一阶微分方程的种类： 可分离变量的微分方程 齐次微分方程 一阶齐次线性微分方程 一阶非齐线性微分方程 Bernoulli方程 全微分方程  一阶微分方程的解法： 可分离变量的微分方程：  形式：$$\frac{dy}{dx}=f(x,y),\quad f(x,y) = \varphi_1(x)\varphi_2(y)$$ 解法：$$\frac{dy}{dx} = f(x,y)">
+<meta property="og:description" content="一阶微分方程的种类： 可分离变量的微分方程 齐次微分方程 一阶齐次线性微分方程 一阶非齐线性微分方程 Bernoulli方程 全微分方程">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-17T18:41:23.676Z">
+<meta property="og:updated_time" content="2019-08-17T19:19:48.428Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第七章 微分方程（二）">
-<meta name="twitter:description" content="第七章 微分方程（二）一阶微分方程的种类： 可分离变量的微分方程 齐次微分方程 一阶齐次线性微分方程 一阶非齐线性微分方程 Bernoulli方程 全微分方程  一阶微分方程的解法： 可分离变量的微分方程：  形式：$$\frac{dy}{dx}=f(x,y),\quad f(x,y) = \varphi_1(x)\varphi_2(y)$$ 解法：$$\frac{dy}{dx} = f(x,y)">
+<meta name="twitter:description" content="一阶微分方程的种类： 可分离变量的微分方程 齐次微分方程 一阶齐次线性微分方程 一阶非齐线性微分方程 Bernoulli方程 全微分方程">
 
 
 
@@ -352,7 +352,7 @@
       
 
       
-        <h1 id="第七章-微分方程（二）"><a href="#第七章-微分方程（二）" class="headerlink" title="第七章 微分方程（二）"></a>第七章 微分方程（二）</h1><h2 id="一阶微分方程的种类："><a href="#一阶微分方程的种类：" class="headerlink" title="一阶微分方程的种类："></a>一阶微分方程的种类：</h2><ol>
+        <h2 id="一阶微分方程的种类："><a href="#一阶微分方程的种类：" class="headerlink" title="一阶微分方程的种类："></a>一阶微分方程的种类：</h2><ol>
 <li>可分离变量的微分方程</li>
 <li>齐次微分方程</li>
 <li>一阶齐次线性微分方程</li>
@@ -360,39 +360,49 @@
 <li>Bernoulli方程</li>
 <li>全微分方程</li>
 </ol>
+<a id="more"></a>
 <h2 id="一阶微分方程的解法："><a href="#一阶微分方程的解法：" class="headerlink" title="一阶微分方程的解法："></a>一阶微分方程的解法：</h2><ol>
 <li><p>可分离变量的微分方程：</p>
 <ul>
-<li>形式：<br>$$\frac{dy}{dx}=f(x,y),\quad f(x,y) = \varphi_1(x)\varphi_2(y)$$<ul>
-<li>解法：<br>$$\frac{dy}{dx} = f(x,y) \implies \frac{dy}{dx} = \varphi_1(x)\varphi_2(y) \implies \frac{dy}{\varphi_2(y)} = \frac{\varphi_1(x)}{dx} \ \implies \int\frac{dy}{\varphi_2(y)} = \int\frac{\varphi_1(x)}{dx} + C$$</li>
+<li>形式：<script type="math/tex; mode=display">\frac{dy}{dx}=f(x,y),\quad f(x,y) = \varphi_1(x)\varphi_2(y)</script><ul>
+<li>解法：<script type="math/tex; mode=display">\frac{dy}{dx} = f(x,y) \implies \frac{dy}{dx} = \varphi_1(x)\varphi_2(y) \implies \frac{dy}{\varphi_2(y)} = \frac{\varphi_1(x)}{dx} \\ \implies \int\frac{dy}{\varphi_2(y)} = \int\frac{\varphi_1(x)}{dx} + C</script></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><p>齐次微分方程:</p>
 <ul>
-<li>形式：<br>$$\frac{dy}{dx} = f(x,y), f(x,y)=\varphi(\frac{y}{x}) \lor f(tx,ty) = f(x,y)$$</li>
-<li>解法：<br>$$\frac{dy}{dx} = f(x,y) \implies \frac{dy}{dx} = f(\frac{y}{x}) \xRightarrow{u = \frac{y}{x}} \frac{du}{dx} = u + x\frac{du}{dx} = \varphi(u) \<br>\implies x\frac{du}{dx} = \varphi(u) - u \implies \int\frac{du}{\varphi(u) - u} = \int \frac{dx}{x} + C$$</li>
+<li>形式：<script type="math/tex; mode=display">\frac{dy}{dx} = f(x,y), f(x,y)=\varphi(\frac{y}{x}) \lor f(tx,ty) = f(x,y)</script></li>
+<li>解法：<script type="math/tex; mode=display">\frac{dy}{dx} = f(x,y) \implies \frac{dy}{dx} = f(\frac{y}{x}) \implies \frac{du}{dx} = u + x\frac{du}{dx},(u = \frac{y}{x}) = \varphi(u) \\
+\implies x\frac{du}{dx} = \varphi(u) - u \implies \int\frac{du}{\varphi(u) - u} = \int \frac{dx}{x} + C</script></li>
 </ul>
 </li>
-<li><p>一阶齐次线性微分方程：</p>
-<ul>
-<li>形式：<br>$$\frac{dy}{dx} + P(x)y = 0, 各项次数为1$$</li>
-<li>解法：<br>$$通解公式： y = Ce^{-\int P(x)dx}<br>\推导过程如下：<br>\1^o:y=0为方程的解<br>\2^o:y \not = 0,\frac{dy}{y} = -P(x)dx \implies \ln{\mid y\mid} = -\int P(X)dx + C_0<br>\ \implies  y= \pm e^{c_0}e^{-\int P(x)dx} \xRightarrow{C = e^{C_0}} y=Ce^{-\int P(x)dx}$$</li>
+<li>一阶齐次线性微分方程：<ul>
+<li>形式：<script type="math/tex; mode=display">\frac{dy}{dx} + P(x)y = 0, 各项次数为1</script></li>
+<li>解法：<script type="math/tex; mode=display">通解公式： y = Ce^{-\int P(x)dx}
+\\推导过程如下：
+\\1^o:y=0为方程的解
+\\2^o:y \not = 0,\frac{dy}{y} = -P(x)dx \implies \ln{\mid y\mid} = -\int P(X)dx + C_0
+\\ \implies  y= \pm e^{c_0}e^{-\int P(x)dx} \implies y=Ce^{-\int P(x)dx}(C = e^{C_0})</script></li>
 </ul>
 </li>
-<li><p>一阶非齐线性微分方程：</p>
-<ul>
-<li>形式：<br>$$\frac{dy}{dx} + P(x)y = Q(x), 等式右边看作0次，即非齐次$$</li>
-<li>解法：<br>$$常数变易法：令其解为y=c(x)e^{-\int P(x)dx},<br>\求导得：\frac{dy}{dx} = c’(x)e^{-\int P(x)dx} - P(x)c(x)e^{-\int P(x)dx}<br>\ \therefore c’(x)e^{-\int P(x)dx}=Q(x) \implies c’(x)=Q(x)e^{\int P(x)dx}<br>\ \implies c(x) = \int Q(x)e^{\int P(x)dx}dx + C<br>\ \therefore y=(\int Q(x)e^{\int P(x)dx}dx + C)e^{-\int P(x)dx}$$</li>
+<li>一阶非齐线性微分方程：<ul>
+<li>形式：<script type="math/tex; mode=display">\frac{dy}{dx} + P(x)y = Q(x), 等式右边看作0次，即非齐次</script></li>
+<li>解法：<script type="math/tex; mode=display">常数变易法：令其解为y=c(x)e^{-\int P(x)dx}, 
+\\求导得：\frac{dy}{dx} = c'(x)e^{-\int P(x)dx} - P(x)c(x)e^{-\int P(x)dx}
+\\ \therefore c'(x)e^{-\int P(x)dx}=Q(x) \implies c'(x)=Q(x)e^{\int P(x)dx} 
+\\ \implies c(x) = \int Q(x)e^{\int P(x)dx}dx + C
+\\ \therefore y=(\int Q(x)e^{\int P(x)dx}dx + C)e^{-\int P(x)dx}</script></li>
 </ul>
 </li>
-<li><p>一阶无特定类的微分方程：</p>
-<ul>
-<li>形式1：<br>$$\frac{dy}{dx}=\frac{1}{x+y}$$ </li>
-<li>解法1：<br>$$\frac{dy}{dx}=\frac{1}{x+y} \implies \frac{dx}{dy}=x+y \implies x = Ce^y-(y+1)$$ </li>
-<li>解法2：<br>$$令x+y=u,则\frac{dy}{dx} = \frac{du}{dx} - 1,代入：<br>\\frac{du}{dx} - 1=\frac{1}{u} \implies u - \ln{(u+1)} = x + C<br>\ \implies y-ln(x + y + 1) = C$$ </li>
-<li>形式2<br>$$\frac{dy}{dx}=\frac{1}{(x+y)^2}<br>\解法1无效，用解法2即可求解$$</li>
+<li>一阶无特定类的微分方程：<ul>
+<li>形式1：<script type="math/tex; mode=display">\frac{dy}{dx}=\frac{1}{x+y}</script></li>
+<li>解法1：<script type="math/tex; mode=display">\frac{dy}{dx}=\frac{1}{x+y} \implies \frac{dx}{dy}=x+y \implies x = Ce^y-(y+1)</script></li>
+<li>解法2：<script type="math/tex; mode=display">令x+y=u,则\frac{dy}{dx} = \frac{du}{dx} - 1,代入：
+\\\frac{du}{dx} - 1=\frac{1}{u} \implies u - \ln{(u+1)} = x + C
+\\ \implies y-ln(x + y + 1) = C</script></li>
+<li>形式2<script type="math/tex; mode=display">\frac{dy}{dx}=\frac{1}{(x+y)^2}
+\\解法1无效，用解法2即可求解</script></li>
 </ul>
 </li>
 </ol>
@@ -568,7 +578,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第七章-微分方程（二）"><span class="nav-number">1.</span> <span class="nav-text">第七章 微分方程（二）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一阶微分方程的种类："><span class="nav-number">1.1.</span> <span class="nav-text">一阶微分方程的种类：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一阶微分方程的解法："><span class="nav-number">1.2.</span> <span class="nav-text">一阶微分方程的解法：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一阶微分方程的种类："><span class="nav-number">1.</span> <span class="nav-text">一阶微分方程的种类：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一阶微分方程的解法："><span class="nav-number">2.</span> <span class="nav-text">一阶微分方程的解法：</span></a></li></ol></div>
             
 
           </div>
@@ -768,6 +778,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
