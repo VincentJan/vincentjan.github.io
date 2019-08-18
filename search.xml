@@ -14,6 +14,37 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[C语言中浮点数的二进制表示（IEEE754）]]></title>
+    <url>%2F2019%2F08%2F18%2FC%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%EF%BC%88IEEE754%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[C语言中浮点数的二进制表示（IEEE754）最近在C语言学习中遇到了浮点运算精度的问题， 在查找资料后发现是浮点数的储存方式引起的问题，在此做一个记录。问题代码： 12345678910111213#include&lt;stdio.h&gt;int main()&#123; int arr[3] = &#123;3, 3, 3&#125;; int i; float a = 0; for (i = 0; i &lt; 3; i++) a += arr[i] / 10.0; //求arr中所有数的平均数 for (i = 0; i &lt; 3; i++) if(arr[i] &gt; a) printf("%d ", arr[i]); //将arr中大于平均数的数打印出来 return 0;&#125; 不难看出，以上程序理论上不应该输出任何数据，可是实际运行结果如下:13 3 3 经过一番尝试，最后发现是由于本代码中a的值并非3.0而是2.99999，由此判断应该是浮点数的运算精度问题。 浮点数在内存中是按照IEEE754标准进行储存的， 即一个float类型的数据占用8Byte内存，其中包括符号位1位，阶码8位和尾数23位。图示如下： S(符号位) E(阶码) M(尾数) 0 0000 0000 0000 0000 0000 0000 0000 000 其中符号位决定该浮点数的正负，正值为0，负值为1。 阶码用以表示该浮点数的指数，其值为 E = e(指数值) + 127 这样可以保证E不为负数，方便机器运算。其中127为float类型的偏移值，其它浮点类型的有其它偏移值。 按照浮点规格化表示，尾数的最高有效位应为1，这意味着M表示的值为1.M。 以遇到的问题中的值0.3为例， 其转化过程如下。 将十进制数转换为二进制，小数点前除2取余，小数点后乘2取整此时可以发现0.3的二进制是无限循环的，故而只能截取到精度对应的位数。 规格化表示 计算相应的值S=0, E = 127 - 2 = 125 = 0111 1101, M = 0011 0011 0011 0011 0011 001 所以0.3在内存中应该为 S E M 0 0111 1101 0011 0011 0011 0011 0011 001 转化为16进制数为：3E999999 可以用以下程序验证12345678#include&lt;stdio.h&gt;int main()&#123; float a = 0.3; printf("%x", *(int *)&amp;a); return 0;&#125; 得到结果：3E99999A， 与理论计算值3E999999相差1，应该是计算机处理过程中对末位进行了四舍五入。]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>计算机</tag>
+        <tag>C语言</tag>
+        <tag>进制</tag>
+        <tag>float</tag>
+        <tag>数据储存</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ubuntu Server 14.04 LTS在ThinkPad E480环境下连接WIFI的方法]]></title>
+    <url>%2F2019%2F08%2F18%2F%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%88%E4%B8%80%EF%BC%89%20copy%2F</url>
+    <content type="text"><![CDATA[前言一直以来想要建立一个linux系统下的工作环境，然而他的桌面版问题太多运行太慢难以满足需求。近来突发奇想想要直接安装一个Server版Ubuntu并且不安装桌面环境，用以进行简单的文本编辑和C语言学习，顺便熟悉一下linux的操作。 然而天公不作美，E480采用的rtl8821ce网卡驱动并不被这个版本的系统支持，故而开始了我的受苦之旅。费了三天时间，终于爬出坑来，于是写下这篇文章记录这次的经历，以备以后使用。 step1 安装操作系统 这一步已经轻车熟路没什么好说的了，只要注意语言选英文，并且最后是否自动更新那一步选不自动更新就好。 step2 更换软件源 ubuntu自带的软件源由于在国外，速度相当差强人意。为了提高速度，有必要对软件源进行更换。出于一种谜之心理，我选择了清华大学的源。操作如下。 cd /etc/aptsudo mv sources.list sources.list.baksudo vim sources.list 将里面的内容改为 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ trusty main restricted universe multiversedeb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ trusty-updates main restricted universe multiversedeb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ trusty-backports main restricted universe multiversedeb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ trusty-security main restricted universe multiverse 可在清华大学镜像站使用帮助|ubuntu获取完整镜像。 完成后进行如下操作 sudo apt-get updatesudo apt-get upgrade step3 升级内核版本 Ubuntu Server 14.04 LTS 自带的内核版本是4.4，而安装rtl8821ce网卡驱动需要高于4.14的内核版本，需要注意内核版本并非越高越好，比如5.0就无法进行安装，并且内核降级比升级麻烦许多，故而升级需谨慎。 我选择升级到4.14版本，且需要4.12的过渡。假设文件在u盘上，操作如下： sudo mount -t vfat /dev/sdb1 /media/usbcd /media/usb/4.12sudo dpkg -i *.debsudo reboot 此时一定要重新启动，并且使用 umane -sr 检查内核版本号是否已经成功升级。此时需要重新挂载u盘，然而并不能直接升级到4.14。不知道出于什么原因，系统会缺失libssl-1.1和linux-base_4.5两个package。导致安装无法进行，因此我们需要先从网上找到这两个包安装上再进行升级操作。 sudo mount -vfat /dev/sdb1 /media/usbcd /media/usb/libssl1.1sudo dpkg -i .debcd /media/usb/linuxbase4.5sudo dpkg -i .debcd /media/usb/4.14sudo dpkg -i *.debsudo reboot 以上安装顺序不能乱，这三次安装之间存在依赖关系。 现在系统内核就升级好了，进行下一步。 step4 安装GCC并且更改默认版本 首先安装gcc与g++ sudo apt-get install gcc g++ 若出现错误还需安装依赖包（下次安装同理） sudo apt-get install software-properties-common 默认安装的是4.8版本，而我们需要4.9以上版本，这里选择安装5.5，操作如下： 安装程序： sudo add-apt-repository ppa:ubuntu-toolchain-r/testsudo apt-get updatesudo apt-get install gcc-5 g++-5 更新链接： sudo ln -s /usr/bin/gcc-5 /usr/bin/gcc -fsudo ln -s /usr/bin/g++-5 /usr/bin/g++ -f 此时gcc默认为5.5版本，运行 gcc -v 确认版本。 step5 安装网卡驱动 经过了漫长的准备终于到了正题，要安装网卡驱动，首先将rtl8821ce.zip解压到任意位置，并且进入该目录： cd /home/username/rtlunzip rtl8821ce.zip 修改Makefile： sudo vim Makefile 将其中的 export TopDIR ?= … 等号后内容改成Makefile的目录。 接着进行如下操作： makesudo make installsudo modprobe -a 8821ce 此时驱动就安装好了，可以开始连接wifi了。 step6 Ubuntu Server下连接WiFi 网上试了很多方法大多以失败告终，最终只得退而求其次连接一个未加密wifi。 首先关闭禁止使用WiFi的限制 sudo apt-get install rfkillsudo rfkill unblock all 然后打开/etc/network/interfaces, 在文件末尾加入 auto wlan0iface wlan0 inet dhcp 保存并关闭文件，然后运行以下两条命令以重启网络服务 sudo ifdown wlan0sudo ifup -v wlan0 此时可以连接WiFi了，运行 sudo apt-get install iwsudo iw dev wlan0 scan |less 搜索可用WiFi列表，查找要连接的WiFi，然后运行 sudo iw dev wlan0 connect SSID 连接目标WiFi，并运行以下命令获取IP地址 sudo apt-get install dhcpcdsudo dhcpcd wlan0 大功告成！ 结束语折腾了三天还是无法连接加密过的WiFi多少有点遗憾，然而这都是自己知识不够技术水平不到的结果，全程根着网上的博客照葫芦画瓢。这已经超出了我的能力范围，即便最后连上了也学不到什么东西，因此再纠结下去恐怕得不偿失。所以这次的受苦之旅就先结束吧。 课程主要构成为： 信息学：数字的进制（二进制，八进制，十六进制等） 硬件：计算机硬件构成与组装 操作系统：操作系统的使用（大一），操作系统的原理（大三） 软件：Microsoft Office 2010三大部件以及一些多媒体软件 网络基础知识：使用（大一），原理（大三） 程序设计：基础（大一），程序语言（大二） 学习程序语言的目的在于培养解决问题的能力，重点在于算法。 进制与编码 进制：根据使用方便的需要，数据分为十进制，二进制，八进制，十六进制等。其中涉及基数和位权两个概念。基数：该种进制下数码的个数。位权（简称权）：一个固定位置对应的单位值。 任何一种进制都可以表示成按权展开的多项式之和： $ (X)_{R}=D_{n-1}R^{n-1}+D_{n-2}R^{n-2}+…+D_0R^0+D_{-1}R^{-1}+…+D_{-m}R^{-m}$ 其中X为一个R进制数，R为基数，n是整数位数，m是小数位数，下标为位置，上标为幂的次数。 故而任何进制的数X都能通过以上方法转化为对应的十进制数Y。 十进制转换为二进制的方法：整数除二取余倒序排列，小数乘二取整正序排列。 八进制与二进制互相转换的方法：三位转换，以小数点为中心。 十六进制与二进制互相转换的方法：四位转换，以小数点为中心。 信息存储单位：1KB=1024Byte（字节），1Byte=8bit（位） 信息编码：二进制标识（B），八进制标识（O或Q），十进制（D），十六进制（H），标识跟于码尾。 BCD码：用四个位表示一个十进制数，得到形式上的二进制数，不可参与数学运算。 原码：根据机器字长产生的机器码，最高位为符号位0正1负。 反码：原码到补码之间的过渡码，正数反码与原码相同，负数反码为原码除符号位以外逐位取反得到的。 补码：能把减法运算化为加法，现代计算机都用补码。正数补码与原码相同，负数补码为反码加1。符号位不受加1影响。 ASCII码：用七个位表示一个字符。]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>计算机</tag>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+        <tag>系统安装</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[计算机导论笔记（一）进制与编码]]></title>
     <url>%2F2019%2F08%2F18%2F%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
     <content type="text"><![CDATA[绪论课程主要构成为： 信息学：数字的进制（二进制，八进制，十六进制等） 硬件：计算机硬件构成与组装 操作系统：操作系统的使用（大一），操作系统的原理（大三） 软件：Microsoft Office 2010三大部件以及一些多媒体软件 网络基础知识：使用（大一），原理（大三） 程序设计：基础（大一），程序语言（大二） 学习程序语言的目的在于培养解决问题的能力，重点在于算法。 进制与编码 进制：根据使用方便的需要，数据分为十进制，二进制，八进制，十六进制等。其中涉及基数和位权两个概念。基数：该种进制下数码的个数。位权（简称权）：一个固定位置对应的单位值。 任何一种进制都可以表示成按权展开的多项式之和： $ (X)_{R}=D_{n-1}R^{n-1}+D_{n-2}R^{n-2}+…+D_0R^0+D_{-1}R^{-1}+…+D_{-m}R^{-m}$ 其中X为一个R进制数，R为基数，n是整数位数，m是小数位数，下标为位置，上标为幂的次数。 故而任何进制的数X都能通过以上方法转化为对应的十进制数Y。 十进制转换为二进制的方法：整数除二取余倒序排列，小数乘二取整正序排列。 八进制与二进制互相转换的方法：三位转换，以小数点为中心。 十六进制与二进制互相转换的方法：四位转换，以小数点为中心。 信息存储单位：1KB=1024Byte（字节），1Byte=8bit（位） 信息编码：二进制标识（B），八进制标识（O或Q），十进制（D），十六进制（H），标识跟于码尾。 BCD码：用四个位表示一个十进制数，得到形式上的二进制数，不可参与数学运算。 原码：根据机器字长产生的机器码，最高位为符号位0正1负。 反码：原码到补码之间的过渡码，正数反码与原码相同，负数反码为原码除符号位以外逐位取反得到的。 补码：能把减法运算化为加法，现代计算机都用补码。正数补码与原码相同，负数补码为反码加1。符号位不受加1影响。 ASCII码：用七个位表示一个字符。]]></content>
@@ -23,8 +54,8 @@
       </categories>
       <tags>
         <tag>计算机</tag>
-        <tag>计算机导论</tag>
         <tag>进制</tag>
+        <tag>计算机导论</tag>
       </tags>
   </entry>
   <entry>
@@ -90,6 +121,19 @@
       <tags>
         <tag>诗</tag>
         <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[横亘在人与人之间的鸿沟——读《献给阿尔吉侬的花束》]]></title>
+    <url>%2F2019%2F08%2F18%2F%E7%8C%AE%E7%BB%99%E9%98%BF%E5%B0%94%E5%90%89%E4%BE%AC%E7%9A%84%E8%8A%B1%E6%9D%9F%2F</url>
+    <content type="text"><![CDATA[这本书记述了一个人由黑暗中走出，回顾黑暗，审视黑暗，回过头被光明晃得头晕目眩，再一步步挣扎着被拖回黑暗的过程。 这样的一个过程里，处处是对人性的讨论和对生活的假设。生与死，自我欺骗，认知差异，傲慢，自卑，情绪化……如同一条条鸿沟横亘在每一个人中间，人们因此无法相互理解。在我看来，对“理解”的思考，正是全书的主题。在查理.高登短暂的旅途里，他的每一种状态，他对世界的态度与世界对他的态度，都在或多或少的对某一类特定的状态造成的理解差异做出讨论。最浅显也最主要的，便是对智力造成的差异的探讨，并在此基础上，将理解的差异扩散到了其他层面上。 傲慢和自卑，造就了这个故事里一切的恶意。这两种心理背后共同的根源，是虚荣。虚荣，是对于某种身份认同的渴望，是对一种自己并不具备的品质的伪装。面包店众人和教授对查理的恶意，母亲对查理的逼迫，皆出于此。虚荣，正是造成理解隔阂的一大原因。 造成理解隔阂的另一原因，在于过于的自我与自利，每个人站在自己的立场上，事事由自己出发。他们永远无法理解他人，因为他们从未试图理解他人。 阿尔吉侬，是对消除理解差异的一次失败尝试，而献给他的花束，则是对无法相互理解的人们的悲哀与缅怀。 记得这捧花，不要沉浸在无知的深渊里。]]></content>
+      <categories>
+        <category>阅读</category>
+        <category>读书笔记</category>
+      </categories>
+      <tags>
+        <tag>读书笔记</tag>
+        <tag>《献给阿尔吉侬的花束》</tag>
       </tags>
   </entry>
   <entry>
