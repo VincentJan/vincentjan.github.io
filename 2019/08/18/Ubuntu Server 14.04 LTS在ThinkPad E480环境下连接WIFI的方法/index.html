@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="计算机,Linux,Ubuntu,系统安装,">
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="朝夕">
-<meta property="og:url" content="http://yoursite.com/archives/2019/page/2/index.html">
+<meta name="description" content="前言一直以来想要建立一个linux系统下的工作环境，然而他的桌面版问题太多运行太慢难以满足需求。近来突发奇想想要直接安装一个Server版Ubuntu并且不安装桌面环境，用以进行简单的文本编辑和C语言学习，顺便熟悉一下linux的操作。 然而天公不作美，E480采用的rtl8821ce网卡驱动并不被这个版本的系统支持，故而开始了我的受苦之旅。费了三天时间，终于爬出坑来，于是写下这篇文章记录这次的经">
+<meta name="keywords" content="计算机,Linux,Ubuntu,系统安装">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu Server 14.04 LTS在ThinkPad E480环境下连接WIFI的方法">
+<meta property="og:url" content="http://yoursite.com/2019/08/18/Ubuntu Server 14.04 LTS在ThinkPad E480环境下连接WIFI的方法/index.html">
 <meta property="og:site_name" content="朝夕">
+<meta property="og:description" content="前言一直以来想要建立一个linux系统下的工作环境，然而他的桌面版问题太多运行太慢难以满足需求。近来突发奇想想要直接安装一个Server版Ubuntu并且不安装桌面环境，用以进行简单的文本编辑和C语言学习，顺便熟悉一下linux的操作。 然而天公不作美，E480采用的rtl8821ce网卡驱动并不被这个版本的系统支持，故而开始了我的受苦之旅。费了三天时间，终于爬出坑来，于是写下这篇文章记录这次的经">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-18T00:31:34.665Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="朝夕">
+<meta name="twitter:title" content="Ubuntu Server 14.04 LTS在ThinkPad E480环境下连接WIFI的方法">
+<meta name="twitter:description" content="前言一直以来想要建立一个linux系统下的工作环境，然而他的桌面版问题太多运行太慢难以满足需求。近来突发奇想想要直接安装一个Server版Ubuntu并且不安装桌面环境，用以进行简单的文本编辑和C语言学习，顺便熟悉一下linux的操作。 然而天公不作美，E480采用的rtl8821ce网卡驱动并不被这个版本的系统支持，故而开始了我的受苦之旅。费了三天时间，终于爬出坑来，于是写下这篇文章记录这次的经">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2019/page/2/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/18/Ubuntu Server 14.04 LTS在ThinkPad E480环境下连接WIFI的方法/">
 
 
 
 
 
-  <title>归档 | 朝夕</title>
+  <title>Ubuntu Server 14.04 LTS在ThinkPad E480环境下连接WIFI的方法 | 朝夕</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -276,111 +281,310 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 12 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/18/Ubuntu Server 14.04 LTS在ThinkPad E480环境下连接WIFI的方法/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vincent Jan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="朝夕">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/08/18/远景/" itemprop="url">
-              
-                <span itemprop="name">远景</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Ubuntu Server 14.04 LTS在ThinkPad E480环境下连接WIFI的方法</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-18T04:00:54+08:00" content="2019-08-18">
-          08-18
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-18T05:36:29+08:00">
+                2019-08-18
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/计算机/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/08/18/献给阿尔吉侬的花束/" itemprop="url">
-              
-                <span itemprop="name">横亘在人与人之间的鸿沟——读《献给阿尔吉侬的花束》</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-18T02:30:54+08:00" content="2019-08-18">
-          08-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>一直以来想要建立一个linux系统下的工作环境，然而他的桌面版问题太多运行太慢难以满足需求。近来突发奇想想要直接安装一个Server版Ubuntu并且不安装桌面环境，用以进行简单的文本编辑和C语言学习，顺便熟悉一下linux的操作。</p>
+<p>然而天公不作美，E480采用的rtl8821ce网卡驱动并不被这个版本的系统支持，故而开始了我的受苦之旅。费了三天时间，终于爬出坑来，于是写下这篇文章记录这次的经历，以备以后使用。<br><a id="more"></a></p>
+<ul>
+<li><h4 id="step1-安装操作系统"><a href="#step1-安装操作系统" class="headerlink" title="step1 安装操作系统"></a>step1 安装操作系统</h4></li>
+</ul>
+<p>这一步已经轻车熟路没什么好说的了，只要注意语言选英文，并且最后是否自动更新那一步选不自动更新就好。</p>
+<ul>
+<li><h4 id="step2-更换软件源"><a href="#step2-更换软件源" class="headerlink" title="step2 更换软件源"></a>step2 更换软件源</h4></li>
+</ul>
+<p>ubuntu自带的软件源由于在国外，速度相当差强人意。为了提高速度，有必要对软件源进行更换。出于一种谜之心理，我选择了清华大学的源。操作如下。</p>
+<blockquote>
+<p>cd /etc/apt<br>sudo mv sources.list sources.list.bak<br>sudo vim sources.list</p>
+</blockquote>
+<p>将里面的内容改为</p>
+<blockquote>
+<p>deb <a href="https://mirrors.tuna.tsinghua.edu.cn/ubuntu/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/ubuntu/</a> trusty main restricted universe multiverse<br>deb <a href="https://mirrors.tuna.tsinghua.edu.cn/ubuntu/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/ubuntu/</a> trusty-updates main restricted universe multiverse<br>deb <a href="https://mirrors.tuna.tsinghua.edu.cn/ubuntu/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/ubuntu/</a> trusty-backports main restricted universe multiverse<br>deb <a href="https://mirrors.tuna.tsinghua.edu.cn/ubuntu/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/ubuntu/</a> trusty-security main restricted universe multiverse</p>
+</blockquote>
+<p>可在<a href="https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/" target="_blank" rel="noopener">清华大学镜像站使用帮助|ubuntu</a>获取完整镜像。</p>
+<p>完成后进行如下操作</p>
+<blockquote>
+<p>sudo apt-get update<br>sudo apt-get upgrade</p>
+</blockquote>
+<ul>
+<li><h4 id="step3-升级内核版本"><a href="#step3-升级内核版本" class="headerlink" title="step3 升级内核版本"></a>step3 升级内核版本</h4></li>
+</ul>
+<p>Ubuntu Server 14.04 LTS 自带的内核版本是4.4，而安装rtl8821ce网卡驱动需要高于4.14的内核版本，需要注意<strong>内核版本并非越高越好</strong>，比如5.0就无法进行安装，并且内核降级比升级麻烦许多，故而升级需谨慎。</p>
+<p>我选择升级到4.14版本，且需要4.12的过渡。假设文件在u盘上，操作如下：</p>
+<blockquote>
+<p>sudo mount -t vfat /dev/sdb1 /media/usb<br>cd /media/usb/4.12<br>sudo dpkg -i *.deb<br>sudo reboot</p>
+</blockquote>
+<p>此时一定要重新启动，并且使用</p>
+<blockquote>
+<p>umane -sr</p>
+</blockquote>
+<p>检查内核版本号是否已经成功升级。此时需要重新挂载u盘，然而并不能直接升级到4.14。不知道出于什么原因，系统会缺失libssl-1.1和linux-base_4.5两个package。导致安装无法进行，因此我们需要先从网上找到这两个包安装上再进行升级操作。</p>
+<blockquote>
+<p>sudo mount -vfat /dev/sdb1 /media/usb<br>cd /media/usb/libssl1.1<br>sudo dpkg -i <em>.deb<br>cd /media/usb/linuxbase4.5<br>sudo dpkg -i </em>.deb<br>cd /media/usb/4.14<br>sudo dpkg -i *.deb<br>sudo reboot</p>
+</blockquote>
+<p>以上安装顺序不能乱，这三次安装之间存在依赖关系。</p>
+<p>现在系统内核就升级好了，进行下一步。</p>
+<ul>
+<li><h4 id="step4-安装GCC并且更改默认版本"><a href="#step4-安装GCC并且更改默认版本" class="headerlink" title="step4 安装GCC并且更改默认版本"></a>step4 安装GCC并且更改默认版本</h4></li>
+</ul>
+<p>首先安装gcc与g++</p>
+<blockquote>
+<p>sudo apt-get install gcc g++</p>
+</blockquote>
+<p>若出现错误还需安装依赖包（下次安装同理）</p>
+<blockquote>
+<p>sudo apt-get install software-properties-common</p>
+</blockquote>
+<p>默认安装的是4.8版本，而我们需要4.9以上版本，这里选择安装5.5，操作如下：</p>
+<p>安装程序：</p>
+<blockquote>
+<p>sudo add-apt-repository ppa:ubuntu-toolchain-r/test<br>sudo apt-get update<br>sudo apt-get install gcc-5 g++-5</p>
+</blockquote>
+<p>更新链接：</p>
+<blockquote>
+<p>sudo ln -s /usr/bin/gcc-5 /usr/bin/gcc -f<br>sudo ln -s /usr/bin/g++-5 /usr/bin/g++ -f</p>
+</blockquote>
+<p>此时gcc默认为5.5版本，运行</p>
+<blockquote>
+<p>gcc -v</p>
+</blockquote>
+<p>确认版本。</p>
+<ul>
+<li><h4 id="step5-安装网卡驱动"><a href="#step5-安装网卡驱动" class="headerlink" title="step5 安装网卡驱动"></a>step5 安装网卡驱动</h4></li>
+</ul>
+<p>经过了漫长的准备终于到了正题，要安装网卡驱动，首先将rtl8821ce.zip解压到任意位置，并且进入该目录：</p>
+<blockquote>
+<p>cd /home/username/rtl<br>unzip rtl8821ce.zip</p>
+</blockquote>
+<p>修改Makefile：</p>
+<blockquote>
+<p>sudo vim Makefile</p>
+</blockquote>
+<p>将其中的</p>
+<blockquote>
+<p>export TopDIR ?= …</p>
+</blockquote>
+<p>等号后内容改成Makefile的目录。</p>
+<p>接着进行如下操作：</p>
+<blockquote>
+<p>make<br>sudo make install<br>sudo modprobe -a 8821ce</p>
+</blockquote>
+<p>此时驱动就安装好了，可以开始连接wifi了。</p>
+<ul>
+<li><h4 id="step6-Ubuntu-Server下连接WiFi"><a href="#step6-Ubuntu-Server下连接WiFi" class="headerlink" title="step6 Ubuntu Server下连接WiFi"></a>step6 Ubuntu Server下连接WiFi</h4></li>
+</ul>
+<p>网上试了很多方法大多以失败告终，最终只得退而求其次连接一个未加密wifi。</p>
+<p>首先关闭禁止使用WiFi的限制</p>
+<blockquote>
+<p>sudo apt-get install rfkill<br>sudo rfkill unblock all</p>
+</blockquote>
+<p>然后打开/etc/network/interfaces, 在文件末尾加入</p>
+<blockquote>
+<p>auto wlan0<br>iface wlan0 inet dhcp</p>
+</blockquote>
+<p>保存并关闭文件，然后运行以下两条命令以重启网络服务</p>
+<blockquote>
+<p>sudo ifdown wlan0<br>sudo ifup -v wlan0</p>
+</blockquote>
+<p>此时可以连接WiFi了，运行</p>
+<blockquote>
+<p>sudo apt-get install iw<br>sudo iw dev wlan0 scan |less</p>
+</blockquote>
+<p>搜索可用WiFi列表，查找要连接的WiFi，然后运行</p>
+<blockquote>
+<p>sudo iw dev wlan0 connect SSID</p>
+</blockquote>
+<p>连接目标WiFi，并运行以下命令获取IP地址</p>
+<blockquote>
+<p>sudo apt-get install dhcpcd<br>sudo dhcpcd wlan0</p>
+</blockquote>
+<p>大功告成！</p>
+<h4 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h4><p>折腾了三天还是无法连接加密过的WiFi多少有点遗憾，然而这都是自己知识不够技术水平不到的结果，全程根着网上的博客照葫芦画瓢。这已经超出了我的能力范围，即便最后连上了也学不到什么东西，因此再纠结下去恐怕得不偿失。所以这次的受苦之旅就先结束吧。</p>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/计算机/" rel="tag"># 计算机</a>
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+          
+            <a href="/tags/系统安装/" rel="tag"># 系统安装</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/18/计算机导论（一）/" rel="next" title="计算机导论笔记（一）进制与编码">
+                <i class="fa fa-chevron-left"></i> 计算机导论笔记（一）进制与编码
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/18/故事结构笔记/" rel="prev" title="《故事》结构笔记">
+                《故事》结构笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2019/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2019/">1</a><span class="page-number current">2</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -388,6 +592,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -408,8 +616,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -469,6 +686,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step1-安装操作系统"><span class="nav-number">2.</span> <span class="nav-text">step1 安装操作系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step2-更换软件源"><span class="nav-number">3.</span> <span class="nav-text">step2 更换软件源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step3-升级内核版本"><span class="nav-number">4.</span> <span class="nav-text">step3 升级内核版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step4-安装GCC并且更改默认版本"><span class="nav-number">5.</span> <span class="nav-text">step4 安装GCC并且更改默认版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step5-安装网卡驱动"><span class="nav-number">6.</span> <span class="nav-text">step5 安装网卡驱动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step6-Ubuntu-Server下连接WiFi"><span class="nav-number">7.</span> <span class="nav-text">step6 Ubuntu Server下连接WiFi</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结束语"><span class="nav-number">8.</span> <span class="nav-text">结束语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -622,6 +855,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
