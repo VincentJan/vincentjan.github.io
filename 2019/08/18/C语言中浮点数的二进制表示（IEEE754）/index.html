@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="朝夕">
 <meta property="og:description" content="C语言中浮点数的二进制表示（IEEE754）最近在C语言学习中遇到了浮点运算精度的问题， 在查找资料后发现是浮点数的储存方式引起的问题，在此做一个记录。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-18T00:31:33.336Z">
+<meta property="og:updated_time" content="2019-08-18T00:40:51.117Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C语言中浮点数的二进制表示（IEEE754）">
 <meta name="twitter:description" content="C语言中浮点数的二进制表示（IEEE754）最近在C语言学习中遇到了浮点运算精度的问题， 在查找资料后发现是浮点数的储存方式引起的问题，在此做一个记录。">
@@ -430,10 +430,12 @@
 <p>按照浮点规格化表示，尾数的最高有效位应为1，这意味着M表示的值为1.M。</p>
 <p>以遇到的问题中的值0.3为例， 其转化过程如下。</p>
 <ol>
-<li><p>将十进制数转换为二进制，小数点前除2取余，小数点后乘2取整<br>此时可以发现0.3的二进制是无限循环的，故而只能截取到精度对应的位数。</p>
-</li>
+<li>将十进制数转换为二进制，小数点前除2取余，小数点后乘2取整<script type="math/tex; mode=display">(0.3)_{10} = (0.0100110011001100110011001)_2</script></li>
+</ol>
+<p>此时可以发现0.3的二进制是无限循环的，故而只能截取到精度对应的位数。</p>
+<ol>
 <li><p>规格化表示</p>
-</li>
+<script type="math/tex; mode=display">0.100110011001100110011001=+1.00110011001100110011001\times2^{-2}</script></li>
 <li><p>计算相应的值<br>S=0, E = 127 - 2 = 125 = 0111 1101, M = 0011 0011 0011 0011 0011 001</p>
 </li>
 </ol>
