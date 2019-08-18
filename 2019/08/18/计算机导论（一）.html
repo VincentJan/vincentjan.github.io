@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="绪论课程主要构成为：  信息学：数字的进制（二进制，八进制，十六进制等） 硬件：计算机硬件构成与组装 操作系统：操作系统的使用（大一），操作系统的原理（大三） 软件：Microsoft Office 2010三大部件以及一些多媒体软件 网络基础知识：使用（大一），原理（大三） 程序设计：基础（大一），程序语言（大二）">
+<meta name="description" content="内容：大学计算机课程教学范围，进制之间的转换以及计算机编码原理。">
 <meta name="keywords" content="计算机,进制,计算机导论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机导论笔记（一）进制与编码">
 <meta property="og:url" content="https://vincentjan.top/2019/08/18/计算机导论（一）.html">
 <meta property="og:site_name" content="朝夕">
-<meta property="og:description" content="绪论课程主要构成为：  信息学：数字的进制（二进制，八进制，十六进制等） 硬件：计算机硬件构成与组装 操作系统：操作系统的使用（大一），操作系统的原理（大三） 软件：Microsoft Office 2010三大部件以及一些多媒体软件 网络基础知识：使用（大一），原理（大三） 程序设计：基础（大一），程序语言（大二）">
+<meta property="og:description" content="内容：大学计算机课程教学范围，进制之间的转换以及计算机编码原理。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-17T20:41:12.758Z">
+<meta property="og:updated_time" content="2019-08-18T18:43:01.112Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机导论笔记（一）进制与编码">
-<meta name="twitter:description" content="绪论课程主要构成为：  信息学：数字的进制（二进制，八进制，十六进制等） 硬件：计算机硬件构成与组装 操作系统：操作系统的使用（大一），操作系统的原理（大三） 软件：Microsoft Office 2010三大部件以及一些多媒体软件 网络基础知识：使用（大一），原理（大三） 程序设计：基础（大一），程序语言（大二）">
+<meta name="twitter:description" content="内容：大学计算机课程教学范围，进制之间的转换以及计算机编码原理。">
 
 
 
@@ -401,7 +401,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  607
+                  647
                 </span>
               
 
@@ -438,27 +438,29 @@
       
 
       
-        <h2 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h2><p>课程主要构成为：</p>
-<ol>
+        <blockquote>
+<p>内容：<br>大学计算机课程教学范围，进制之间的转换以及计算机编码原理。<br><a id="more"></a></p>
+</blockquote>
+<h3 id="课程主要构成为："><a href="#课程主要构成为：" class="headerlink" title="课程主要构成为："></a>课程主要构成为：</h3><ol>
 <li>信息学：数字的<strong>进制</strong>（二进制，八进制，十六进制等）</li>
 <li>硬件：计算机硬件构成与组装</li>
 <li>操作系统：操作系统的使用（大一），操作系统的原理（大三）</li>
 <li>软件：Microsoft Office 2010三大部件以及一些多媒体软件</li>
 <li><strong>网络</strong>基础知识：使用（大一），原理（大三）</li>
-<li><strong>程序设计</strong>：基础（大一），程序语言（大二）<a id="more"></a>
-<strong>学习程序语言的目的在于培养解决问题的能力，重点在于算法。</strong></li>
+<li><strong>程序设计</strong>：基础（大一），程序语言（大二）</li>
 </ol>
-<h3 id="进制与编码"><a href="#进制与编码" class="headerlink" title="进制与编码"></a>进制与编码</h3><ul>
-<li>进制：根据使用方便的需要，数据分为十进制，二进制，八进制，十六进制等。其中涉及<strong>基数</strong>和<strong>位权</strong>两个概念。<br><em>基数：该种进制下数码的个数。</em><br><em>位权（简称权）：一个固定位置对应的单位值。</em></li>
-</ul>
+<p><strong>学习程序语言的目的在于培养解决问题的能力，重点在于算法。</strong></p>
+<h3 id="进制与编码"><a href="#进制与编码" class="headerlink" title="进制与编码"></a>进制与编码</h3><h4 id="进制："><a href="#进制：" class="headerlink" title="进制："></a>进制：</h4><p>根据使用方便的需要，数据分为十进制，二进制，八进制，十六进制等。其中涉及<strong>基数</strong>和<strong>位权</strong>两个概念。</p>
+<p><em>基数：该种进制下数码的个数。</em></p>
+<p><em>位权（简称权）：一个固定位置对应的单位值。</em></p>
 <p>任何一种进制都可以表示成按权展开的多项式之和：</p>
 <p>$ (X)_{R}=D_{n-1}R^{n-1}+D_{n-2}R^{n-2}+…+D_0R^0+D_{-1}R^{-1}+…+D_{-m}R^{-m}$</p>
 <p>其中X为一个R进制数，R为基数，n是整数位数，m是小数位数，下标为位置，上标为幂的次数。</p>
 <p>故而任何进制的数X都能通过以上方法转化为对应的十进制数Y。</p>
-<p>十进制转换为二进制的方法：整数除二取余倒序排列，小数乘二取整正序排列。</p>
+<h5 id="转换方法"><a href="#转换方法" class="headerlink" title="转换方法"></a>转换方法</h5><p>十进制转换为二进制的方法：整数除二取余倒序排列，小数乘二取整正序排列。</p>
 <p>八进制与二进制互相转换的方法：三位转换，以小数点为中心。</p>
 <p>十六进制与二进制互相转换的方法：四位转换，以小数点为中心。</p>
-<ul>
+<h4 id="信息存储及编码原理"><a href="#信息存储及编码原理" class="headerlink" title="信息存储及编码原理"></a>信息存储及编码原理</h4><ul>
 <li>信息存储单位：1KB=1024Byte（字节），1Byte=8bit（位）</li>
 <li>信息编码：二进制标识（B），八进制标识（O或Q），十进制（D），十六进制（H），标识跟于码尾。</li>
 </ul>
@@ -683,7 +685,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进制与编码"><span class="nav-number">1.1.</span> <span class="nav-text">进制与编码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#课程主要构成为："><span class="nav-number">1.</span> <span class="nav-text">课程主要构成为：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进制与编码"><span class="nav-number">2.</span> <span class="nav-text">进制与编码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进制："><span class="nav-number">2.1.</span> <span class="nav-text">进制：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#转换方法"><span class="nav-number">2.1.1.</span> <span class="nav-text">转换方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#信息存储及编码原理"><span class="nav-number">2.2.</span> <span class="nav-text">信息存储及编码原理</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -717,7 +719,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">11.2k</span>
+    <span title="Site words total count">11.4k</span>
   
 </div>
 

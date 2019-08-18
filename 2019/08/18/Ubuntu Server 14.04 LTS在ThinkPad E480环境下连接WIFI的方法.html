@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="前言一直以来想要建立一个linux系统下的工作环境，然而他的桌面版问题太多运行太慢难以满足需求。近来突发奇想想要直接安装一个Server版Ubuntu并且不安装桌面环境，用以进行简单的文本编辑和C语言学习，顺便熟悉一下linux的操作。 然而天公不作美，E480采用的rtl8821ce网卡驱动并不被这个版本的系统支持，故而开始了我的受苦之旅。费了三天时间，终于爬出坑来，于是写下这篇文章记录这次的经">
+<meta name="description" content="前言： 一直以来想要建立一个linux系统下的工作环境，然而他的桌面版问题太多运行太慢难以满足需求。近来突发奇想想要直接安装一个Server版Ubuntu并且不安装桌面环境，用以进行简单的文本编辑和C语言学习，顺便熟悉一下linux的操作。 然而天公不作美，E480采用的rtl8821ce网卡驱动并不被这个版本的系统支持，故而开始了我的受苦之旅。费了三天时间，终于爬出坑来，于是写下这篇文章记录这">
 <meta name="keywords" content="计算机,Linux,Ubuntu,系统安装">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu Server 14.04 LTS在ThinkPad E480环境下连接WIFI的方法">
 <meta property="og:url" content="https://vincentjan.top/2019/08/18/Ubuntu Server 14.04 LTS在ThinkPad E480环境下连接WIFI的方法.html">
 <meta property="og:site_name" content="朝夕">
-<meta property="og:description" content="前言一直以来想要建立一个linux系统下的工作环境，然而他的桌面版问题太多运行太慢难以满足需求。近来突发奇想想要直接安装一个Server版Ubuntu并且不安装桌面环境，用以进行简单的文本编辑和C语言学习，顺便熟悉一下linux的操作。 然而天公不作美，E480采用的rtl8821ce网卡驱动并不被这个版本的系统支持，故而开始了我的受苦之旅。费了三天时间，终于爬出坑来，于是写下这篇文章记录这次的经">
+<meta property="og:description" content="前言： 一直以来想要建立一个linux系统下的工作环境，然而他的桌面版问题太多运行太慢难以满足需求。近来突发奇想想要直接安装一个Server版Ubuntu并且不安装桌面环境，用以进行简单的文本编辑和C语言学习，顺便熟悉一下linux的操作。 然而天公不作美，E480采用的rtl8821ce网卡驱动并不被这个版本的系统支持，故而开始了我的受苦之旅。费了三天时间，终于爬出坑来，于是写下这篇文章记录这">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-18T00:31:34.665Z">
+<meta property="og:updated_time" content="2019-08-18T18:33:46.970Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu Server 14.04 LTS在ThinkPad E480环境下连接WIFI的方法">
-<meta name="twitter:description" content="前言一直以来想要建立一个linux系统下的工作环境，然而他的桌面版问题太多运行太慢难以满足需求。近来突发奇想想要直接安装一个Server版Ubuntu并且不安装桌面环境，用以进行简单的文本编辑和C语言学习，顺便熟悉一下linux的操作。 然而天公不作美，E480采用的rtl8821ce网卡驱动并不被这个版本的系统支持，故而开始了我的受苦之旅。费了三天时间，终于爬出坑来，于是写下这篇文章记录这次的经">
+<meta name="twitter:description" content="前言： 一直以来想要建立一个linux系统下的工作环境，然而他的桌面版问题太多运行太慢难以满足需求。近来突发奇想想要直接安装一个Server版Ubuntu并且不安装桌面环境，用以进行简单的文本编辑和C语言学习，顺便熟悉一下linux的操作。 然而天公不作美，E480采用的rtl8821ce网卡驱动并不被这个版本的系统支持，故而开始了我的受苦之旅。费了三天时间，终于爬出坑来，于是写下这篇文章记录这">
 
 
 
@@ -438,11 +438,14 @@
       
 
       
-        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>一直以来想要建立一个linux系统下的工作环境，然而他的桌面版问题太多运行太慢难以满足需求。近来突发奇想想要直接安装一个Server版Ubuntu并且不安装桌面环境，用以进行简单的文本编辑和C语言学习，顺便熟悉一下linux的操作。</p>
+        <blockquote>
+<p>前言：</p>
+<p>一直以来想要建立一个linux系统下的工作环境，然而他的桌面版问题太多运行太慢难以满足需求。近来突发奇想想要直接安装一个Server版Ubuntu并且不安装桌面环境，用以进行简单的文本编辑和C语言学习，顺便熟悉一下linux的操作。</p>
 <p>然而天公不作美，E480采用的rtl8821ce网卡驱动并不被这个版本的系统支持，故而开始了我的受苦之旅。费了三天时间，终于爬出坑来，于是写下这篇文章记录这次的经历，以备以后使用。<br><a id="more"></a></p>
 <ul>
 <li><h4 id="step1-安装操作系统"><a href="#step1-安装操作系统" class="headerlink" title="step1 安装操作系统"></a>step1 安装操作系统</h4></li>
 </ul>
+</blockquote>
 <p>这一步已经轻车熟路没什么好说的了，只要注意语言选英文，并且最后是否自动更新那一步选不自动更新就好。</p>
 <ul>
 <li><h4 id="step2-更换软件源"><a href="#step2-更换软件源" class="headerlink" title="step2 更换软件源"></a>step2 更换软件源</h4></li>
@@ -770,7 +773,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step1-安装操作系统"><span class="nav-number">2.</span> <span class="nav-text">step1 安装操作系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step2-更换软件源"><span class="nav-number">3.</span> <span class="nav-text">step2 更换软件源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step3-升级内核版本"><span class="nav-number">4.</span> <span class="nav-text">step3 升级内核版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step4-安装GCC并且更改默认版本"><span class="nav-number">5.</span> <span class="nav-text">step4 安装GCC并且更改默认版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step5-安装网卡驱动"><span class="nav-number">6.</span> <span class="nav-text">step5 安装网卡驱动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step6-Ubuntu-Server下连接WiFi"><span class="nav-number">7.</span> <span class="nav-text">step6 Ubuntu Server下连接WiFi</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结束语"><span class="nav-number">8.</span> <span class="nav-text">结束语</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#step1-安装操作系统"><span class="nav-number">1.</span> <span class="nav-text">step1 安装操作系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step2-更换软件源"><span class="nav-number">2.</span> <span class="nav-text">step2 更换软件源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step3-升级内核版本"><span class="nav-number">3.</span> <span class="nav-text">step3 升级内核版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step4-安装GCC并且更改默认版本"><span class="nav-number">4.</span> <span class="nav-text">step4 安装GCC并且更改默认版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step5-安装网卡驱动"><span class="nav-number">5.</span> <span class="nav-text">step5 安装网卡驱动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step6-Ubuntu-Server下连接WiFi"><span class="nav-number">6.</span> <span class="nav-text">step6 Ubuntu Server下连接WiFi</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结束语"><span class="nav-number">7.</span> <span class="nav-text">结束语</span></a></li></ol></div>
             
 
           </div>
@@ -804,7 +807,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">11.2k</span>
+    <span title="Site words total count">11.4k</span>
   
 </div>
 
