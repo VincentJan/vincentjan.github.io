@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f2592f;
+  background: #b5be32;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2696,6 +2696,9 @@ embed {
 .sidebar {
   background: url("/images/sbg.png");
 }
+.post-toc .nav .nav-child {
+  display: block;
+}
 .site-title {
   font-size: 35px;
   font-weight: bold;
@@ -2740,10 +2743,4 @@ body {
   color: #fc6423;
   border-bottom: none;
   border-bottom: 1px solid #fc6423;
-}
-* {
-  cursor: url("/images/cursor.ico"), auto !important;
-}
-:active {
-  cursor: url("/images/cursor.ico"), auto !important;
 }
