@@ -5,9 +5,9 @@
   <subtitle>Make life more fun!</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://vincentjan.github.io/"/>
+  <link href="https://vincentjan.top/"/>
   <updated>2020-03-09T02:04:13.000Z</updated>
-  <id>https://vincentjan.github.io/</id>
+  <id>https://vincentjan.top/</id>
   
   <author>
     <name>Vincent Jan</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Arch Linux安装与配置</title>
-    <link href="https://vincentjan.github.io/2020/03/09/ArchLinuxConfig.html"/>
-    <id>https://vincentjan.github.io/2020/03/09/ArchLinuxConfig.html</id>
+    <link href="https://vincentjan.top/2020/03/09/ArchLinuxConfig.html"/>
+    <id>https://vincentjan.top/2020/03/09/ArchLinuxConfig.html</id>
     <published>2020-03-09T12:36:29.000Z</published>
     <updated>2020-03-09T02:04:13.000Z</updated>
     
@@ -33,21 +33,21 @@
     
     </summary>
     
-      <category term="术" scheme="https://vincentjan.github.io/categories/%E6%9C%AF/"/>
+      <category term="术" scheme="https://vincentjan.top/categories/%E6%9C%AF/"/>
     
-      <category term="计算机" scheme="https://vincentjan.github.io/categories/%E6%9C%AF/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="计算机" scheme="https://vincentjan.top/categories/%E6%9C%AF/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-      <category term="Linux" scheme="https://vincentjan.github.io/tags/Linux/"/>
+      <category term="Linux" scheme="https://vincentjan.top/tags/Linux/"/>
     
-      <category term="折腾" scheme="https://vincentjan.github.io/tags/%E6%8A%98%E8%85%BE/"/>
+      <category term="折腾" scheme="https://vincentjan.top/tags/%E6%8A%98%E8%85%BE/"/>
     
   </entry>
   
   <entry>
     <title>C++的声明与定义</title>
-    <link href="https://vincentjan.github.io/2020/02/26/CppDeclarationAndDefinition.html"/>
-    <id>https://vincentjan.github.io/2020/02/26/CppDeclarationAndDefinition.html</id>
+    <link href="https://vincentjan.top/2020/02/26/CppDeclarationAndDefinition.html"/>
+    <id>https://vincentjan.top/2020/02/26/CppDeclarationAndDefinition.html</id>
     <published>2020-02-26T05:51:29.000Z</published>
     <updated>2020-02-26T08:40:39.511Z</updated>
     
@@ -63,19 +63,19 @@
     
     </summary>
     
-      <category term="术" scheme="https://vincentjan.github.io/categories/%E6%9C%AF/"/>
+      <category term="术" scheme="https://vincentjan.top/categories/%E6%9C%AF/"/>
     
-      <category term="计算机" scheme="https://vincentjan.github.io/categories/%E6%9C%AF/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="计算机" scheme="https://vincentjan.top/categories/%E6%9C%AF/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-      <category term="C++" scheme="https://vincentjan.github.io/tags/C/"/>
+      <category term="C++" scheme="https://vincentjan.top/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>小张和小丽 ——开开550</title>
-    <link href="https://vincentjan.github.io/2019/11/15/%E5%B0%8F%E5%BC%A0%E5%92%8C%E5%B0%8F%E4%B8%BD.html"/>
-    <id>https://vincentjan.github.io/2019/11/15/小张和小丽.html</id>
+    <link href="https://vincentjan.top/2019/11/15/%E5%B0%8F%E5%BC%A0%E5%92%8C%E5%B0%8F%E4%B8%BD.html"/>
+    <id>https://vincentjan.top/2019/11/15/小张和小丽.html</id>
     <published>2019-11-15T07:48:35.000Z</published>
     <updated>2020-02-13T14:40:34.000Z</updated>
     
@@ -88,19 +88,19 @@
     
     </summary>
     
-      <category term="文" scheme="https://vincentjan.github.io/categories/%E6%96%87/"/>
+      <category term="文" scheme="https://vincentjan.top/categories/%E6%96%87/"/>
     
-      <category term="摘录" scheme="https://vincentjan.github.io/categories/%E6%96%87/%E6%91%98%E5%BD%95/"/>
+      <category term="摘录" scheme="https://vincentjan.top/categories/%E6%96%87/%E6%91%98%E5%BD%95/"/>
     
     
-      <category term="文学" scheme="https://vincentjan.github.io/tags/%E6%96%87%E5%AD%A6/"/>
+      <category term="文学" scheme="https://vincentjan.top/tags/%E6%96%87%E5%AD%A6/"/>
     
   </entry>
   
   <entry>
     <title>《如何高效学习》笔记——效率篇</title>
-    <link href="https://vincentjan.github.io/2019/08/23/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E5%AD%A6%E4%B9%A03.html"/>
-    <id>https://vincentjan.github.io/2019/08/23/如何高效学习3.html</id>
+    <link href="https://vincentjan.top/2019/08/23/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E5%AD%A6%E4%B9%A03.html"/>
+    <id>https://vincentjan.top/2019/08/23/如何高效学习3.html</id>
     <published>2019-08-23T14:08:03.000Z</published>
     <updated>2020-02-13T14:40:34.000Z</updated>
     
@@ -117,19 +117,19 @@
     
     </summary>
     
-      <category term="文" scheme="https://vincentjan.github.io/categories/%E6%96%87/"/>
+      <category term="文" scheme="https://vincentjan.top/categories/%E6%96%87/"/>
     
-      <category term="读书笔记" scheme="https://vincentjan.github.io/categories/%E6%96%87/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="https://vincentjan.top/categories/%E6%96%87/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="效率" scheme="https://vincentjan.github.io/tags/%E6%95%88%E7%8E%87/"/>
+      <category term="效率" scheme="https://vincentjan.top/tags/%E6%95%88%E7%8E%87/"/>
     
   </entry>
   
   <entry>
     <title>《如何高效学习》笔记——方法篇</title>
-    <link href="https://vincentjan.github.io/2019/08/23/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E5%AD%A6%E4%B9%A02.html"/>
-    <id>https://vincentjan.github.io/2019/08/23/如何高效学习2.html</id>
+    <link href="https://vincentjan.top/2019/08/23/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E5%AD%A6%E4%B9%A02.html"/>
+    <id>https://vincentjan.top/2019/08/23/如何高效学习2.html</id>
     <published>2019-08-22T17:45:00.000Z</published>
     <updated>2020-02-13T14:40:35.000Z</updated>
     
@@ -146,19 +146,19 @@
     
     </summary>
     
-      <category term="文" scheme="https://vincentjan.github.io/categories/%E6%96%87/"/>
+      <category term="文" scheme="https://vincentjan.top/categories/%E6%96%87/"/>
     
-      <category term="读书笔记" scheme="https://vincentjan.github.io/categories/%E6%96%87/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="https://vincentjan.top/categories/%E6%96%87/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="效率" scheme="https://vincentjan.github.io/tags/%E6%95%88%E7%8E%87/"/>
+      <category term="效率" scheme="https://vincentjan.top/tags/%E6%95%88%E7%8E%87/"/>
     
   </entry>
   
   <entry>
     <title>《如何高效学习》笔记——原理篇</title>
-    <link href="https://vincentjan.github.io/2019/08/21/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E5%AD%A6%E4%B9%A01.html"/>
-    <id>https://vincentjan.github.io/2019/08/21/如何高效学习1.html</id>
+    <link href="https://vincentjan.top/2019/08/21/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E5%AD%A6%E4%B9%A01.html"/>
+    <id>https://vincentjan.top/2019/08/21/如何高效学习1.html</id>
     <published>2019-08-21T13:45:00.000Z</published>
     <updated>2020-02-13T14:40:34.000Z</updated>
     
@@ -175,19 +175,19 @@
     
     </summary>
     
-      <category term="文" scheme="https://vincentjan.github.io/categories/%E6%96%87/"/>
+      <category term="文" scheme="https://vincentjan.top/categories/%E6%96%87/"/>
     
-      <category term="读书笔记" scheme="https://vincentjan.github.io/categories/%E6%96%87/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="https://vincentjan.top/categories/%E6%96%87/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="效率" scheme="https://vincentjan.github.io/tags/%E6%95%88%E7%8E%87/"/>
+      <category term="效率" scheme="https://vincentjan.top/tags/%E6%95%88%E7%8E%87/"/>
     
   </entry>
   
   <entry>
     <title>我看过草叶葳蕤 ——孙频</title>
-    <link href="https://vincentjan.github.io/2019/08/20/%E6%88%91%E7%9C%8B%E8%BF%87%E8%8D%89%E5%8F%B6%E8%91%B3%E8%95%A4.html"/>
-    <id>https://vincentjan.github.io/2019/08/20/我看过草叶葳蕤.html</id>
+    <link href="https://vincentjan.top/2019/08/20/%E6%88%91%E7%9C%8B%E8%BF%87%E8%8D%89%E5%8F%B6%E8%91%B3%E8%95%A4.html"/>
+    <id>https://vincentjan.top/2019/08/20/我看过草叶葳蕤.html</id>
     <published>2019-08-20T14:28:07.000Z</published>
     <updated>2020-02-13T14:40:35.000Z</updated>
     
@@ -199,19 +199,19 @@
     
     </summary>
     
-      <category term="文" scheme="https://vincentjan.github.io/categories/%E6%96%87/"/>
+      <category term="文" scheme="https://vincentjan.top/categories/%E6%96%87/"/>
     
-      <category term="摘录" scheme="https://vincentjan.github.io/categories/%E6%96%87/%E6%91%98%E5%BD%95/"/>
+      <category term="摘录" scheme="https://vincentjan.top/categories/%E6%96%87/%E6%91%98%E5%BD%95/"/>
     
     
-      <category term="文学" scheme="https://vincentjan.github.io/tags/%E6%96%87%E5%AD%A6/"/>
+      <category term="文学" scheme="https://vincentjan.top/tags/%E6%96%87%E5%AD%A6/"/>
     
   </entry>
   
   <entry>
     <title>魇</title>
-    <link href="https://vincentjan.github.io/2019/08/19/%E9%AD%87.html"/>
-    <id>https://vincentjan.github.io/2019/08/19/魇.html</id>
+    <link href="https://vincentjan.top/2019/08/19/%E9%AD%87.html"/>
+    <id>https://vincentjan.top/2019/08/19/魇.html</id>
     <published>2019-08-18T18:05:54.000Z</published>
     <updated>2020-02-13T14:40:35.000Z</updated>
     
@@ -225,17 +225,17 @@
     
     </summary>
     
-      <category term="文" scheme="https://vincentjan.github.io/categories/%E6%96%87/"/>
+      <category term="文" scheme="https://vincentjan.top/categories/%E6%96%87/"/>
     
-      <category term="故事" scheme="https://vincentjan.github.io/categories/%E6%96%87/%E6%95%85%E4%BA%8B/"/>
+      <category term="故事" scheme="https://vincentjan.top/categories/%E6%96%87/%E6%95%85%E4%BA%8B/"/>
     
     
   </entry>
   
   <entry>
     <title>C语言中浮点数的二进制表示（IEEE754）</title>
-    <link href="https://vincentjan.github.io/2019/08/18/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%EF%BC%88IEEE754%EF%BC%89.html"/>
-    <id>https://vincentjan.github.io/2019/08/18/C语言中浮点数的二进制表示（IEEE754）.html</id>
+    <link href="https://vincentjan.top/2019/08/18/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%EF%BC%88IEEE754%EF%BC%89.html"/>
+    <id>https://vincentjan.top/2019/08/18/C语言中浮点数的二进制表示（IEEE754）.html</id>
     <published>2019-08-17T22:36:29.000Z</published>
     <updated>2020-02-13T14:40:34.000Z</updated>
     
@@ -249,19 +249,19 @@
     
     </summary>
     
-      <category term="术" scheme="https://vincentjan.github.io/categories/%E6%9C%AF/"/>
+      <category term="术" scheme="https://vincentjan.top/categories/%E6%9C%AF/"/>
     
-      <category term="计算机" scheme="https://vincentjan.github.io/categories/%E6%9C%AF/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="计算机" scheme="https://vincentjan.top/categories/%E6%9C%AF/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-      <category term="C语言" scheme="https://vincentjan.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
+      <category term="C语言" scheme="https://vincentjan.top/tags/C%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   
   <entry>
     <title>《故事》结构笔记</title>
-    <link href="https://vincentjan.github.io/2019/08/18/%E6%95%85%E4%BA%8B%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://vincentjan.github.io/2019/08/18/故事结构笔记.html</id>
+    <link href="https://vincentjan.top/2019/08/18/%E6%95%85%E4%BA%8B%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://vincentjan.top/2019/08/18/故事结构笔记.html</id>
     <published>2019-08-17T22:30:54.000Z</published>
     <updated>2020-02-13T14:40:35.000Z</updated>
     
@@ -275,17 +275,17 @@
     
     </summary>
     
-      <category term="文" scheme="https://vincentjan.github.io/categories/%E6%96%87/"/>
+      <category term="文" scheme="https://vincentjan.top/categories/%E6%96%87/"/>
     
-      <category term="读书笔记" scheme="https://vincentjan.github.io/categories/%E6%96%87/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="https://vincentjan.top/categories/%E6%96%87/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
   </entry>
   
   <entry>
     <title>《如何阅读一本书》脉络整理与方法论总结</title>
-    <link href="https://vincentjan.github.io/2019/08/18/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6.html"/>
-    <id>https://vincentjan.github.io/2019/08/18/如何阅读一本书.html</id>
+    <link href="https://vincentjan.top/2019/08/18/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6.html"/>
+    <id>https://vincentjan.top/2019/08/18/如何阅读一本书.html</id>
     <published>2019-08-17T20:30:54.000Z</published>
     <updated>2020-02-13T14:40:34.000Z</updated>
     
@@ -299,19 +299,19 @@
     
     </summary>
     
-      <category term="文" scheme="https://vincentjan.github.io/categories/%E6%96%87/"/>
+      <category term="文" scheme="https://vincentjan.top/categories/%E6%96%87/"/>
     
-      <category term="读书笔记" scheme="https://vincentjan.github.io/categories/%E6%96%87/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="https://vincentjan.top/categories/%E6%96%87/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="效率" scheme="https://vincentjan.github.io/tags/%E6%95%88%E7%8E%87/"/>
+      <category term="效率" scheme="https://vincentjan.top/tags/%E6%95%88%E7%8E%87/"/>
     
   </entry>
   
   <entry>
     <title>虚构文学创作练习03——宠物</title>
-    <link href="https://vincentjan.github.io/2019/08/18/%E8%99%9A%E6%9E%84%E6%96%87%E5%AD%A6%E5%88%9B%E4%BD%9C%E7%BB%83%E4%B9%A003%E2%80%94%E2%80%94%E5%AE%A0%E7%89%A9.html"/>
-    <id>https://vincentjan.github.io/2019/08/18/虚构文学创作练习03——宠物.html</id>
+    <link href="https://vincentjan.top/2019/08/18/%E8%99%9A%E6%9E%84%E6%96%87%E5%AD%A6%E5%88%9B%E4%BD%9C%E7%BB%83%E4%B9%A003%E2%80%94%E2%80%94%E5%AE%A0%E7%89%A9.html"/>
+    <id>https://vincentjan.top/2019/08/18/虚构文学创作练习03——宠物.html</id>
     <published>2019-08-17T20:05:54.000Z</published>
     <updated>2020-02-25T17:01:18.297Z</updated>
     
@@ -323,21 +323,21 @@
     
     </summary>
     
-      <category term="文" scheme="https://vincentjan.github.io/categories/%E6%96%87/"/>
+      <category term="文" scheme="https://vincentjan.top/categories/%E6%96%87/"/>
     
-      <category term="故事" scheme="https://vincentjan.github.io/categories/%E6%96%87/%E6%95%85%E4%BA%8B/"/>
+      <category term="故事" scheme="https://vincentjan.top/categories/%E6%96%87/%E6%95%85%E4%BA%8B/"/>
     
     
-      <category term="故事" scheme="https://vincentjan.github.io/tags/%E6%95%85%E4%BA%8B/"/>
+      <category term="故事" scheme="https://vincentjan.top/tags/%E6%95%85%E4%BA%8B/"/>
     
-      <category term="虚构文学创作练习" scheme="https://vincentjan.github.io/tags/%E8%99%9A%E6%9E%84%E6%96%87%E5%AD%A6%E5%88%9B%E4%BD%9C%E7%BB%83%E4%B9%A0/"/>
+      <category term="虚构文学创作练习" scheme="https://vincentjan.top/tags/%E8%99%9A%E6%9E%84%E6%96%87%E5%AD%A6%E5%88%9B%E4%BD%9C%E7%BB%83%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>虚构文学创作练习02———意识</title>
-    <link href="https://vincentjan.github.io/2019/08/18/%E8%99%9A%E6%9E%84%E6%96%87%E5%AD%A6%E5%88%9B%E4%BD%9C%E7%BB%83%E4%B9%A002%E2%80%94%E2%80%94%E6%84%8F%E8%AF%86.html"/>
-    <id>https://vincentjan.github.io/2019/08/18/虚构文学创作练习02——意识.html</id>
+    <link href="https://vincentjan.top/2019/08/18/%E8%99%9A%E6%9E%84%E6%96%87%E5%AD%A6%E5%88%9B%E4%BD%9C%E7%BB%83%E4%B9%A002%E2%80%94%E2%80%94%E6%84%8F%E8%AF%86.html"/>
+    <id>https://vincentjan.top/2019/08/18/虚构文学创作练习02——意识.html</id>
     <published>2019-08-17T20:05:52.000Z</published>
     <updated>2020-02-25T17:01:14.727Z</updated>
     
@@ -351,21 +351,21 @@
     
     </summary>
     
-      <category term="文" scheme="https://vincentjan.github.io/categories/%E6%96%87/"/>
+      <category term="文" scheme="https://vincentjan.top/categories/%E6%96%87/"/>
     
-      <category term="故事" scheme="https://vincentjan.github.io/categories/%E6%96%87/%E6%95%85%E4%BA%8B/"/>
+      <category term="故事" scheme="https://vincentjan.top/categories/%E6%96%87/%E6%95%85%E4%BA%8B/"/>
     
     
-      <category term="故事" scheme="https://vincentjan.github.io/tags/%E6%95%85%E4%BA%8B/"/>
+      <category term="故事" scheme="https://vincentjan.top/tags/%E6%95%85%E4%BA%8B/"/>
     
-      <category term="虚构文学创作练习" scheme="https://vincentjan.github.io/tags/%E8%99%9A%E6%9E%84%E6%96%87%E5%AD%A6%E5%88%9B%E4%BD%9C%E7%BB%83%E4%B9%A0/"/>
+      <category term="虚构文学创作练习" scheme="https://vincentjan.top/tags/%E8%99%9A%E6%9E%84%E6%96%87%E5%AD%A6%E5%88%9B%E4%BD%9C%E7%BB%83%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>虚构文学创作练习01——某人的婚纱照</title>
-    <link href="https://vincentjan.github.io/2019/08/18/%E8%99%9A%E6%9E%84%E6%96%87%E5%AD%A6%E5%88%9B%E4%BD%9C%E7%BB%83%E4%B9%A001%E2%80%94%E2%80%94%E6%9F%90%E4%BA%BA%E7%9A%84%E5%A9%9A%E7%BA%B1%E7%85%A7.html"/>
-    <id>https://vincentjan.github.io/2019/08/18/虚构文学创作练习01——某人的婚纱照.html</id>
+    <link href="https://vincentjan.top/2019/08/18/%E8%99%9A%E6%9E%84%E6%96%87%E5%AD%A6%E5%88%9B%E4%BD%9C%E7%BB%83%E4%B9%A001%E2%80%94%E2%80%94%E6%9F%90%E4%BA%BA%E7%9A%84%E5%A9%9A%E7%BA%B1%E7%85%A7.html"/>
+    <id>https://vincentjan.top/2019/08/18/虚构文学创作练习01——某人的婚纱照.html</id>
     <published>2019-08-17T20:05:50.000Z</published>
     <updated>2020-02-13T14:40:34.000Z</updated>
     
@@ -378,21 +378,21 @@
     
     </summary>
     
-      <category term="文" scheme="https://vincentjan.github.io/categories/%E6%96%87/"/>
+      <category term="文" scheme="https://vincentjan.top/categories/%E6%96%87/"/>
     
-      <category term="故事" scheme="https://vincentjan.github.io/categories/%E6%96%87/%E6%95%85%E4%BA%8B/"/>
+      <category term="故事" scheme="https://vincentjan.top/categories/%E6%96%87/%E6%95%85%E4%BA%8B/"/>
     
     
-      <category term="故事" scheme="https://vincentjan.github.io/tags/%E6%95%85%E4%BA%8B/"/>
+      <category term="故事" scheme="https://vincentjan.top/tags/%E6%95%85%E4%BA%8B/"/>
     
-      <category term="虚构文学创作练习" scheme="https://vincentjan.github.io/tags/%E8%99%9A%E6%9E%84%E6%96%87%E5%AD%A6%E5%88%9B%E4%BD%9C%E7%BB%83%E4%B9%A0/"/>
+      <category term="虚构文学创作练习" scheme="https://vincentjan.top/tags/%E8%99%9A%E6%9E%84%E6%96%87%E5%AD%A6%E5%88%9B%E4%BD%9C%E7%BB%83%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>仿春赋</title>
-    <link href="https://vincentjan.github.io/2019/08/18/%E4%BB%BF%E6%98%A5%E8%B5%8B.html"/>
-    <id>https://vincentjan.github.io/2019/08/18/仿春赋.html</id>
+    <link href="https://vincentjan.top/2019/08/18/%E4%BB%BF%E6%98%A5%E8%B5%8B.html"/>
+    <id>https://vincentjan.top/2019/08/18/仿春赋.html</id>
     <published>2019-08-17T20:00:54.000Z</published>
     <updated>2020-02-13T14:40:35.000Z</updated>
     
@@ -408,19 +408,19 @@
     
     </summary>
     
-      <category term="文" scheme="https://vincentjan.github.io/categories/%E6%96%87/"/>
+      <category term="文" scheme="https://vincentjan.top/categories/%E6%96%87/"/>
     
-      <category term="随笔" scheme="https://vincentjan.github.io/categories/%E6%96%87/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://vincentjan.top/categories/%E6%96%87/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="诗" scheme="https://vincentjan.github.io/tags/%E8%AF%97/"/>
+      <category term="诗" scheme="https://vincentjan.top/tags/%E8%AF%97/"/>
     
   </entry>
   
   <entry>
     <title>远景</title>
-    <link href="https://vincentjan.github.io/2019/08/18/%E8%BF%9C%E6%99%AF.html"/>
-    <id>https://vincentjan.github.io/2019/08/18/远景.html</id>
+    <link href="https://vincentjan.top/2019/08/18/%E8%BF%9C%E6%99%AF.html"/>
+    <id>https://vincentjan.top/2019/08/18/远景.html</id>
     <published>2019-08-17T20:00:54.000Z</published>
     <updated>2020-02-13T14:40:35.000Z</updated>
     
@@ -432,19 +432,19 @@
     
     </summary>
     
-      <category term="文" scheme="https://vincentjan.github.io/categories/%E6%96%87/"/>
+      <category term="文" scheme="https://vincentjan.top/categories/%E6%96%87/"/>
     
-      <category term="随笔" scheme="https://vincentjan.github.io/categories/%E6%96%87/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://vincentjan.top/categories/%E6%96%87/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="诗" scheme="https://vincentjan.github.io/tags/%E8%AF%97/"/>
+      <category term="诗" scheme="https://vincentjan.top/tags/%E8%AF%97/"/>
     
   </entry>
   
   <entry>
     <title>横亘在人与人之间的鸿沟——读《献给阿尔吉侬的花束》</title>
-    <link href="https://vincentjan.github.io/2019/08/18/%E7%8C%AE%E7%BB%99%E9%98%BF%E5%B0%94%E5%90%89%E4%BE%AC%E7%9A%84%E8%8A%B1%E6%9D%9F.html"/>
-    <id>https://vincentjan.github.io/2019/08/18/献给阿尔吉侬的花束.html</id>
+    <link href="https://vincentjan.top/2019/08/18/%E7%8C%AE%E7%BB%99%E9%98%BF%E5%B0%94%E5%90%89%E4%BE%AC%E7%9A%84%E8%8A%B1%E6%9D%9F.html"/>
+    <id>https://vincentjan.top/2019/08/18/献给阿尔吉侬的花束.html</id>
     <published>2019-08-17T18:30:54.000Z</published>
     <updated>2020-02-13T14:40:35.000Z</updated>
     
@@ -457,9 +457,9 @@
     
     </summary>
     
-      <category term="文" scheme="https://vincentjan.github.io/categories/%E6%96%87/"/>
+      <category term="文" scheme="https://vincentjan.top/categories/%E6%96%87/"/>
     
-      <category term="读书笔记" scheme="https://vincentjan.github.io/categories/%E6%96%87/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="https://vincentjan.top/categories/%E6%96%87/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
   </entry>
