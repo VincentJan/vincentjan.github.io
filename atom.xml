@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://vincentjan.top/"/>
-  <updated>2020-03-09T02:04:13.000Z</updated>
+  <updated>2020-03-24T02:41:13.093Z</updated>
   <id>https://vincentjan.top/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>电路分析（二）</title>
+    <link href="https://vincentjan.top/2020/03/24/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90%EF%BC%88%E4%BA%8C%EF%BC%89.html"/>
+    <id>https://vincentjan.top/2020/03/24/电路分析（二）.html</id>
+    <published>2020-03-24T02:36:29.000Z</published>
+    <updated>2020-03-24T02:41:13.093Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>电路分析的物理量部分</p></blockquote><a id="more"></a><h2 id="电路分析（二）"><a href="#电路分析（二）" class="headerlink" title="电路分析（二）"></a>电路分析（二）</h2><h3 id="电阻元件"><a href="#电阻元件" class="headerlink" title="电阻元件"></a>电阻元件</h3><h4 id="电阻：用R表示，r表示动态电阻，单位是欧姆。反应电阻元件对电流的阻力。"><a href="#电阻：用R表示，r表示动态电阻，单位是欧姆。反应电阻元件对电流的阻力。" class="headerlink" title="电阻：用R表示，r表示动态电阻，单位是欧姆。反应电阻元件对电流的阻力。"></a>电阻：用R表示，r表示动态电阻，单位是欧姆。反应电阻元件对电流的阻力。</h4><h4 id="电导：用G表示，单位是西门子。反映元件导电能力的强弱。"><a href="#电导：用G表示，单位是西门子。反映元件导电能力的强弱。" class="headerlink" title="电导：用G表示，单位是西门子。反映元件导电能力的强弱。"></a>电导：用G表示，单位是西门子。反映元件导电能力的强弱。</h4><p>公式：</p><script type="math/tex; mode=display">G = 1/R</script><h4 id="伏安特性（VAR）：在电阻两端加电压后，元件中有电流通过，电阻元件上的电压与电流之间的关系曲线"><a href="#伏安特性（VAR）：在电阻两端加电压后，元件中有电流通过，电阻元件上的电压与电流之间的关系曲线" class="headerlink" title="伏安特性（VAR）：在电阻两端加电压后，元件中有电流通过，电阻元件上的电压与电流之间的关系曲线"></a>伏安特性（VAR）：在电阻两端加电压后，元件中有电流通过，电阻元件上的电压与电流之间的关系曲线</h4><h4 id="线性电阻：电阻元件的伏安特性曲线是一条过原点的直线。"><a href="#线性电阻：电阻元件的伏安特性曲线是一条过原点的直线。" class="headerlink" title="线性电阻：电阻元件的伏安特性曲线是一条过原点的直线。"></a>线性电阻：电阻元件的伏安特性曲线是一条过原点的直线。</h4><p>特点：电阻值是一<strong>常数</strong>，与通过的电流或两端电压<strong>无关</strong>。</p><h4 id="非线性电阻：电阻元件的伏安特性曲线不是直线"><a href="#非线性电阻：电阻元件的伏安特性曲线不是直线" class="headerlink" title="非线性电阻：电阻元件的伏安特性曲线不是直线"></a>非线性电阻：电阻元件的伏安特性曲线不是直线</h4><p>特点：电阻值<strong>不是常数</strong>，与通过的电流或两端的电压<strong>相关</strong>。</p><h4 id="欧姆定律：通过电阻R的电流与作用于电阻两端的电压成正比。（欧姆定律仅适用于线性电阻）"><a href="#欧姆定律：通过电阻R的电流与作用于电阻两端的电压成正比。（欧姆定律仅适用于线性电阻）" class="headerlink" title="欧姆定律：通过电阻R的电流与作用于电阻两端的电压成正比。（欧姆定律仅适用于线性电阻）"></a>欧姆定律：通过电阻R的电流与作用于电阻两端的电压成正比。（欧姆定律仅适用于线性电阻）</h4><p>当<strong>通过电阻R</strong>的电流与作用于<strong>电阻两端</strong>的电压为<strong>关联参考方向</strong>时：</p><script type="math/tex; mode=display">R=\frac{u}{i}</script><p><strong>非关联参考方向</strong>：</p><script type="math/tex; mode=display">R=-\frac{u}{i}</script><ul><li>直流电路所学部分不存在非线性电阻欧姆定律</li><li>选取参考方向时应尽量选取关联参考方向，避免不必要的麻烦</li></ul><h3 id="电压源与电流源"><a href="#电压源与电流源" class="headerlink" title="电压源与电流源"></a>电压源与电流源</h3><p><img src="/img/NoteImg/image-20200305144432267.png" alt="image-20200305144432267"></p><h4 id="理想电压源（电压源）：输出端电压与外电路无关"><a href="#理想电压源（电压源）：输出端电压与外电路无关" class="headerlink" title="理想电压源（电压源）：输出端电压与外电路无关"></a>理想电压源（电压源）：输出端电压与外电路无关</h4><ul><li>电压源的伏安特性曲线平行于i轴</li><li>电压为0时相当于短路，用于叠加原理</li><li>电流完全依赖外电路</li></ul><h4 id="理想电流源（电流源）：输出端电流与外电路无关"><a href="#理想电流源（电流源）：输出端电流与外电路无关" class="headerlink" title="理想电流源（电流源）：输出端电流与外电路无关"></a>理想电流源（电流源）：输出端电流与外电路无关</h4><ul><li>电流源的伏安特性曲线平行于u轴</li><li>电流为0时相当于开路，用于叠加原理</li><li>电压完全依赖外电路</li></ul><h4 id="等效变换：对于外电路，伏安特性相同的部分电路可以互相等效变换（即互相替代）"><a href="#等效变换：对于外电路，伏安特性相同的部分电路可以互相等效变换（即互相替代）" class="headerlink" title="等效变换：对于外电路，伏安特性相同的部分电路可以互相等效变换（即互相替代）"></a>等效变换：对于外电路，伏安特性相同的部分电路可以互相等效变换（即互相替代）</h4><p><strong>即：用新的结构替代电路中某一部分时，必须不影响电路中未被替代部分的电流和电压。</strong></p><h5 id="等效电压源和等效电流源"><a href="#等效电压源和等效电流源" class="headerlink" title="等效电压源和等效电流源"></a>等效电压源和等效电流源</h5><ul><li>电压值不同的电压源不能并联，违背KVL</li><li>电流值不同的电流源不能串联，违背KCL</li></ul><p>只要与<strong>电压源并联即等效</strong>于电压源，只要与<strong>电流源串联即等效</strong>于电流源。</p><h4 id="实际电压源：既体现了供能的电压源特性，又体现了耗能的电阻持性"><a href="#实际电压源：既体现了供能的电压源特性，又体现了耗能的电阻持性" class="headerlink" title="实际电压源：既体现了供能的电压源特性，又体现了耗能的电阻持性"></a>实际电压源：既体现了供能的电压源特性，又体现了耗能的电阻持性</h4><p><strong>实际电压源等效为理想电压源和电阻的串联</strong></p><p><img src="/img/NoteImg/image-20200310104549395.png" alt="image-20200310104549395"></p><script type="math/tex; mode=display">y=b-kx,k>0\rightarrow U=b-kI \rightarrow U=U_s - R_sI</script><h4 id="实际电流源：既体现了供能的电流源特性，又体现了耗能的电阻持性"><a href="#实际电流源：既体现了供能的电流源特性，又体现了耗能的电阻持性" class="headerlink" title="实际电流源：既体现了供能的电流源特性，又体现了耗能的电阻持性"></a>实际电流源：既体现了供能的电流源特性，又体现了耗能的电阻持性</h4><p><strong>实际电流源等效为理想电流源和电阻的并联</strong></p><p><img src="/img/NoteImg/image-20200310105423156.png" alt="image-20200310105423156"></p><h4 id="实际电源的两种等效互换"><a href="#实际电源的两种等效互换" class="headerlink" title="实际电源的两种等效互换"></a>实际电源的两种等效互换</h4><p><strong>电压源Us和内阻Rs串联</strong>可以等效互换为<strong>电流源Is和内阻Rs并联</strong></p><p><img src="/img/NoteImg/image-20200310112749112.png" alt="image-20200310112749112"></p><p>条件：</p><script type="math/tex; mode=display">Rs = \frac{Us}{Is}</script><p>注意互换前后<strong>电压源电压与电流源电流的方向</strong>关系，即<strong>电流从正极流出</strong>。</p><p>实际电源的等效变换，也可看作含源支路的等效变换。</p><p>即，一个电压源与电阻串联的组合，可以等效为一个电流源与电阻并联的组合，并<strong>不要求电阻是电源内阻</strong>。</p><ul><li>不要求电阻是内阻，则可以<strong>根据需要改变电阻的值</strong>，以实现等效变换的目的。</li></ul><p>应用等效变换法时，所求<strong>支路必须放在外电路</strong>。</p><h3 id="基尔霍夫电流定律（KCL）-对于电路中任何一个节点，流入电流等于流出电流。"><a href="#基尔霍夫电流定律（KCL）-对于电路中任何一个节点，流入电流等于流出电流。" class="headerlink" title="基尔霍夫电流定律（KCL）:对于电路中任何一个节点，流入电流等于流出电流。"></a>基尔霍夫电流定律（KCL）:对于电路中任何一个节点，流入电流等于流出电流。</h3><p><strong>推广：对于任何一个闭合面，流入或流出闭合面的电流代数和为零。</strong></p><p>支路：电路中流过<strong>同一</strong>（并非同大小，只要流过即可）电流的分支</p><p>节点：三条或三条以上支路的连接点</p><p>回路：由支路构成的闭合的路径，称回路</p><p>网孔：无子回路的回路</p><h3 id="基尔霍夫电压定律（KVL-：沿任何一个闭合回路，绕行一周，各支路电压代数和为零。"><a href="#基尔霍夫电压定律（KVL-：沿任何一个闭合回路，绕行一周，各支路电压代数和为零。" class="headerlink" title="基尔霍夫电压定律（KVL)：沿任何一个闭合回路，绕行一周，各支路电压代数和为零。"></a>基尔霍夫电压定律（KVL)：沿任何一个闭合回路，绕行一周，各支路电压代数和为零。</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;电路分析的物理量部分&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="术" scheme="https://vincentjan.top/categories/%E6%9C%AF/"/>
+    
+      <category term="计算机" scheme="https://vincentjan.top/categories/%E6%9C%AF/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="模电" scheme="https://vincentjan.top/tags/%E6%A8%A1%E7%94%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>电路分析（一）</title>
+    <link href="https://vincentjan.top/2020/03/24/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89.html"/>
+    <id>https://vincentjan.top/2020/03/24/电路分析（一）.html</id>
+    <published>2020-03-24T01:36:29.000Z</published>
+    <updated>2020-03-24T02:41:13.903Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>电路分析的物理量部分</p></blockquote><a id="more"></a><h2 id="电路分析（一）"><a href="#电路分析（一）" class="headerlink" title="电路分析（一）"></a>电路分析（一）</h2><h3 id="课程内容"><a href="#课程内容" class="headerlink" title="课程内容"></a>课程内容</h3><p>电路是学习电子技术的基础。</p><p>内容包括：简单电路分析、线性网络分析的一般方法和定理。</p><h4 id="主要介绍"><a href="#主要介绍" class="headerlink" title="主要介绍"></a>主要介绍</h4><ul><li>几个物理量：电流、电压、电功率</li><li>几种元件：电阻、电源（受控源、独立源）</li><li>三个定律：欧姆定律、基尔霍夫电流/电压定律</li><li>两个公式：分压公式、分流公式</li><li>两个定律：叠加定律、戴维南定律</li></ul><h4 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h4><ul><li>理解<strong>参考方向、关联/非关联参考方向</strong>的概念</li><li>掌握基尔霍夫电流定律（<strong>KCL</strong>)、基尔霍夫电压定律（<strong>KVL</strong>），并应用于电路分析计算</li><li>理解<strong>理想</strong>电压源/电流源、<strong>实际</strong>电压源/电流源、电阻元件的<strong>伏安特性</strong>，写出有源支路的伏安特性。</li><li>理解<strong>等效电路、等效变换</strong>。运用等效的方法化简求和电路</li><li>理解并运用<strong>叠加定理、戴维南定理</strong></li><li>掌握<strong>含受控源电路</strong>的计算方法</li></ul><h3 id="电路元件"><a href="#电路元件" class="headerlink" title="电路元件"></a>电路元件</h3><p>分为集成电路元件与分立电路元件。</p><h4 id="理想电路元件"><a href="#理想电路元件" class="headerlink" title="理想电路元件"></a>理想电路元件</h4><h5 id="实际元件抽象而成"><a href="#实际元件抽象而成" class="headerlink" title="实际元件抽象而成"></a>实际元件抽象而成</h5><ol><li><p>抽象化：忽略元件的大小、材料等物理性质</p></li><li><p>理想化：元件仅有一种电磁性质</p></li><li><p>集总假设：电路尺寸远小于其工作电磁波的波长</p></li></ol><h5 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h5><ul><li><p>电特性：</p><ul><li><p>电源：提供电能</p><ul><li>电流源、电压源</li></ul></li><li><p>负载：吸收并转化电能</p><ul><li>电阻、电容、电感</li></ul></li></ul></li><li><p>端子：</p><ul><li>二端：电阻、电感</li><li>三端：晶体三极管</li><li>四端：受控源</li></ul></li></ul><h3 id="电路模型"><a href="#电路模型" class="headerlink" title="电路模型"></a>电路模型</h3><p>理想电路元件组成、统一规定符号。</p><h3 id="电流电压电位"><a href="#电流电压电位" class="headerlink" title="电流电压电位"></a>电流电压电位</h3><h4 id="电流：电荷有规则的定向移动所形成"><a href="#电流：电荷有规则的定向移动所形成" class="headerlink" title="电流：电荷有规则的定向移动所形成"></a>电流：电荷有规则的定向移动所形成</h4><p><strong>电流强度</strong>（简称电流）：单位时间内通过导体横截面的电量。用i表示。单位是安倍（A)。</p><p><strong>电流公式</strong>：</p><script type="math/tex; mode=display">i(t) = \frac{dq}{dt}</script><p>大小、方向不随时间变化的电流叫做恒定电流，简称<strong>直流电流，用大写字母I表示</strong></p><p>电流方向：</p><ul><li>实际：正电荷移动方向</li><li>参考：任意选定的电流方向</li></ul><p>表示：</p><script type="math/tex; mode=display">\rightarrow\\+-</script><p><strong>实际方向与参考方向一致时电流为正值，反之则为负值。</strong></p><h4 id="电压：电场力把单位正电荷从a点移动到b点所做的功，称为两点间的电压。"><a href="#电压：电场力把单位正电荷从a点移动到b点所做的功，称为两点间的电压。" class="headerlink" title="电压：电场力把单位正电荷从a点移动到b点所做的功，称为两点间的电压。"></a>电压：电场力把单位正电荷从a点移动到b点所做的功，称为两点间的电压。</h4><p>用u表示，单位是伏特(V)</p><p><strong>电压公式</strong>:</p><script type="math/tex; mode=display">u(t) = \frac{dw}{dq}</script><p>大小、方向不随时间变化的电压叫做恒定电压，简称<strong>直流电压，用大写字母U表示</strong></p><p>电场两点间的电压也称<strong>电位</strong>差。</p><p>电压方向：</p><ul><li>实际：<strong>高</strong>电位<strong>指向低</strong>电位</li><li>参考：<strong>任意</strong>选取的电压方向</li></ul><p><strong>实际方向与参考方向一致时电压为正值，反之则为负值。</strong></p><p>电压表示方法：</p><script type="math/tex; mode=display">\rightarrow\\+-\\U_{ab}</script><h4 id="电流与电压参考方向一致时，称之为关联参考方向、反之则称为非关联参考方向"><a href="#电流与电压参考方向一致时，称之为关联参考方向、反之则称为非关联参考方向" class="headerlink" title="电流与电压参考方向一致时，称之为关联参考方向、反之则称为非关联参考方向"></a>电流与电压参考方向一致时，称之为关联参考方向、反之则称为非关联参考方向</h4><h4 id="电位：在电路中选定一点为参考点，并将参考点的电位规定为零，则某点与参考点之间的电压就称作该点的电位"><a href="#电位：在电路中选定一点为参考点，并将参考点的电位规定为零，则某点与参考点之间的电压就称作该点的电位" class="headerlink" title="电位：在电路中选定一点为参考点，并将参考点的电位规定为零，则某点与参考点之间的电压就称作该点的电位"></a>电位：在电路中选定一点为参考点，并将参考点的电位规定为零，则某点与参考点之间的电压就称作该点的电位</h4><ul><li>某一点的<strong>电位</strong>值随参考点的不同而<strong>变化</strong></li><li>两点之间的<strong>电压</strong>与参考点<strong>无关</strong></li></ul><h3 id="电功率：单位时间内元件所吸收或发出的电能。用p表示，单位是瓦特（W-。"><a href="#电功率：单位时间内元件所吸收或发出的电能。用p表示，单位是瓦特（W-。" class="headerlink" title="电功率：单位时间内元件所吸收或发出的电能。用p表示，单位是瓦特（W)。"></a>电功率：单位时间内元件所吸收或发出的电能。用p表示，单位是瓦特（W)。</h3><p>公式:</p><script type="math/tex; mode=display">p = \frac{dw}{dt}=\frac{dw}{dq}\frac{dq}{dt}=ui</script><p>w为<em>电场力通过元件做功</em></p><p><strong>u、i关联方向时，吸收能量。反之释放能量</strong></p><h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><h4 id="1-求电流I"><a href="#1-求电流I" class="headerlink" title="1.求电流I"></a>1.求电流I</h4><p><img src="/img/NoteImg/image-20200305130912524.png" alt="image-20200305130912524"></p><p>将导线看作水管，电阻大的导线类比细的水管，则干路电流大于支路电流。且流入电流等于流出电流。</p><p>故在向右的参考方向下，电流为：</p><script type="math/tex; mode=display">I_0 = 1.5A\\I_1 = \frac{U}{R} = \frac{10V}{10\Omega} = 1A\\I = I_1 - I_0 = -0.5A</script><h4 id="2-图中a点对地电压15V，b点对地电压35V，求电压大小"><a href="#2-图中a点对地电压15V，b点对地电压35V，求电压大小" class="headerlink" title="2.图中a点对地电压15V，b点对地电压35V，求电压大小"></a>2.图中a点对地电压15V，b点对地电压35V，求电压大小</h4><p><img src="/img/NoteImg/image-20200305125754573.png" alt="image-20200305125754573"></p><p>图中a为+极、b为-极，则参考方向为a-&gt;b，故电压大小为</p><script type="math/tex; mode=display">U=U_a-U_b = -20V</script><h4 id="3-分析下图5V电源功率和网络N的功率"><a href="#3-分析下图5V电源功率和网络N的功率" class="headerlink" title="3.分析下图5V电源功率和网络N的功率"></a>3.分析下图5V电源功率和网络N的功率</h4><p><img src="/img/NoteImg/image-20200310101954966.png" alt="image-20200310101954966"></p><p>P=ui = 5 * 4 = 20mW</p><p>该图中电源电压的参考方向向下，流经电源的电流参考方向向上，故为非关联参考方向，放出能量。</p><p>网络的电压参考方向向下，流经网络的电流参考方向向下，故为关联参考方向，吸收能量。</p><h4 id="4-阴极射线管每秒扫射10-15个电子，功率为4W求电压"><a href="#4-阴极射线管每秒扫射10-15个电子，功率为4W求电压" class="headerlink" title="4.阴极射线管每秒扫射10^15个电子，功率为4W求电压"></a>4.阴极射线管每秒扫射10^15个电子，功率为4W求电压</h4><p><img src="/img/NoteImg/image-20200310103217806.png" alt="image-20200310103217806"></p><h4 id="5-求每个元件的电功率"><a href="#5-求每个元件的电功率" class="headerlink" title="5.求每个元件的电功率"></a>5.求每个元件的电功率</h4><p><img src="/img/NoteImg/image-20200317084202705.png" alt="image-20200317084202705"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;电路分析的物理量部分&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="术" scheme="https://vincentjan.top/categories/%E6%9C%AF/"/>
+    
+      <category term="计算机" scheme="https://vincentjan.top/categories/%E6%9C%AF/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="模电" scheme="https://vincentjan.top/tags/%E6%A8%A1%E7%94%B5/"/>
+    
+  </entry>
   
   <entry>
     <title>Arch Linux安装与配置</title>
