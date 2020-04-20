@@ -73,7 +73,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Linux,">
 
 
 
@@ -86,17 +86,20 @@
 
 
 
-<meta name="description" content="对《故事》做的结构笔记，将其划分为由内到外的六个层次：基本原理，核心原则，创作与故事的本质，故事的要素，故事设计原理，创作方法。">
+<meta name="description" content="Arch Linux是GNU/Linux的众多发行版中相对小众的一个。相对Ubuntu等更加广为人知的发行版，Arch对新手并不是很友好。这篇文章旨在从零开始，一步一步帮助读者完成Arch Linux的安装与配置。">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《故事》结构笔记">
-<meta property="og:url" content="https://vincentjan.top/2019/08/18/故事结构笔记.html">
+<meta property="og:title" content="Arch Linux安装与配置">
+<meta property="og:url" content="https://vincentjan.top/2020/03/20/ArchLinuxConfig.html">
 <meta property="og:site_name" content="Vincent&#39;s Blog">
-<meta property="og:description" content="对《故事》做的结构笔记，将其划分为由内到外的六个层次：基本原理，核心原则，创作与故事的本质，故事的要素，故事设计原理，创作方法。">
+<meta property="og:description" content="Arch Linux是GNU/Linux的众多发行版中相对小众的一个。相对Ubuntu等更加广为人知的发行版，Arch对新手并不是很友好。这篇文章旨在从零开始，一步一步帮助读者完成Arch Linux的安装与配置。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-13T14:40:35.000Z">
+<meta property="og:image" content="https://vincentjan-blog.oss-cn-beijing.aliyuncs.com/img/20200420/ArchLinuxInstall/final.jpg">
+<meta property="og:updated_time" content="2020-04-20T14:52:41.972Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《故事》结构笔记">
-<meta name="twitter:description" content="对《故事》做的结构笔记，将其划分为由内到外的六个层次：基本原理，核心原则，创作与故事的本质，故事的要素，故事设计原理，创作方法。">
+<meta name="twitter:title" content="Arch Linux安装与配置">
+<meta name="twitter:description" content="Arch Linux是GNU/Linux的众多发行版中相对小众的一个。相对Ubuntu等更加广为人知的发行版，Arch对新手并不是很友好。这篇文章旨在从零开始，一步一步帮助读者完成Arch Linux的安装与配置。">
+<meta name="twitter:image" content="https://vincentjan-blog.oss-cn-beijing.aliyuncs.com/img/20200420/ArchLinuxInstall/final.jpg">
 
 
 
@@ -126,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="https://vincentjan.top/2019/08/18/故事结构笔记.html">
+  <link rel="canonical" href="https://vincentjan.top/2020/03/20/ArchLinuxConfig.html">
 
 
 
 
 
-  <title>《故事》结构笔记 | Vincent's Blog</title>
+  <title>Arch Linux安装与配置 | Vincent's Blog</title>
   
 
 
@@ -301,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://vincentjan.top/2019/08/18/故事结构笔记.html">
+    <link itemprop="mainEntityOfPage" href="https://vincentjan.top/2020/03/20/ArchLinuxConfig.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vincent Jan">
@@ -318,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">《故事》结构笔记</h1>
+          <h1 class="post-title" itemprop="name headline">Arch Linux安装与配置</h1>
         
 
         <div class="post-meta">
@@ -330,8 +333,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-18T06:30:54+08:00">
-                2019-08-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-20T20:36:29+08:00">
+                2020-03-20
               </time>
             
 
@@ -353,8 +356,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/文/" itemprop="url" rel="index">
-                    <span itemprop="name">文</span>
+                  <a href="/categories/术/" itemprop="url" rel="index">
+                    <span itemprop="name">术</span>
                   </a>
                 </span>
 
@@ -364,8 +367,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/文/读书笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
+                  <a href="/categories/术/计算机/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机</span>
                   </a>
                 </span>
 
@@ -395,7 +398,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4.2k
+                  1.7k
                 </span>
               
 
@@ -411,7 +414,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  14
+                  7
                 </span>
               
             </div>
@@ -433,220 +436,197 @@
 
       
         <blockquote>
-<p>对《故事》做的结构笔记，将其划分为由内到外的六个层次：基本原理，核心原则，创作与故事的本质，故事的要素，故事设计原理，创作方法。</p>
+<p>Arch Linux是GNU/Linux的众多发行版中相对小众的一个。相对Ubuntu等更加广为人知的发行版，Arch对新手并不是很友好。这篇文章旨在从零开始，一步一步帮助读者完成Arch Linux的安装与配置。</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="1、本书谈论故事的基本原理，由原理-故事至方法-作者由内而外的展开论述。"><a href="#1、本书谈论故事的基本原理，由原理-故事至方法-作者由内而外的展开论述。" class="headerlink" title="1、本书谈论故事的基本原理，由原理-故事至方法-作者由内而外的展开论述。"></a>1、本书谈论故事的基本原理，由原理-故事至方法-作者由内而外的展开论述。</h2><h2 id="2、核心与统领：序言"><a href="#2、核心与统领：序言" class="headerlink" title="2、核心与统领：序言"></a>2、核心与统领：序言</h2><pre><code>1. 顺从原理而非规则
-2. 展现形式而非公式
-3. 围绕原始模型而非陈规俗套
-4. 一丝不苟
-5. 写作没有秘诀，银幕之上没有藏拙之地
-6. 精通艺术而非揣摩市场
-7. 尊重观众
-8. 独创，但不要为异而异
-</code></pre><h2 id="3、核心附着层：作家与故事"><a href="#3、核心附着层：作家与故事" class="headerlink" title="3、核心附着层：作家与故事"></a>3、核心附着层：作家与故事</h2><pre><code>1. 故事是人生的必要设备
-2. 故事是对现实的挖掘与探寻而不是逃避
-3. 文化离不开故事
-4. 优秀的故事创作是卖方市场
-5. 作者需要洞察生活，以从内而外的创作
-6. 价值观、人生的是非曲直，是故事的灵魂
-7. 故事进展中缺乏过程，动机虚假，人物累赘，潜文本空洞,情节漏洞等故事问题是文笔乏味的根本原因
-8. 所有故事都会暴露作者的人性
-9. 作家的任务是发觉值得讲世人也愿意听的故事
-10. 作家需要热爱写作并且忍受寂寞
-11. 故事是生活的比喻
-12. 讲得精彩比素材深奥重要
-</code></pre><h2 id="4、内层：故事的要素"><a href="#4、内层：故事的要素" class="headerlink" title="4、内层：故事的要素"></a>4、内层：故事的要素</h2><pre><code>1. 结构图谱
+<h2 id="目标效果"><a href="#目标效果" class="headerlink" title="目标效果"></a>目标效果</h2><p><img src="https://vincentjan-blog.oss-cn-beijing.aliyuncs.com/img/20200420/ArchLinuxInstall/final.jpg" alt="My desktop"></p>
+<h2 id="开始之前"><a href="#开始之前" class="headerlink" title="开始之前"></a>开始之前</h2><h3 id="检查你的硬件"><a href="#检查你的硬件" class="headerlink" title="检查你的硬件"></a>检查你的硬件</h3><p>在安装Arch Linux之前，请先确认你的硬件是否支持Linux，通常显卡与网卡比较容易出现问题。这篇文章将以硬件完全兼容作为前提，如果你的硬件不被支持可以尝试更换硬件。</p>
+<p>这里给出本文所用机器的配置以供参考。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>硬件名称</th>
+<th>型号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>处理器</td>
+<td>Intel Core i5-8250U</td>
+</tr>
+<tr>
+<td>独立显卡</td>
+<td>AMD ATI Radeon 550</td>
+</tr>
+<tr>
+<td>集成显卡</td>
+<td>Intel UHD Graphics 620</td>
+</tr>
+<tr>
+<td>网卡</td>
+<td>Intel 9260AC</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="为什么选择Arch-Linux"><a href="#为什么选择Arch-Linux" class="headerlink" title="为什么选择Arch Linux"></a>为什么选择Arch Linux</h3><p><a href="https://wiki.archlinux.org/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87" target="_blank" rel="noopener">点击进入官方介绍页面</a>)</p>
+<p>对我而言Arch Linux相效于其它发行版有以下几点优点：</p>
+<ol>
+<li><p>极简的安装：安装完成后的Arch Linux仅有一百余个软件包，作为对比，Ubuntu通常有上千个包。</p>
+</li>
+<li><p>高度可定制化：事实上几乎任何GNU/Linux发行版都高度支持个性化定制，但Arch Linux相较其它发行版要更加方便。</p>
+</li>
+<li><p>最好用的包管理器：pacman几乎是公认的最好用的包管理器，也许还有其它不比它差的包管理器，但你很难找到一个比它更好的。</p>
+</li>
+<li><p>滚动更新：Arch Linux采用滚动更新机制，这意味着只要安装一次就可以一直使用最新版本的系统而不用重装。</p>
+</li>
+<li><p>最丰富的软件包：Arch Linux允许用户在AUR中发布自已的软件，这使得Arch Linux在软件包数量上远远领先其它发行版。</p>
+</li>
+</ol>
+<p>另一方面，这些优点也意味着Arch Linux无法长时间停留在某一版本，安装更繁琐，且可能不如其它发行版稳定。用作个人桌面通常不用担心这些问题。</p>
+<h2 id="安装：基本系统的搭建"><a href="#安装：基本系统的搭建" class="headerlink" title="安装：基本系统的搭建"></a>安装：基本系统的搭建</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>首先需要下载Arch Linux的镜像文件，建议从国内的镜像源下载，比如：<a href="https://mirrors.tuna.tsinghua.edu.cn/" target="_blank" rel="noopener">清华大学开源软件镜像站</a>。</p>
+<p>安装过程可能会随时产生变化，为防止步骤过期对读者造成误导，这里不再赘述，参看<a href="https://wiki.archlinux.org/index.php/Installation_guide" target="_blank" rel="noopener">ArchWiki</a>即可。</p>
+<h3 id="对wiki的一些补充"><a href="#对wiki的一些补充" class="headerlink" title="对wiki的一些补充"></a>对wiki的一些补充</h3><ol>
+<li><p>EFI分区的格式是FAT32，使用<code>mkfs.fat -F32 /dev/sdxx</code>创建。</p>
+</li>
+<li><p>一些常用功能并未包含在core组中，需单独安装。如:</p>
+</li>
+</ol>
+<ul>
+<li>网络管理工具(NetworkManager)</li>
+<li>sudo</li>
+<li>vim</li>
+</ul>
+<ol>
+<li><p>若系统以BIOS模式启动，分区时记得为GRUB提前分配一个1M大小的分区，参照<a href="https://wiki.archlinux.org/index.php/GRUB" target="_blank" rel="noopener">GRUB-ArchWiki</a>。</p>
+</li>
+<li><p>安装系统时建议直接安装linux-lts:</p>
+<p> 即<code>pacstrap /mnt base linux linux-firmware</code>这步换成<code>pacstrap /mnt base linux-lts linux-firmware</code></p>
+</li>
+</ol>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h3><p>参照<a href="https://wiki.archlinux.org/index.php/General_recommendations" target="_blank" rel="noopener">General recommendations-ArchWiki</a>，完成用户、网络等设置，并安装xorg服务。</p>
+<h3 id="yay"><a href="#yay" class="headerlink" title="yay"></a>yay</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><ol>
+<li>安装<code>base-devel</code>、<code>git</code>、<code>go</code></li>
+<li>执行<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://aur.archlinux.org/yay.git</span><br><span class="line"><span class="built_in">cd</span> yay</span><br><span class="line">makepkg -si</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><ol>
+<li>安装包: <code>yay -S &lt;package name&gt;</code></li>
+<li>搜索包: <code>yay -Ss &lt;package name&gt;</code></li>
+</ol>
+<p>详见man page: <code>man yay</code></p>
+<h3 id="zsh-amp-amp-oh-my-zsh"><a href="#zsh-amp-amp-oh-my-zsh" class="headerlink" title="zsh &amp;&amp; oh-my-zsh"></a>zsh &amp;&amp; oh-my-zsh</h3><ol>
+<li><p>安装：<code>yay -S zsh oh-my-zsh-git</code></p>
+</li>
+<li><p>切换默认终端：<code>chsh -s /bin/zsh</code></p>
+</li>
+<li><p>配置可参考<a href="https://wiki.archlinux.org/index.php/Zsh" target="_blank" rel="noopener">zsh-ArchWiki</a>、<a href="https://github.com/ohmyzsh/ohmyzsh" target="_blank" rel="noopener">oh-my-zsh</a></p>
+<ol>
+<li><p>复制配置文件：<code>cp /usr/share/oh-my-zsh/zshrc ~/.zshrc</code></p>
+</li>
+<li><p>更改主题：<code>vim .zshrc</code>, 将<code>ZSH_THEME</code>的值改为<code>&quot;agnoster&quot;</code>或其它主题名称</p>
+</li>
+<li><p>安装powerline字体：<code>yay -S powerline-fonts-git</code></p>
+<p>此时还看不出效果，显示powerline字体需要图形界面。</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="梯子"><a href="#梯子" class="headerlink" title="梯子"></a>梯子</h3><h4 id="Trojan"><a href="#Trojan" class="headerlink" title="Trojan"></a>Trojan</h4><ol>
+<li><p>安装<code>sudo pacman -S trojan</code></p>
+</li>
+<li><p>编辑配置文件/etc/trojan/config.json</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> <span class="attr">"run_type"</span>: <span class="string">"client"</span>,</span><br><span class="line"> <span class="attr">"local_addr"</span>: <span class="string">"127.0.0.1"</span>,</span><br><span class="line"> <span class="attr">"local_port"</span>: <span class="number">1080</span>,</span><br><span class="line"> <span class="attr">"remote_addr"</span>: <span class="string">"your addr"</span>,</span><br><span class="line"> <span class="attr">"remote_port"</span>: your addr port,</span><br><span class="line"> <span class="attr">"password"</span>: [</span><br><span class="line">     <span class="string">"your password"</span></span><br><span class="line"> ],</span><br><span class="line"> <span class="attr">"log_level"</span>: <span class="number">1</span>,</span><br><span class="line"> <span class="attr">"ssl"</span>: &#123;</span><br><span class="line">     <span class="attr">"verify"</span>: <span class="literal">true</span>,</span><br><span class="line">     <span class="attr">"verify_hostname"</span>: <span class="literal">true</span>,</span><br><span class="line">     <span class="attr">"cert"</span>: <span class="string">""</span>,</span><br><span class="line">     <span class="attr">"cipher"</span>: <span class="string">"ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES128-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA:AES128-SHA:AES256-SHA:DES-CBC3-SHA"</span>,</span><br><span class="line">     <span class="attr">"cipher_tls13"</span>: <span class="string">"TLS_AES_128_GCM_SHA256:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_256_GCM_SHA384"</span>,</span><br><span class="line">     <span class="attr">"sni"</span>: <span class="string">""</span>,</span><br><span class="line">     <span class="attr">"alpn"</span>: [</span><br><span class="line">         <span class="string">"h2"</span>,</span><br><span class="line">         <span class="string">"http/1.1"</span></span><br><span class="line">     ],</span><br><span class="line">     <span class="attr">"reuse_session"</span>: <span class="literal">true</span>,</span><br><span class="line">     <span class="attr">"session_ticket"</span>: <span class="literal">false</span>,</span><br><span class="line">     <span class="attr">"curves"</span>: <span class="string">""</span></span><br><span class="line"> &#125;,</span><br><span class="line"> <span class="attr">"tcp"</span>: &#123;</span><br><span class="line">     <span class="attr">"no_delay"</span>: <span class="literal">true</span>,</span><br><span class="line">     <span class="attr">"keep_alive"</span>: <span class="literal">true</span>,</span><br><span class="line">     <span class="attr">"reuse_port"</span>: <span class="literal">false</span>,</span><br><span class="line">     <span class="attr">"fast_open"</span>: <span class="literal">false</span>,</span><br><span class="line">     <span class="attr">"fast_open_qlen"</span>: <span class="number">20</span></span><br><span class="line"> &#125;</span><br><span class="line">&#125;//通常来说除了上面三个值以外不必修改</span><br></pre></td></tr></table></figure>
+<ol>
+<li>启动服务<code>sudo systemctl start trojan.service</code></li>
+<li>开机自启<code>sudo systemctl enable trojan.service</code></li>
+</ol>
+</li>
+</ol>
+<p>参照<a href="(https://wiki.archlinux.org/index.php/Shadowsocks_(简体中文">ShadowSocks - ArchWiki</a>)</p>
+<h4 id="Privoxy"><a href="#Privoxy" class="headerlink" title="Privoxy"></a>Privoxy</h4><ol>
+<li><p>安装<code>sudo pacman -S privoxy</code></p>
+</li>
+<li><p>编辑配置文件/etc/privoxy/config</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//只列出需要修改的值</span><br><span class="line">listem-address  127.0.0.1:8118</span><br><span class="line">forward-socks5  /  127.0.0.1:1080 .</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注意第二行末尾的点</li>
+</ul>
+</li>
+<li><p>启动服务<code>sudo systemctl start privoxy.service</code></p>
+</li>
+<li><p>开机自启<code>sudo systemctl enable privoxy.service</code></p>
+</li>
+</ol>
+<p>参照<a href="https://wiki.archlinux.org/index.php/Privoxy_(简体中文" target="_blank" rel="noopener">Privoxy - ArchWiki</a>)</p>
+<h4 id="配置命令行模式的代理"><a href="#配置命令行模式的代理" class="headerlink" title="配置命令行模式的代理"></a>配置命令行模式的代理</h4><p>将以下内容添加进终端的配置文件.bashrc或.zshrc</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">proxy_off</span></span>()&#123;</span><br><span class="line">	<span class="built_in">unset</span> http_proxy</span><br><span class="line">	<span class="built_in">unset</span> https_proxy</span><br><span class="line">	<span class="built_in">unset</span> ftp_proxy</span><br><span class="line">	<span class="built_in">unset</span> rsync_proxy</span><br><span class="line">	<span class="built_in">echo</span> -e <span class="string">"proxy off"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> proxy_on&#123;</span><br><span class="line">	<span class="built_in">export</span> no_proxy=<span class="string">"localhost,127.0.0.1,localaddress,.localdomain.com"</span></span><br><span class="line">	<span class="built_in">export</span> http_proxy=<span class="string">"http://127.0.0.1:8118"</span></span><br><span class="line">	<span class="built_in">export</span> https_proxy=<span class="string">"http://127.0.0.1:8118"</span></span><br><span class="line">	<span class="built_in">export</span> ftp_proxy=<span class="string">"http://127.0.0.1:8118"</span></span><br><span class="line">	<span class="built_in">export</span> rsync_proxy=<span class="string">"http://127.0.0.1:8118"</span></span><br><span class="line">	<span class="built_in">export</span> HTTP_PROXY=<span class="string">"http://127.0.0.1:8118"</span></span><br><span class="line">	<span class="built_in">export</span> HTTPS_PROXY=<span class="string">"http://127.0.0.1:8118"</span></span><br><span class="line">	<span class="built_in">export</span> FTP_PROXY=<span class="string">"http://127.0.0.1:8118"</span></span><br><span class="line">	<span class="built_in">export</span> RSYNC_PROXY=<span class="string">"http://127.0.0.1:8118"</span></span><br><span class="line">	<span class="built_in">echo</span> -e <span class="string">"proxy on"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>重新登录就可以使用<code>proxy_on</code>/<code>proxy_off</code>来开启/关闭代理了</p>
+<p>如果在进入图形界面之前开启了代理，那么进入图形界面后即为全局代理；反之，则默认不走代理，需要为应用单独配置。</p>
+<h3 id="进军图形界面"><a href="#进军图形界面" class="headerlink" title="进军图形界面"></a>进军图形界面</h3><h4 id="安装前准备"><a href="#安装前准备" class="headerlink" title="安装前准备"></a>安装前准备</h4><ul>
+<li><p>安装xorg-xinit，并将配置文件复制到主目录：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S xorg-xinit</span><br><span class="line">cp /etc/X11/xinit/xinitrc ~/.xinitrc</span><br></pre></td></tr></table></figure>
+<p>  完成下面任一环境的配置后，使用<code>startx</code>进入图形界面</p>
+<p>  <strong><em>不要用sudo来执行startx!</em></strong></p>
+</li>
+<li><p>安装一些字体</p>
+<ul>
+<li><p>基础</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S ttf-dejavu ttf-liberation wqy-microhei wqy--zenhei</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>等宽</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S ttf-monaco ttf-jetbrains-mono</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>图形</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S ttf-font-awesome</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>安装输入法</p>
+<ol>
+<li><p>安装fcitx<code>sudo pacman -S fcitx fcitx-im</code></p>
+</li>
+<li><p>安装所用的输入法，例如：</p>
+<ol>
+<li>sun拼音:<code>sudo pacman -S fcitx-sunpinyin</code></li>
+<li>Google拼音:<code>sudo pacman -S fcitx-googlepinyin</code></li>
+<li>搜狗输入法:<code>yay -S fcitx-sougoupinyin</code></li>
+<li>五笔等:<code>sudo pacman -S fcitx-table-extra</code></li>
+</ol>
+</li>
+<li><p>添加环境变量，在主目录新建一个文件~/.pam_environment，并加入以下内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GTK_IM_MODULE=fcitx</span><br><span class="line">QT_IM_MODULE=fcitx</span><br><span class="line">XMODIFIERS=@im=fcitx</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<p>  参照<a href="https://wiki.archlinux.org/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87" target="_blank" rel="noopener">Fcitx - ArchWiki</a>)</p>
+<h4 id="i3-gaps"><a href="#i3-gaps" class="headerlink" title="i3-gaps"></a>i3-gaps</h4><h5 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h5><ol>
+<li>安装i3gaps: <code>yay -S i3-gaps</code></li>
+<li>添加<code>exec i3</code>到.xinitrc文件的末尾</li>
+<li><p>安装polybar:<code>yay -S polybar</code></p>
+<ul>
+<li>特别注意polybar使用的字体是fontawesome:<code>ttf-font-awesome</code></li>
+</ul>
+</li>
+</ol>
+<p>如果没有安装其它桌面环境，还需要以下基础工具：</p>
+<ol>
+<li>终端摸拟器:<code>sudo pacman -S xfce4-terminal</code></li>
+<li>剪贴板:<code>sudo pacman -S xfce4-clipman-plugin</code></li>
+<li>截图工具:<code>sudo pacman -S xfce4-screenshooter</code></li>
+<li>文件管理器:<code>sudo pacman -S thunar</code></li>
+<li>回收站:<code>sudo pacman -S gvfs</code></li>
+<li>压缩文件管理:<code>sudo pacman -S file-roller</code></li>
+<li>锁屏:<code>yay -S i3lock-color</code></li>
+<li>壁纸显示:<code>sudo pacman -S feh</code></li>
+<li>桌面信息:<code>sudo pacman -S conky</code></li>
+</ol>
+<h5 id="附配置文件与官方文档"><a href="#附配置文件与官方文档" class="headerlink" title="附配置文件与官方文档"></a>附配置文件与官方文档</h5><p><a href="https://github.com/VincentJan/Arch-i3_configfile" target="_blank" rel="noopener">VincentJan/Arch-i3_configfile</a></p>
+<p><a href="https://i3wm.org/docs/userguide.html" target="_blank" rel="noopener">i3 User’s Guide</a></p>
+<p><a href="https://github.com/polybar/polybar/wiki" target="_blank" rel="noopener">polybar wiki</a></p>
 
-    1. 从瞬间到永恒，用少数瞬间展示宏大的整体
-    2. 结构是对人物生活故事中事件的选择，这种选择为事件赋予意义
-    3. 事件是人物生活情境中的变化，变化是通过价值来表达并通过冲突完成的
-    4. 故事的价值是人类经验的普遍特征
-    5. 理想的场景即是事件，连续时空中通过冲突表现的引起变化的动作
-    6. 解说应该编织在故事中
-    7. 节拍是行为的交替，场景由节拍构成
-    8. 序列是一系列有关联的场景组成的更具冲击力的形式
-    9. 幕是一系列序列的组合，以高潮作为顶峰
-    10. 故事由一系列幕构成，最后的幕高潮称为故事高潮，故事应该引起不可逆转的弧光
-    11. 情节是作者对故事发展与形式的选择，有大情节（经典，因果，闭合结局，线性时间，外在冲突，单一主人公，连贯现实，主动主人公），小情节（极简，开放结局，内在冲突，多重主人公，被动主人公）与反情节（巧合，非线性时间，非连贯现实）三个极端
-
-        1. 闭合式结局解决了所有问题而开放式结局留有余地
-        2. 主动主人公追求欲望积极行动与周围的人和世界发生直接冲突
-        3. 被动主人公表面消极被动，而在追求内心欲望时与自身性格发生冲突
-        4. 即便有闪回，大致连贯的时间即是线性的
-        5. 时间跳跃以至于无法判断事件先后为非线性时间
-        6. 非连贯现实混合多种互动营造出荒诞感
-        7. 情节依附于变化，没有变化的故事称为非情节
-    12. 作者创作故事应该自然不做作，并且精于经典形式
-2. 背景
-
-    1. 背景体现了作者对故事世界的了解程度，有四个维度：时代，期限，地点，冲突层面
-
-        1. 时代：故事在时间中的位置
-        2. 期限：故事在时间中的长度
-        3. 地点：故事在空间中的位置
-        4. 冲突层面：故事在人类斗争的层级体系中的位置
-    2. 背景限制了故事中的可能性，故事必须遵守自身内在的或然性
-    3. 创作故事的第一步是创造一个小而可知的世界
-    4. 背景越大作者的知识越被稀释，选择也越少
-    5. 背景的建立：调查，记忆，想象，事实
-    6. 故事并不是一堆累积的信息，而是对事件的设计
-    7. 创作是在取舍中作的选择
-3. 类型
-
-    1. 精通一种类型及常规，把握世界的脉搏，持之以恒。
-4. 人物
-
-    1. 压力越大对人物性格的揭示越深
-    2. 衬托与反衬是揭示人物性格基本工具
-    3. 故事需要展现人物弧光
-    4. 人物必须具备足以承担他在故事中的选择的素质，以令人信服
-    5. 事件设计与人物设计互为镜像
-    6. 最终高潮是故事的灵魂
-5. 意义
-
-    1. 故事的高明之处在于理智与非理智的统一
-    2. 创作的动力来源于灵感（开端动机）与最终思想（想表达的东西）
-    3. 故事的意义只能让故事本身去表达
-    4. 故事越是围绕一个中心意义越能展现价值
-    5. 故事反照出真实的作者
-    6. 故事通过正面价值与负面价值的互动交替取得进展
-    7. 避免在故事中加入过强的说教倾向
-</code></pre><h2 id="5、次外层：故事设计原理"><a href="#5、次外层：故事设计原理" class="headerlink" title="5、次外层：故事设计原理"></a>5、次外层：故事设计原理</h2><pre><code>1. 故事材质
-
-    1. 语言仅仅是一种媒介，作者需要从里到外，从人物的内心到整个世界去体察故事。
-    2. 主人公是一个具有自觉欲望（还可以有一个自相矛盾的不自觉欲望）且有能力和至少一次机会达成欲望的人物。主人公将追寻其欲望直到背景和类型设立的极限。
-    3. 故事的艺术不在于讲述中间状态，而在于讲述人类生存状况的钟摆在两极之间摆动的情形，讲述最紧张状态下的人生。
-    4. 故事必须有一个观众无从想象出更好可能的最后动作。
-    5. 主人公必须具有移情作用，而同情作用可有可无。
-    6. 人物在追寻欲望的过程中总是会采取主观最小行动。但世界并不能完全按照人物的意愿进行，要么反向，要么超过预期。
-    7. 人物拥有三个冲突层面，内心冲突，人际冲突与社会冲突。
-    8. 鸿沟：主观预计与客观现实之间的地带，或然与实然间的撕裂。故事的材质就是鸿沟。
-    9. 主人公必须面对一个一旦失败就无可挽回的后果。风险与价值成正比。
-    10. 鸿沟层层递进推进故事发展。在鸿沟中探寻反应与对立反应，以找寻真理。
-    11.  写作应该强调事件发生于谁，为何发生，而非发生了什么。期望等同于结果的场景没有意义。
-    12.  观众对世界的期望大约等同于主角对世界的期望。
-2. 激励事件
-
-    1. 故事是一个由五部分组成的设计：激励事件，进展纠葛，危机，高潮，结局。
-    2. 激励事件：故事讲述的第一个重大事件，一切后续情节的首要导因。
-    3. 每一个角色都应该出于独一无二的目的所设计，最终应借角色编织出一张充满矛盾与对立态度。
-    4. 作者以对世界主神般的了解，通过移情作用与可信幻觉控制观众感情投入。
-    5. 可信性：内部连贯的世界，其规模、深度和细节都能自圆其说。
-    6. 可信性取决于讲述细节。独创性存在于对可信性的追求，而非标新立异的猎奇。
-    7. 激励事件必须是一个动态的，充分发展的事件，而非一个静态模糊的事件。激励事件必须彻底打破主角生活中的各种力量平衡。
-    8. 主人公必须对激励事件做出反应。由激励事件引发的主人公的自觉欲望与不自觉欲望共同构成故事脊椎。
-    9. 故事表现为一个求索形式，由激励事件开始，在脊椎上产生冲突，最终达成一个结局。
-    10. 深入主人公的内心，就能看到故事弧光，并以此展开求索之路。
-    11. 激励事件必须在主情节里，且发生于故事前四分之一。
-    12. 自白与解释说服不了观众，人物需要事件的考验。
-3. 幕设计
-
-    1. 进展纠葛：人物面对越来越强的对抗力量时产生更多的冲突，经过一个个无法回归的事件点。
-    2. 故事决不能退隐于轻量级性质或力度的行动，必须循序渐进的朝着观众无法想象出更好替代的最终行动运行。
-    3. 冲突推动故事进展。故事生活的比喻，活着就是置身于看似永恒的冲突中。
-    4. 长篇叙事至少经过三个重大逆转才能到线索的终点。
-    5. 幕高潮的泛滥容易招致陈词滥调。且会削弱高潮的冲击力并导致重复感。
-    6. 推迟主情节入场可以使观众详细了解主人公，以便他们能够对激励事件做出充分反应。
-    7. 故事的动感取决于正负价值的交替。情感体验重复时，第二个事件的力度将减半。
-    8. 次情节作用：反讽，回响，伏笔，制造纠葛。
-4. 场景设计
-
-    1. 一个场景即使一个微缩的故事。
-    2. 转折点效果：惊奇，增加好奇心，见识，新方向。        3. 伏笔必须埋植的足够牢固。伏笔与分晓间可以多次交错。
-    4. 情感转变取决于足够精确的情景，为此需要三点努力：移情于人物，知道人物欲望，明白人物生活中的筹码。
-    5. 回报递减定理：对某事体验的越多，它产生的效果就越少。
-    6. 情感是一种短期体验，感情是一种长期背景。感情也被称作基调。
-    7. 人类的行动永远趋向于选择善和是（其主观判断）。故而善恶之选不能算作选择。真正的选择是两善择其一或两恶取其轻，即两难之境。
-5. 场景分析
-
-    1. 分析始于将文本与潜文本分离。
-    2. 必须注意事物的两重性。
-    3. 永远要具备一个潜文本，一个与文本互为对照或构成矛盾的内在生活。
-    4. 最富激情的时刻必须隐含着一个更加深刻的层面。
-    5. 观众意识到潜文本才能使场景行之有效。
-6. 布局谋篇
-
-    1. 激励事件与故事高潮之间有一把因果关系之锁。
-    2. 故事被期望具有生活的节奏，即紧张与松弛的交替。
-    3. 高潮不可一掠而过，需要深刻地展开。
-    4. 表现进展过程：扩大社会影响，将动作深深楔入人物私人生活中，讲故事意象的象征负荷升华，反讽升华。
-    5. 过渡原理——铰链：两个场景间共同或相反的东西。
-7. 危机、高潮和结局
-
-    1. 危机指主角面对强盛的对抗力量时所做出的自发决定。是一个两难之境的终结。
-    2. 危机决定必须是一个有意而为的静态时刻。
-    3. 高潮指不可逆转的价值剧变。
-    4. 创造力的流动往往从结果到原因。
-    5. 结局是高潮后的故事终结。
-</code></pre><h2 id="6、最外层：作者的工作"><a href="#6、最外层：作者的工作" class="headerlink" title="6、最外层：作者的工作"></a>6、最外层：作者的工作</h2><pre><code>1. 反面人物塑造原理
-
-    1. 主人公极其故事的智慧魅力和情感魄力必须与对抗力量相适应。
-    2. 生活总是微妙而复杂，很少简单的是非对错，因而价值之间有三种关系：矛盾价值，相反价值，负面之负面价值。
-    3. 矛盾价值是与原价值冲突对立的价值，。
-    4. 相反价值则是带有原价值的相对元素却不足以与之对立的价值。
-    5. 负面之负面价值是具有多个与原价值相对的元素的极负价值。
-    6. 在冲突上具有深度和广度的故事必须具有上述价值类型。
-    7. 一部作品的伟大在于作者对负面的处理。
-2. 解说
-
-    1. 解说的技巧在于无形。
-    2. 保持观众兴趣靠的不是信息，而是扣押信息。
-    3. 幕后故事可以制造强力转折。
-    4. 闪回的技巧：戏剧化，尽量不用。
-    5. 避免梦境序列，蒙太奇等手法。
-    6. “展示，不要告诉。”意味着对观众智慧和感知力的尊重。不要将观众当作一切都需要解释的小孩。
-3. 问题和解决方法
-
-    1. 兴趣问题：好奇心，关心与善之中心。
-
-        * 信息的三种状态：神秘状态下观众知道的比人物少，悬念状态下，观众与人物知道同样的信息。戏剧反讽状态下，观众知道的比人物多。
-        * 戏剧反讽鼓励观众深入探寻人物生活中起作用的动机和因果力量。
-    2. 惊奇问题：廉价惊奇是在利用观众的脆弱。
-    3. 巧合问题：不应该回避巧合，而是要戏剧化地表现出它是如何毫无意义地进入生活的，又怎样随着时间流逝而获得意义，表现出随意的反逻辑如何变成生活现实的逻辑。
-
-        * 尽早引入巧合，以给予它充分的时间获得意义。
-        * 不要用巧合来转折一个结局。
-        * 不要让巧合取代人物决定。
-    4. 喜剧问题
-
-        1. 喜剧允许中断叙事动力
-        2. 喜剧容忍更多巧合
-        3. 不要引用机智的对白或描述视觉的噱头。
-    5. 和人物一起度过的时间越多，目睹其选择的机会也越多，移情会更强。
-    6. 为了表现人物冲突，作者必须使用平实的对白。
-    7. 改编需要走下纯文学的台阶。
-    8. 两个方向：从社会环境冲突的形象将观众带入复杂的个人关系。从言谈举止开始，去透视内心生活，去发现那些不可言喻，不可觉知的东西。
-    9. 戏剧腔不是夸张表达的结果，而是动机不足的结果。
-4. 人物
-
-    1. 人性是唯一不会过时的主题。
-    2. 人物不是真人，而是一件艺术品，一种对人的比喻。
-    3. 人物的真相只能通过两难的选择来表达，压力越大揭露越深刻。
-    4. 动机是多种复杂力量的综合。
-    5. 自我解释必须用行动来证实或者用行动来反驳。
-    6. 人物维：维是指矛盾，一个人物内在矛盾越多，便有越多的维。
-    7. 主角必须是最多维的角色。
-    8. 本质上是主人公创造了其他人物。
-    9. 维可以通过对照制造。
-    10. 喜剧人物的特点是盲目执迷。
-    11. 创作人物的诀窍：为演员留有余地，热爱所有人物，人物就是自知。
-    12. 对自己了解的越多，对人性洞察的越深刻，越能了解别人。
-5. 文本
-
-    1. 对白不是对话
-    2. 对白要求压缩和简约
-
-        1. 用最少的词句表达内容。
-        2. 具有方向，使节拍向一个方向转折。
-        3. 具有目的，每一行台词都要执行一个步骤，使场景围绕转折点构建形成弧光。
-    3. 描写要避免笼统名词，尽量使画面感充分。
-    4. 象征不可以被意识到，否则将失去力度。
-6. 作者的创作方法
-
-    1. 从里到外的写作：由高度简洁的单个元素推敲排列再渐渐填充。从外到里的写作：由一个想法开始的写作行为，一气完成。
-    2. 应该使用从里到外的写作并且尽量推迟台词创作，不好的台词会使故事窒息。
-</code></pre>
       
     </div>
     
@@ -666,7 +646,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://vincentjan.top/2019/08/18/故事结构笔记.html" title="《故事》结构笔记">https://vincentjan.top/2019/08/18/故事结构笔记.html</a>
+    <a href="https://vincentjan.top/2020/03/20/ArchLinuxConfig.html" title="Arch Linux安装与配置">https://vincentjan.top/2020/03/20/ArchLinuxConfig.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -679,6 +659,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
 
       
       
@@ -688,8 +674,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/18/如何阅读一本书.html" rel="next" title="《如何阅读一本书》脉络整理与方法论总结">
-                <i class="fa fa-chevron-left"></i> 《如何阅读一本书》脉络整理与方法论总结
+              <a href="/2020/02/26/CppDeclarationAndDefinition.html" rel="next" title="C++的声明与定义">
+                <i class="fa fa-chevron-left"></i> C++的声明与定义
               </a>
             
           </div>
@@ -697,10 +683,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/18/C语言中浮点数的二进制表示（IEEE754）.html" rel="prev" title="C语言中浮点数的二进制表示（IEEE754）">
-                C语言中浮点数的二进制表示（IEEE754） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -859,7 +841,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、本书谈论故事的基本原理，由原理-故事至方法-作者由内而外的展开论述。"><span class="nav-text">1、本书谈论故事的基本原理，由原理-故事至方法-作者由内而外的展开论述。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、核心与统领：序言"><span class="nav-text">2、核心与统领：序言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、核心附着层：作家与故事"><span class="nav-text">3、核心附着层：作家与故事</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、内层：故事的要素"><span class="nav-text">4、内层：故事的要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、次外层：故事设计原理"><span class="nav-text">5、次外层：故事设计原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、最外层：作者的工作"><span class="nav-text">6、最外层：作者的工作</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目标效果"><span class="nav-text">目标效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始之前"><span class="nav-text">开始之前</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#检查你的硬件"><span class="nav-text">检查你的硬件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么选择Arch-Linux"><span class="nav-text">为什么选择Arch Linux</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装：基本系统的搭建"><span class="nav-text">安装：基本系统的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对wiki的一些补充"><span class="nav-text">对wiki的一些补充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本配置"><span class="nav-text">基本配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#yay"><span class="nav-text">yay</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zsh-amp-amp-oh-my-zsh"><span class="nav-text">zsh &amp;&amp; oh-my-zsh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梯子"><span class="nav-text">梯子</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Trojan"><span class="nav-text">Trojan</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Privoxy"><span class="nav-text">Privoxy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置命令行模式的代理"><span class="nav-text">配置命令行模式的代理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进军图形界面"><span class="nav-text">进军图形界面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装前准备"><span class="nav-text">安装前准备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#i3-gaps"><span class="nav-text">i3-gaps</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装-1"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#附配置文件与官方文档"><span class="nav-text">附配置文件与官方文档</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
