@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[基于C++的Python3入门笔记（一）——基本语法篇]]></title>
+    <url>%2F2020%2F06%2F07%2F%E5%9F%BA%E4%BA%8EC%2B%2B%E7%9A%84Python3%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0.html</url>
+    <content type="text"><![CDATA[前言：虽然Python与C++有众多区别，但基本上同属命令式语言（甚至Python的解释器是C++实现的），因此在不求深入学习Python时记住一些基础语法差异即可大概使用。 基本区别python中以缩进（4个空格）而不是花括号区分代码块。 python中以换行而不是分号区分语句 python中不需要main函数，从代码第一行开始执行 注释12345678# 单行注释：井号+空格# 多行注释本质上是野生三引号字符串'''多行注释1:三个单引号'''"""多行注释2:三个双引号""" 变量数值python是动态类型语言，定义变量时无需指定类型，且程序运行过程中可改变类型。 1234i = 1f = 2.3str = 'string'f = 'change to string' 字符串123456# 单引号'Hello""Wo\'\'rld' # Hello""Wo''rld# 双引号"Hello''Wo\"\"rld" #Hello''Wo""rld# 单双引号唯一的区别是其中包含哪种引号时需要转义# 三引号包含单双引号都不用转义，可作注释用 格式化 1234# 占位符'Hello,%s %d %.2f, %02d' % ('World!', 123, 3.14159, 1) # Hello,World! 123 3.14 01# format(),用&#123;0&#125;&#123;1&#125;...当占位符'Hello,&#123;0&#125;:&#123;1:.1f&#125;'.format('World!', 3.14159) # Hello,World:3.1 list、tuple和dict、set定义123456789# []、()、&#123;&#125;、([])# list用[]定义, 可变长，可变元素值，可用下标位序取值l = [1, 2, 3, 4]# tuple用()定义，不可变长，不可变元素值，可用下标位序取值t = (1, 2, 3, 4)t1 = (1, ) # 若无逗号则为整数1# dict用&#123;&#125;定义， 类似c++的map; set用([])定义，类似setd = &#123;a:1, 2:b, 3:c&#125; # d[a] = 1, d[2] = b, d[3] = cs = ([1, 1, 2, 2, 3, 4]) # set自动去重，s = &#123;1, 2, 3, 4&#125; 操作 list l.append(): push_back l.pop():pop_back l.pop(i):erase(i) l.insert(pos, vue) dict ‘keyvalue’ in d //d中是否存在key值为‘keyvalue’ d.get(‘keyvalue’, -1) //无’keyvalue’时返回-1，没有第二个参数则无返回值 d.pop(‘keyvalue’) //删除keyvalue set add(key) remove(key) 运算符 算术运算符：+ - / % *(幂) //(整除) 比较运算符：== != &gt; &lt; &gt;= &lt;= 赋值运算符：= 算术= 位运算符：&amp; | ^ ~ &lt;&lt; &gt;&gt; 逻辑运算符：and or not 成员运算符：in not in 身份运算符：is is not //判断两对象地址是否相同 分支与循环1234567891011121314# if-else语句if condition: pass # 占位用关键字，不执行任何操作elif condition: passelse: pass# 范围forfor x in l: pass# 可用range(10)生成0-9的列表# whilewhile condition: psss 函数12345678910111213141516171819202122232425262728293031323334353637383940def Add(x, y): return x+ydef Dont_Do_Anything(x, y) return x, y#隐式返回一个元组def Default_Function(x, y=2) return x**y;#默认参数def Add_End(L) L.append('End') return L#多次调用会出现&#123;End, End, End&#125;，原因：参数并非临时变量，故而改进def Add_End_Fixed(L=None) if L is None: L = [] L.append('End') return Ldef Calc(*numbers) sum = 0 for x in numbers: sum += x return sum#可变数量参数，隐式生成一个tuple, 已有list或tuple可直接前加*传入def person(name, age, **kw) if 'key' in kw: pass# 关键字参数，调用时连关键字一同写入，如person('Jack', 23, city='Heaven')def person(name, *, city, age) passdef person(name, *age, city) pass# 命名关键字参数，跟在可变数量参数或一个空*参数后，只能传入指定关键字 类1234567891011121314151617181920212223242526272829303132333435class My_Class(object): def __init__(self, name, score): # 前后各2下划线，类内任何函数首参数都为self self.name = name self.__score = score #前置2下划线则私有，仍可通过._My_Class__score访问 def Get_Name(self): print(self.name) Sex = 'Male'# 括号内表示父类，object是python中的根基类；__init__()相当于构造函数# 构造函数外的属性相当于static成员mc = MyClass('Jack', 70)mc.age = 10# 通过构造函数来实例化类对象，可以给对象添加属性# 使用del mc.age删除属性class Mumei(My_Class): def Get_Name(self): print(self.__score)# 子类通过定义同名函数来重载基类函数# 用函数isinstance(a, type)判断对象的类型是否为type， 使用type(a)得到对象类型# 使用dir(a)获得对象的所有属性和方法# 使用hasattr(obj, 'sth')判断是否有属性sth# 使用getattr(obj, 'sth')取属性地址def Name(MC): MC.Get_Name() mumei = Mumei('Tom', '2')Name(mc)Name(mumei)# 对基类和子类通用other = Other_Class('Jerry')Name(other)# 任何有Get_Name的对象都可调用 高级特性切片取一个list或tuple的部分元素 123456L = [1, 2, 3, 4, 5]L[0:2] # 取&#123;1, 2&#125;即下标范围[0,2)的元素L[:2] # 第一个参数为0时可省略L[-1] # 取倒数第一个元素L[-2:-1] # 取倒数两个元素L[-2:] #-1可省略 列表生成式用[express]生成一个列表 12345[x * x for x in range(1, 11)] # 1x1,2x2...10x10[x * x for x in range(1, 11) if x % 2 == 0] # 2x2,4x4...10x10[m + n for m in 'ABC' for n in 'DEF'] # ABC与DEF的全排列# 当if出现在for后面时，不可带else# 当if出现在fot前面时，必须带else 生成器生成器仅存储一个生成方法而不是具体对象，有肋于节省空间。 方法1: 用(express)生成一个生成器(generator) 123g = (x * x for x in range(10))for n in g: print(n) 方法2: 用函数来生成一个生成器 12345678910111213141516171819202122# 输出斐波那契数列的函数如下# a, b = b, a + b =&gt; a, b = (b, a + b) =&gt; a = b b = a + b(a与b的值同时改变) def fib(max): n, a, b = 0, 0, 1 while n &lt; max: print(b) a, b = b, a + b n = n + 1 return 'done'#把上述函数改成generator, 仅需将print(b)换成yield bdef fib(max): n, a, b = 0, 0, 1 while n &lt; max: yield b a, b = b, a + b n = n + 1 return 'done'f = fib(6)for n in f: print(n)]]></content>
+      <categories>
+        <category>术</category>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[二叉树的存储结构及其非层序遍历]]></title>
     <url>%2F2020%2F04%2F24%2F%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84%E5%8F%8A%E5%85%B6%E9%9D%9E%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86.html</url>
     <content type="text"><![CDATA[二叉树是我接触的第一个非线性数据结构。在对它进行操作前，如何对其进行构建与遍历很自然地成为了首先要关心的问题。 这篇文章总结了： 二叉树的五个性质 如何存储一个二叉树 二叉树的先序、中序和后序遍历及其非递归实现 以及通过二叉树中序序列+先序/后序序列构建二叉树的方法 如何计算一对先序序列和后序序列可能表示的二叉树个数。 二叉树的五个性质 二叉树的第i层上至多有2^(i - 1)个结点 深度为k的二叉树至多有2^k - 1个结点 对任何一棵二叉树T, 其终端结点数 = 度为2的结点数 + 1 具有n个结点的完全二叉树深度为：log2(n) + 1 满二叉树：每一层结点数都为最大 完全二叉树：每一结点按层的编号都与对应的满二叉树一一对应 a.满二叉树 b.完全二叉树 对一颗有n个结点的完全二叉树，将其结点按层序编号i，有 i=1，则该结点为根结点，无双亲 2i&gt;n，则结点i无左孩子，否则其左孩子是2i 2i + 1 &gt; n则结点无右孩子，否则其右孩子是2i + 1 二叉树的存储结构1. 顺序存储结构将完全二叉树上序号为i的结点存在数组中标号为i - 1的地址中，如非完全二叉树，则空出来的地址留空。此时子结点用性质5即可得到。 上面三个二叉树的存储结构分别为： (用0表示结点不存在) 可以看出，当二叉树不是完全二叉树时，这种结构非常浪费存储空间。因此仅适合用作完全二叉树的存储。 2. 链式存储结构二叉树用链表来存储是非常自然的，常见的有二叉链表和三叉链表。 二叉链表二叉链表的组织形式： 三叉链表三叉链表在二叉链表的基础上添加了指向父结点的指针，与二叉链表大同小异。 三叉链表的组织形式： 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071typedef struct Node&#123; Node *leftChild; Node *rightChild; int data;&#125; *BinTree;int CreateBinTree(BinTree &amp;tree)&#123; tree = new Node&#123;nullptr, nullptr, 0&#125;; if(tree == nullptr) &#123; cerr &lt;&lt; "Error While Create BinTree!" &lt;&lt; endl; return -1; &#125; return 0;&#125;int InsertChild(Node *aim, bool left)&#123; Node *newNode = new Node&#123;nullptr, nullptr, 0&#125;; if(newNode == nullptr) &#123; cerr &lt;&lt; "Error While Add Note!" &lt;&lt; endl; return -1; &#125; if(left) &#123; aim-&gt;leftChild = newNode; &#125; else &#123; aim-&gt;rightChild = newNode; &#125; return 0;&#125;int DeleteChild(Node *aim, bool left)&#123; if(aim == nullptr) return -1; Node *preDel = (left) ? aim-&gt;left : aim-&gt;right; if(preDel != nullptr) &#123; if(preDel-&gt;left != nullptr) &#123; DeleteChild(preDel, left); &#125; if(preDel-&gt;right != nullptr) &#123; DeleteChild(preDel, right); &#125; delete preDel; preDel = nullptr; &#125; if(left) &#123; aim-&gt;left = nullptr; &#125; else &#123; aim-&gt;right = nullptr; &#125; return 0;&#125;int Visit(Bintree T)&#123; if(T == nullptr) return -1; cout &lt;&lt; T-&gt;data &lt;&lt; endl; return 0;&#125; 二叉树的遍历要遍历二叉树，可将二叉树分为三个部分，左子树(L)、根(D)、右子树(R)，并依次访问每个部分。若规定左子树一定先于右子树访问，则共有三种情况：DLR、LDR、LRD。分别称为前（先）序遍历、中序遍历和后序遍历。 这三种遍历的算法是递归描述的，如下： 前序遍历算法描述若二叉树为空，则空操作，否则 访问根结点 先序遍历左子树 先序遍历右子树 算法的递归实现12345678int DLR(BinTree T)&#123; if(T == nullptr) return 0; if(Visit(T) == -1) return -1; if(DLR(T-&gt;left) == -1) return -1; if(DLR(T-&gt;right) == -1) return -1; return 0;&#125; 中序遍历算法描述若二叉树为空，则空操作，否则 中序遍历左子树 访问根结点 中序遍历右子树 算法的递归实现12345678int LDR(BinTree T)&#123; if(T == nullptr) return 0; if(LDR(T-&gt;left) == -1) return -1; if(Visit(T) == -1) return -1; if(LDR(T-&gt;right) == -1) return -1; return 0;&#125; 后序遍历算法描述若二叉树为空，则空操作，否则 后序遍历左子树 后序遍历右子树 访问根结点 算法的递归实现12345678int LRD(BinTree T)&#123; if(T == nullptr) return 0; if(LRD(T-&gt;left) == -1) return -1; if(LRD(T-&gt;right) == -1) return -1; if(Visit(T) == -1) return -1; return 0;&#125; 三种遍历的非递归实现原理由上面的描述可以看出用递归实现三种遍历是非常简洁自然的，然而在大部分情况下递归实现的性能开销大于非递归实现（函数反复调用以及系统堆栈带来的），因此在非常需要考虑性能时可以使用算法的非递归实现（算法的递归几乎都可以转化成非递归实现）。 为了实现非递归遍历，先来看看遍历过程中发生了什么。 在遍历过程中，每个结点有三次访问机会，即指针从父结点指向自身，从左孩子退回，从右孩子退回。这里我们不妨规定没有左/右孩子的结点仍能获得空指针退回的访问机会（即将空指针看做一个无法进入的孩子结点）。 由于我们规定了左子树一定在右子树之前遍历，整个树的遍历顺序就如上图所示(a-&gt;b)。我们在每个结点的左侧、下侧和右侧分别设定一个触发点，并将它们在遍历路径中出现的顺序记录下来。 对于左触发点：ABDECFG 对于下触发点：DBEAFCG 对于右触发点：DEBFGCA 可以看出，它们分别是这个二叉树的前序序列、中序序列和后序序列。因此，实现正确的遍历顺序，并在合适的时机访问结点，就可以实现非递归地遍历二叉树。 前序遍历和中序遍历前序遍历和中序遍历的实现相对后序遍历简单，描述为： 向左一路前进，若下一结点为空则退栈，否则将其压入栈中。 若指针是左子树退回，则进入右子树。若指针是右子树退回，则表示当前层遍历结束，继续退一层。这也意味着进入右子树时可以将当前结点直接退栈。 栈为空时，遍历完成。 12345678910111213141516171819202122232425262728int LDR(BinTree T)&#123; //定义一个存储遍历信息的栈和一个用来遍历树的指针 stack&lt;Node*&gt; S; Node *cur = T; //每访问一个结点就将结点出栈，因此以栈非空作为循环条件 //最后出栈的必是一个叶子结点，因此指针的值在结束时必为nullptr while(!S.empty() || cur != nullptr) &#123; //指针非空时一路向左走并将沿途结点压入栈中 //指针为空则表示走到了当前路径的尽头，将最后入栈的结点出栈并令指针指向该结点的右子树 if(cur != nullptr) &#123; S.push(cur); //cout &lt;&lt; cur-&gt;data; 前序时在此输出。 cur = cur-&gt;left; &#125; else &#123; cur = S.top(); S.pop(); cout &lt;&lt; cur-&gt;data; //中序时在此输出。 cur = cur-&gt;right; &#125; &#125; return 0;&#125; 总结：一路向左，非空则进。遇空出栈，右子代之。 后序遍历在前面的代码中我们实际上省略了对指针是由左子树退回还是右子树退回的判断，直接在指针进入右子树时将当前结点出栈。对于前序遍历和中序遍历而言这样做并没有影响，因为它们的访问操作都在指针进入右子树之前。但是对于后序遍历显然是不行的，这里对上述算法进行改进： 指针非空时向左前进到底，若指针非空则压入栈中，初始化一个指针保存最近出栈的结点。 指针为空时令指针指向栈顶，进行判定，若指针的右子树存在且没有遍历过则进入右子树，否则输出指针所指元素并退栈。同时将指针置零以免将已退栈的元素重新入栈。 栈为空时，遍历完成。 1234567891011121314151617181920212223242526272829303132333435363738394041int LRD(BinTree T)&#123; stack&lt;Node*&gt; S; Node *cur = T; //存储最后退栈的元素 Node *lastPop = nullptr; while(!S.empty() || cur != nullptr) &#123; //非空时向左前进到底 if(cur != nullptr) &#123; //cout &lt;&lt; cur-&gt;data; 仍然可用于前序遍历 S.push(cur); cur = cur-&gt;left; &#125; else &#123; cur = S.top(); //判定当前结点是否存在右子树以及右子树是否遍历过 //此处是否存在的判定是必要的，否则当lastPop非空而当前结点又不存在右子树时， //将导致指针不断尝试进入不存在的右子树引发死循环 if(cur-&gt;right != nullptr &amp;&amp; cur-&gt;right != lastPop) &#123; //cout &lt;&lt; cur-&gt;data; 中序遍历输出根结点 cur = cur-&gt;right; &#125; else &#123; //右子树不存在或已遍历过，输出根结点并退栈 S.pop(); cout &lt;&lt; cour-&gt;data; //if(cur-&gt;right == nullptr) cout &lt;&lt; cur-&gt;data; 中序遍历输出叶子结点 //令lastPop指向最后退栈结点，将cur指针置0以免下一轮循环将已退栈的结点重新入栈 lastPop = cur; cur = nullptr; &#125; &#125; &#125; return 0;&#125; 总结：一路向左，非空则进，遇空判定，有右则进，无右则出，不忘置零。 图解后序遍历的非递归算法 精力有限，只好挑一个难度最大的做图解。 通过中序序列+前序/后序序列构建二叉树原理 前序序列中任一子树以根结点-左子树-右子树的结构排列。 中序序列中任一子树以左子树-根结点-右子树的结构排列。 后序序列中任一子树以左子树-右子树-根结点的结构排列。 根据以上性质，可以得到算法： 从前/后序序列中取首/尾元素，确定树的根结点 在中序序列中搜索根结点，确定左子树和右子树 对左子树和右子树分别重复这个过程，直到不可再分 图解：以前序-中序构建为例 代码实现前序-中序构建二叉树 123456789101112131415161718192021222324252627282930313233343536//根据前序-中序序列构建二叉树，代码是通过递归实现的//SI是string::iterator类型，函数的四个参数分别指向//前序序列p的首元素和尾后元素，中序序列m的首元素和尾后元素BinTree Pre_Mid_Build(SI p_begin, SI p_end, SI m_begin, SI m_end)&#123; //用前序序列的首元素初始化一个仅有根结点的树 Node *boot = new Node&#123;nullptr, nullptr, *p_begin&#125;; //左子树的前序序列首元素地址为当前前序序列的首元素地址+1 //中序序列的首元素地址和当前中序序列相同 auto left_p_begin = p_begin + 1; //左子树中序序列的尾后地址为根结点在当前中序序列中出现的位置 //搜索当前中序序列求出，并求出左子树的长度 auto left_m_end = m_begin; int num = 0; while(*left_m_end != *p_begin) &#123; ++left_m_end; ++num; &#125; //利用左子树的长度求出左子树前序序列的尾后迭代器 auto left_p_end = left_p_begin + num; //若左子树存在，递归构建左子树 if(m_begin != left_m_end) &#123; boot-&gt;left = Pre_Mid_Build(left_p_begin, left_p_end, m_begin, left_m_end); &#125; //右子树的迭代器比较方便取得 auto right_p_begin = left_p_end; auto right_m_begin = left_m_end + 1; //若右子树存在，递归构建右子树 if(right_m_begin != m_end) &#123; boot-&gt;right = Pre_Mid_Build(right_p_begin, p_end, right_m_begin, m_end); &#125; return boot;&#125; 中序-后序构建二叉树 12345678910111213141516171819202122232425//代码与前序-中序大同小异，不再写注释BinTree Post_Mid_Build (SI p_begin, SI p_end, SI m_begin, SI m_end)&#123; Node *boot = new Node&#123;nullptr, nullptr, *(p_end - 1)&#125;; auto left_m_end = m_begin; int num = 0; while(*left_m_end != *(p_end - 1)) &#123; ++left_m_end; ++num; &#125; auto left_p_end = p_begin + num; if(m_begin != left_m_end) &#123; boot-&gt;left = Post_Mid_Build (p_begin, left_p_end, m_begin, left_m_end); &#125; auto right_p_begin = left_p_end; auto right_p_end = p_end - 1; auto right_m_begin = left_m_end + 1; if(right_m_begin != m_end) &#123; boot-&gt;right = Post_Mid_Build (right_p_begin, right_p_end, right_m_begin, m_end); &#125; return boot;&#125; 计算一对先序序列和后序序列可能表示的二叉树个数原理 前序序列中任一子树以根结点-左子树-右子树的结构排列。 后序序列中任一子树以左子树-右子树-根结点的结构排列。 可能混淆的情况有：根（左/右）+（左/右）根。 可以知道，前序序列与后序序列中任何有两个子树的树都是确定的。而每一对仅一个子树的树将有两种可能结构。 因此只要求出序列对中有多少对无法确定的子树即可，很容易发现这样的树对以AB &amp; BA的方式存在。只要搜索两个序列即可。 代码123456789101112131415161718192021222324//因为要用到位运算， 使用无符号类型using UL = unsigned long;int main()&#123; string pre, post; cin &gt;&gt; pre &gt;&gt; post; //搜索并计数 UL sum = 0; for(UL i = 0; i &lt; pre.length() - 1; ++i) &#123; for(UL j = 1; j &lt; post.length(); ++j) &#123; if(pre[i] == post[j] &amp;&amp; pre[i + 1] == post[j - 1]) &#123; ++sum; &#125; &#125; &#125; UL base = 1; //位运算计算2的次幂方便且快速，注意括号 cout &lt;&lt; (base&lt;&lt;sum) &lt;&lt; endl; return 0;&#125;]]></content>
@@ -9,6 +21,7 @@
         <category>计算机</category>
       </categories>
       <tags>
+        <tag>C++</tag>
         <tag>算法</tag>
         <tag>数据结构</tag>
         <tag>二叉树</tag>
@@ -47,7 +60,7 @@
         <category>摘录</category>
       </categories>
       <tags>
-        <tag>文学</tag>
+        <tag>故事</tag>
       </tags>
   </entry>
   <entry>
@@ -59,7 +72,7 @@
         <category>读书笔记</category>
       </categories>
       <tags>
-        <tag>效率</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -71,7 +84,7 @@
         <category>读书笔记</category>
       </categories>
       <tags>
-        <tag>效率</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -83,7 +96,7 @@
         <category>读书笔记</category>
       </categories>
       <tags>
-        <tag>效率</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -95,7 +108,7 @@
         <category>摘录</category>
       </categories>
       <tags>
-        <tag>文学</tag>
+        <tag>故事</tag>
       </tags>
   </entry>
   <entry>
@@ -107,7 +120,7 @@
         <category>计算机</category>
       </categories>
       <tags>
-        <tag>C语言</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -118,6 +131,10 @@
         <category>文</category>
         <category>读书笔记</category>
       </categories>
+      <tags>
+        <tag>故事</tag>
+        <tag>方法</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[《如何阅读一本书》脉络整理与方法论总结]]></title>
@@ -128,7 +145,7 @@
         <category>读书笔记</category>
       </categories>
       <tags>
-        <tag>效率</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>

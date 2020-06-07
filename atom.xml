@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://vincentjan.top/"/>
-  <updated>2020-04-23T16:41:24.022Z</updated>
+  <updated>2020-06-07T12:32:03.022Z</updated>
   <id>https://vincentjan.top/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>基于C++的Python3入门笔记（一）——基本语法篇</title>
+    <link href="https://vincentjan.top/2020/06/07/%E5%9F%BA%E4%BA%8EC++%E7%9A%84Python3%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://vincentjan.top/2020/06/07/基于C++的Python3入门笔记.html</id>
+    <published>2020-06-07T12:36:29.000Z</published>
+    <updated>2020-06-07T12:32:03.022Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;前言：虽然Python与C++有众多区别，但基本上同属命令式语言（甚至Python的解释器是C++实现的），因此在不求深入学习Python时记住一些基础语法差异即可大概使用。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="术" scheme="https://vincentjan.top/categories/%E6%9C%AF/"/>
+    
+      <category term="计算机" scheme="https://vincentjan.top/categories/%E6%9C%AF/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="Python" scheme="https://vincentjan.top/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>二叉树的存储结构及其非层序遍历</title>
     <link href="https://vincentjan.top/2020/04/24/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84%E5%8F%8A%E5%85%B6%E9%9D%9E%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86.html"/>
     <id>https://vincentjan.top/2020/04/24/二叉树的存储结构及其非层序遍历.html</id>
     <published>2020-04-23T16:36:29.000Z</published>
-    <updated>2020-04-23T16:41:24.022Z</updated>
+    <updated>2020-06-07T12:34:51.372Z</updated>
     
     <summary type="html">
     
@@ -43,6 +67,8 @@
     
       <category term="计算机" scheme="https://vincentjan.top/categories/%E6%9C%AF/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
+    
+      <category term="C++" scheme="https://vincentjan.top/tags/C/"/>
     
       <category term="算法" scheme="https://vincentjan.top/tags/%E7%AE%97%E6%B3%95/"/>
     
@@ -107,7 +133,7 @@
     <link href="https://vincentjan.top/2019/11/15/%E5%B0%8F%E5%BC%A0%E5%92%8C%E5%B0%8F%E4%B8%BD.html"/>
     <id>https://vincentjan.top/2019/11/15/小张和小丽.html</id>
     <published>2019-11-15T07:48:35.000Z</published>
-    <updated>2020-02-13T14:40:34.000Z</updated>
+    <updated>2020-06-07T12:38:14.243Z</updated>
     
     <summary type="html">
     
@@ -121,7 +147,7 @@
       <category term="摘录" scheme="https://vincentjan.top/categories/%E6%96%87/%E6%91%98%E5%BD%95/"/>
     
     
-      <category term="文学" scheme="https://vincentjan.top/tags/%E6%96%87%E5%AD%A6/"/>
+      <category term="故事" scheme="https://vincentjan.top/tags/%E6%95%85%E4%BA%8B/"/>
     
   </entry>
   
@@ -130,7 +156,7 @@
     <link href="https://vincentjan.top/2019/08/23/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E5%AD%A6%E4%B9%A03.html"/>
     <id>https://vincentjan.top/2019/08/23/如何高效学习3.html</id>
     <published>2019-08-23T14:08:03.000Z</published>
-    <updated>2020-02-13T14:40:34.000Z</updated>
+    <updated>2020-06-07T12:37:17.693Z</updated>
     
     <summary type="html">
     
@@ -148,7 +174,7 @@
       <category term="读书笔记" scheme="https://vincentjan.top/categories/%E6%96%87/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="效率" scheme="https://vincentjan.top/tags/%E6%95%88%E7%8E%87/"/>
+      <category term="方法" scheme="https://vincentjan.top/tags/%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
@@ -157,7 +183,7 @@
     <link href="https://vincentjan.top/2019/08/23/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E5%AD%A6%E4%B9%A02.html"/>
     <id>https://vincentjan.top/2019/08/23/如何高效学习2.html</id>
     <published>2019-08-22T17:45:00.000Z</published>
-    <updated>2020-02-13T14:40:35.000Z</updated>
+    <updated>2020-06-07T12:37:13.363Z</updated>
     
     <summary type="html">
     
@@ -175,7 +201,7 @@
       <category term="读书笔记" scheme="https://vincentjan.top/categories/%E6%96%87/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="效率" scheme="https://vincentjan.top/tags/%E6%95%88%E7%8E%87/"/>
+      <category term="方法" scheme="https://vincentjan.top/tags/%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
@@ -184,7 +210,7 @@
     <link href="https://vincentjan.top/2019/08/21/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E5%AD%A6%E4%B9%A01.html"/>
     <id>https://vincentjan.top/2019/08/21/如何高效学习1.html</id>
     <published>2019-08-21T13:45:00.000Z</published>
-    <updated>2020-02-13T14:40:34.000Z</updated>
+    <updated>2020-06-07T12:37:08.472Z</updated>
     
     <summary type="html">
     
@@ -202,7 +228,7 @@
       <category term="读书笔记" scheme="https://vincentjan.top/categories/%E6%96%87/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="效率" scheme="https://vincentjan.top/tags/%E6%95%88%E7%8E%87/"/>
+      <category term="方法" scheme="https://vincentjan.top/tags/%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
@@ -211,7 +237,7 @@
     <link href="https://vincentjan.top/2019/08/20/%E6%88%91%E7%9C%8B%E8%BF%87%E8%8D%89%E5%8F%B6%E8%91%B3%E8%95%A4.html"/>
     <id>https://vincentjan.top/2019/08/20/我看过草叶葳蕤.html</id>
     <published>2019-08-20T14:28:07.000Z</published>
-    <updated>2020-04-30T06:50:41.286Z</updated>
+    <updated>2020-06-07T12:38:26.163Z</updated>
     
     <summary type="html">
     
@@ -224,7 +250,7 @@
       <category term="摘录" scheme="https://vincentjan.top/categories/%E6%96%87/%E6%91%98%E5%BD%95/"/>
     
     
-      <category term="文学" scheme="https://vincentjan.top/tags/%E6%96%87%E5%AD%A6/"/>
+      <category term="故事" scheme="https://vincentjan.top/tags/%E6%95%85%E4%BA%8B/"/>
     
   </entry>
   
@@ -233,7 +259,7 @@
     <link href="https://vincentjan.top/2019/08/18/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%EF%BC%88IEEE754%EF%BC%89.html"/>
     <id>https://vincentjan.top/2019/08/18/C语言中浮点数的二进制表示（IEEE754）.html</id>
     <published>2019-08-17T22:36:29.000Z</published>
-    <updated>2020-02-13T14:40:34.000Z</updated>
+    <updated>2020-06-07T12:34:25.292Z</updated>
     
     <summary type="html">
     
@@ -248,7 +274,7 @@
       <category term="计算机" scheme="https://vincentjan.top/categories/%E6%9C%AF/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-      <category term="C语言" scheme="https://vincentjan.top/tags/C%E8%AF%AD%E8%A8%80/"/>
+      <category term="C++" scheme="https://vincentjan.top/tags/C/"/>
     
   </entry>
   
@@ -257,7 +283,7 @@
     <link href="https://vincentjan.top/2019/08/18/%E6%95%85%E4%BA%8B%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0.html"/>
     <id>https://vincentjan.top/2019/08/18/故事结构笔记.html</id>
     <published>2019-08-17T22:30:54.000Z</published>
-    <updated>2020-02-13T14:40:35.000Z</updated>
+    <updated>2020-06-07T12:36:53.062Z</updated>
     
     <summary type="html">
     
@@ -272,6 +298,10 @@
       <category term="读书笔记" scheme="https://vincentjan.top/categories/%E6%96%87/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
+      <category term="故事" scheme="https://vincentjan.top/tags/%E6%95%85%E4%BA%8B/"/>
+    
+      <category term="方法" scheme="https://vincentjan.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
   </entry>
   
   <entry>
@@ -279,7 +309,7 @@
     <link href="https://vincentjan.top/2019/08/18/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6.html"/>
     <id>https://vincentjan.top/2019/08/18/如何阅读一本书.html</id>
     <published>2019-08-17T20:30:54.000Z</published>
-    <updated>2020-02-13T14:40:34.000Z</updated>
+    <updated>2020-06-07T12:37:01.602Z</updated>
     
     <summary type="html">
     
@@ -294,7 +324,7 @@
       <category term="读书笔记" scheme="https://vincentjan.top/categories/%E6%96%87/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="效率" scheme="https://vincentjan.top/tags/%E6%95%88%E7%8E%87/"/>
+      <category term="方法" scheme="https://vincentjan.top/tags/%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
@@ -378,7 +408,7 @@
     <link href="https://vincentjan.top/2019/08/18/%E8%BF%9C%E6%99%AF.html"/>
     <id>https://vincentjan.top/2019/08/18/远景.html</id>
     <published>2019-08-17T20:00:54.000Z</published>
-    <updated>2020-02-13T14:40:35.000Z</updated>
+    <updated>2020-06-07T12:35:43.202Z</updated>
     
     <summary type="html">
     
