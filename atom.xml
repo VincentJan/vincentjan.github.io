@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://vincentjan.top/"/>
-  <updated>2020-06-07T12:32:03.022Z</updated>
+  <updated>2020-06-07T16:04:00.837Z</updated>
   <id>https://vincentjan.top/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Linux平台下C++库的生成与使用</title>
+    <link href="https://vincentjan.top/2020/06/07/CreateAndUseLibrary-Linux.html"/>
+    <id>https://vincentjan.top/2020/06/07/CreateAndUseLibrary-Linux.html</id>
+    <published>2020-06-07T13:32:06.000Z</published>
+    <updated>2020-06-07T16:04:00.837Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;学习C++也有一段时间了，却一直不太了解库相关的知识，今天得空学习了一些基础用法，在此记录。&lt;/p&gt;
+&lt;p&gt;内容包含：&lt;/p&gt;
+&lt;p&gt;1.什么是库(library)？静态库与动态库的区别与优缺点&lt;/p&gt;
+&lt;p&gt;3.静态库的生成与使用&lt;/p&gt;
+&lt;p&gt;4.动态库的生成与使用&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="术" scheme="https://vincentjan.top/categories/%E6%9C%AF/"/>
+    
+      <category term="程序" scheme="https://vincentjan.top/categories/%E6%9C%AF/%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="C++" scheme="https://vincentjan.top/tags/C/"/>
+    
+      <category term="Linux" scheme="https://vincentjan.top/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>基于C++的Python3入门笔记（一）——基本语法篇</title>
     <link href="https://vincentjan.top/2020/06/07/%E5%9F%BA%E4%BA%8EC++%E7%9A%84Python3%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0.html"/>
     <id>https://vincentjan.top/2020/06/07/基于C++的Python3入门笔记.html</id>
     <published>2020-06-07T12:36:29.000Z</published>
-    <updated>2020-06-07T12:32:03.022Z</updated>
+    <updated>2020-06-07T14:00:42.666Z</updated>
     
     <summary type="html">
     
@@ -33,7 +63,7 @@
     
       <category term="术" scheme="https://vincentjan.top/categories/%E6%9C%AF/"/>
     
-      <category term="计算机" scheme="https://vincentjan.top/categories/%E6%9C%AF/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="程序" scheme="https://vincentjan.top/categories/%E6%9C%AF/%E7%A8%8B%E5%BA%8F/"/>
     
     
       <category term="Python" scheme="https://vincentjan.top/tags/Python/"/>
@@ -45,7 +75,7 @@
     <link href="https://vincentjan.top/2020/04/24/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84%E5%8F%8A%E5%85%B6%E9%9D%9E%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86.html"/>
     <id>https://vincentjan.top/2020/04/24/二叉树的存储结构及其非层序遍历.html</id>
     <published>2020-04-23T16:36:29.000Z</published>
-    <updated>2020-06-07T12:34:51.372Z</updated>
+    <updated>2020-06-07T14:00:50.196Z</updated>
     
     <summary type="html">
     
@@ -65,7 +95,7 @@
     
       <category term="术" scheme="https://vincentjan.top/categories/%E6%9C%AF/"/>
     
-      <category term="计算机" scheme="https://vincentjan.top/categories/%E6%9C%AF/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="程序" scheme="https://vincentjan.top/categories/%E6%9C%AF/%E7%A8%8B%E5%BA%8F/"/>
     
     
       <category term="C++" scheme="https://vincentjan.top/tags/C/"/>
@@ -83,7 +113,7 @@
     <link href="https://vincentjan.top/2020/03/20/ArchLinuxConfig.html"/>
     <id>https://vincentjan.top/2020/03/20/ArchLinuxConfig.html</id>
     <published>2020-03-20T12:36:29.000Z</published>
-    <updated>2020-04-30T06:58:19.271Z</updated>
+    <updated>2020-06-07T14:00:12.006Z</updated>
     
     <summary type="html">
     
@@ -95,7 +125,7 @@
     
       <category term="术" scheme="https://vincentjan.top/categories/%E6%9C%AF/"/>
     
-      <category term="计算机" scheme="https://vincentjan.top/categories/%E6%9C%AF/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="日用" scheme="https://vincentjan.top/categories/%E6%9C%AF/%E6%97%A5%E7%94%A8/"/>
     
     
       <category term="Linux" scheme="https://vincentjan.top/tags/Linux/"/>
@@ -107,7 +137,7 @@
     <link href="https://vincentjan.top/2020/02/26/CppDeclarationAndDefinition.html"/>
     <id>https://vincentjan.top/2020/02/26/CppDeclarationAndDefinition.html</id>
     <published>2020-02-26T05:51:29.000Z</published>
-    <updated>2020-05-14T11:12:28.089Z</updated>
+    <updated>2020-06-07T14:00:20.786Z</updated>
     
     <summary type="html">
     
@@ -121,7 +151,7 @@
     
       <category term="术" scheme="https://vincentjan.top/categories/%E6%9C%AF/"/>
     
-      <category term="计算机" scheme="https://vincentjan.top/categories/%E6%9C%AF/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="程序" scheme="https://vincentjan.top/categories/%E6%9C%AF/%E7%A8%8B%E5%BA%8F/"/>
     
     
       <category term="C++" scheme="https://vincentjan.top/tags/C/"/>
@@ -259,7 +289,7 @@
     <link href="https://vincentjan.top/2019/08/18/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%EF%BC%88IEEE754%EF%BC%89.html"/>
     <id>https://vincentjan.top/2019/08/18/C语言中浮点数的二进制表示（IEEE754）.html</id>
     <published>2019-08-17T22:36:29.000Z</published>
-    <updated>2020-06-07T12:34:25.292Z</updated>
+    <updated>2020-06-07T14:00:34.606Z</updated>
     
     <summary type="html">
     
@@ -271,7 +301,7 @@
     
       <category term="术" scheme="https://vincentjan.top/categories/%E6%9C%AF/"/>
     
-      <category term="计算机" scheme="https://vincentjan.top/categories/%E6%9C%AF/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="程序" scheme="https://vincentjan.top/categories/%E6%9C%AF/%E7%A8%8B%E5%BA%8F/"/>
     
     
       <category term="C++" scheme="https://vincentjan.top/tags/C/"/>
@@ -298,9 +328,9 @@
       <category term="读书笔记" scheme="https://vincentjan.top/categories/%E6%96%87/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="故事" scheme="https://vincentjan.top/tags/%E6%95%85%E4%BA%8B/"/>
-    
       <category term="方法" scheme="https://vincentjan.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="故事" scheme="https://vincentjan.top/tags/%E6%95%85%E4%BA%8B/"/>
     
   </entry>
   
@@ -333,7 +363,7 @@
     <link href="https://vincentjan.top/2019/08/18/%E8%99%9A%E6%9E%84%E6%96%87%E5%AD%A6%E5%88%9B%E4%BD%9C%E7%BB%83%E4%B9%A003%E2%80%94%E2%80%94%E5%AE%A0%E7%89%A9.html"/>
     <id>https://vincentjan.top/2019/08/18/虚构文学创作练习03——宠物.html</id>
     <published>2019-08-17T20:05:54.000Z</published>
-    <updated>2020-02-25T17:01:18.297Z</updated>
+    <updated>2020-06-07T13:58:29.375Z</updated>
     
     <summary type="html">
     
@@ -343,7 +373,7 @@
     
       <category term="文" scheme="https://vincentjan.top/categories/%E6%96%87/"/>
     
-      <category term="故事" scheme="https://vincentjan.top/categories/%E6%96%87/%E6%95%85%E4%BA%8B/"/>
+      <category term="写作" scheme="https://vincentjan.top/categories/%E6%96%87/%E5%86%99%E4%BD%9C/"/>
     
     
       <category term="故事" scheme="https://vincentjan.top/tags/%E6%95%85%E4%BA%8B/"/>
@@ -357,7 +387,7 @@
     <link href="https://vincentjan.top/2019/08/18/%E8%99%9A%E6%9E%84%E6%96%87%E5%AD%A6%E5%88%9B%E4%BD%9C%E7%BB%83%E4%B9%A002%E2%80%94%E2%80%94%E6%84%8F%E8%AF%86.html"/>
     <id>https://vincentjan.top/2019/08/18/虚构文学创作练习02——意识.html</id>
     <published>2019-08-17T20:05:52.000Z</published>
-    <updated>2020-02-25T17:01:14.727Z</updated>
+    <updated>2020-06-07T13:58:04.465Z</updated>
     
     <summary type="html">
     
@@ -369,7 +399,7 @@
     
       <category term="文" scheme="https://vincentjan.top/categories/%E6%96%87/"/>
     
-      <category term="故事" scheme="https://vincentjan.top/categories/%E6%96%87/%E6%95%85%E4%BA%8B/"/>
+      <category term="写作" scheme="https://vincentjan.top/categories/%E6%96%87/%E5%86%99%E4%BD%9C/"/>
     
     
       <category term="故事" scheme="https://vincentjan.top/tags/%E6%95%85%E4%BA%8B/"/>
@@ -383,7 +413,7 @@
     <link href="https://vincentjan.top/2019/08/18/%E8%99%9A%E6%9E%84%E6%96%87%E5%AD%A6%E5%88%9B%E4%BD%9C%E7%BB%83%E4%B9%A001%E2%80%94%E2%80%94%E6%9F%90%E4%BA%BA%E7%9A%84%E5%A9%9A%E7%BA%B1%E7%85%A7.html"/>
     <id>https://vincentjan.top/2019/08/18/虚构文学创作练习01——某人的婚纱照.html</id>
     <published>2019-08-17T20:05:50.000Z</published>
-    <updated>2020-05-22T04:11:15.024Z</updated>
+    <updated>2020-06-07T13:58:00.815Z</updated>
     
     <summary type="html">
     
@@ -394,7 +424,7 @@
     
       <category term="文" scheme="https://vincentjan.top/categories/%E6%96%87/"/>
     
-      <category term="故事" scheme="https://vincentjan.top/categories/%E6%96%87/%E6%95%85%E4%BA%8B/"/>
+      <category term="写作" scheme="https://vincentjan.top/categories/%E6%96%87/%E5%86%99%E4%BD%9C/"/>
     
     
       <category term="故事" scheme="https://vincentjan.top/tags/%E6%95%85%E4%BA%8B/"/>
@@ -408,7 +438,7 @@
     <link href="https://vincentjan.top/2019/08/18/%E8%BF%9C%E6%99%AF.html"/>
     <id>https://vincentjan.top/2019/08/18/远景.html</id>
     <published>2019-08-17T20:00:54.000Z</published>
-    <updated>2020-06-07T12:35:43.202Z</updated>
+    <updated>2020-06-07T13:58:37.726Z</updated>
     
     <summary type="html">
     
@@ -418,7 +448,7 @@
     
       <category term="文" scheme="https://vincentjan.top/categories/%E6%96%87/"/>
     
-      <category term="随笔" scheme="https://vincentjan.top/categories/%E6%96%87/%E9%9A%8F%E7%AC%94/"/>
+      <category term="写作" scheme="https://vincentjan.top/categories/%E6%96%87/%E5%86%99%E4%BD%9C/"/>
     
     
       <category term="诗" scheme="https://vincentjan.top/tags/%E8%AF%97/"/>
