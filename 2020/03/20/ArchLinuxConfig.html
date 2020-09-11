@@ -1,267 +1,17 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon.png">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vincentjan.top","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
-
-  <meta name="description" content="Arch Linux是GNU&#x2F;Linux的众多发行版中相对小众的一个。相对Ubuntu等更加广为人知的发行版，Arch对新手并不是很友好。这篇文章旨在从零开始，一步一步帮助读者完成Arch Linux的安装与配置。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Arch Linux安装与配置">
-<meta property="og:url" content="https://vincentjan.top/2020/03/20/ArchLinuxConfig.html">
-<meta property="og:site_name" content="Vincent&#39;s Blog">
-<meta property="og:description" content="Arch Linux是GNU&#x2F;Linux的众多发行版中相对小众的一个。相对Ubuntu等更加广为人知的发行版，Arch对新手并不是很友好。这篇文章旨在从零开始，一步一步帮助读者完成Arch Linux的安装与配置。">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-03-20T12:36:29.000Z">
-<meta property="article:modified_time" content="2020-07-23T07:29:09.042Z">
-<meta property="article:author" content="Vincent Jan">
-<meta property="article:tag" content="Linux">
-<meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="https://vincentjan.top/2020/03/20/ArchLinuxConfig.html">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'en-US'
-  };
-</script>
-
-  <title>Arch Linux安装与配置 | Vincent's Blog</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Vincent's Blog</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-      <p class="site-subtitle" itemprop="description">Make life more fun!</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
-
-  </li>
-        <li class="menu-item menu-item-repositories">
-
-    <a href="/repositories/" rel="section"><i class="fa fa-database fa-fw"></i>Repositories</a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-  <div class="reading-progress-bar"></div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content post posts-expand">
-            
-
-    
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en-US">
-    <link itemprop="mainEntityOfPage" href="https://vincentjan.top/2020/03/20/ArchLinuxConfig.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Vincent Jan">
-      <meta itemprop="description" content="飞光飞光，劝尔一杯酒。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vincent's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          Arch Linux安装与配置
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-03-20 20:36:29" itemprop="dateCreated datePublished" datetime="2020-03-20T20:36:29+08:00">2020-03-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-23 15:29:09" itemprop="dateModified" datetime="2020-07-23T15:29:09+08:00">2020-07-23</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E7%82%B9%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">学点技术</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E7%82%B9%E6%8A%80%E6%9C%AF/Linux%E6%8A%98%E8%85%BE%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">Linux折腾记</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.7k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <blockquote>
+<!DOCTYPE html><html lang="en-US"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"><meta name="description" content="Arch Linux安装与配置 - Vincent's Blog"><meta name="theme-color" content="#ebc65a"><title>Arch Linux安装与配置 - Vincent's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css"><script src="https://cdn.bootcss.com/highlight.js/9.6.0/highlight.min.js" defer></script><script src="/js/paper.js" defer></script><link rel="stylesheet" href="/css/tocbot.css"><script src="/js/tocbot.js" defer></script><script>window.addEventListener('DOMContentLoaded', () => {
+  tocbot.init({
+    // Where to render the table of contents.
+    tocSelector: '.toc__content',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: '.article__content',
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    // For headings inside relative or absolute positioned containers within content.
+    hasInnerContainers: false,
+    orderedList: false,
+    collapseDepth: 3,
+  });
+})</script><link rel="preload" href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css"><link rel="preload" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap"><meta name="generator" content="Hexo 4.2.0"></head><body><div class="mask-border"></div><div class="head"><div class="head__inner"><h1><a href="/">Vincent's Blog</a></h1><p>飞光飞光，劝尔一杯酒。</p></div></div><div class="paper-container"><div class="main"><div class="location-bar"><div class="line-1"><div class="horizontal-line" style="height: 3px"></div></div><div class="line-2"><div class="horizontal-line" style="height: 1px"></div></div><a class="text" href="/">Index</a><a class="text" href="/about">About</a><a class="text" href="/repositories">Repositories</a><a class="text" href="/links">Links</a><a class="text" href="/toolbox">Tool Box </a><div class="switch-button"><input class="container_toggle" type="checkbox" id="switch" name="mode"><label for="switch">Toggle</label></div><div class="line-3"><div class="horizontal-line" style="height: 1px"></div></div></div><div class="main__2-col"><article class="post-view__article"><div class="article__infomation"><div class="posts-item"><h2 class="posts-item__title"><a href="">Arch Linux安装与配置</a></h2><span class="post__date">2020-03-20</span><a href="/tags/Linux/"><span class="post__tags">#Linux</span></a></div></div><div class="article__content"><blockquote>
 <p>Arch Linux是GNU/Linux的众多发行版中相对小众的一个。相对Ubuntu等更加广为人知的发行版，Arch对新手并不是很友好。这篇文章旨在从零开始，一步一步帮助读者完成Arch Linux的安装与配置。</p>
 </blockquote>
 <a id="more"></a>
@@ -333,7 +83,7 @@
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h3><p>参照<a href="https://wiki.archlinux.org/index.php/General_recommendations" target="_blank" rel="noopener">General recommendations-ArchWiki</a>，完成用户、网络等设置，并安装xorg服务。</p>
 <h3 id="yay"><a href="#yay" class="headerlink" title="yay"></a>yay</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><ol>
 <li>安装<code>base-devel</code>、<code>git</code>、<code>go</code></li>
-<li>执行<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://aur.archlinux.org/yay.git</span><br><span class="line"><span class="built_in">cd</span> yay</span><br><span class="line">makepkg -si</span><br></pre></td></tr></table></figure>
+<li>执行<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://aur.archlinux.org/yay.git<br><span class="hljs-built_in">cd</span> yay<br>makepkg -si<br></code></pre></td></tr></table></figure>
 </li>
 </ol>
 <h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><ol>
@@ -362,7 +112,7 @@
 <li><p>安装<code>sudo pacman -S trojan</code></p>
 </li>
 <li><p>编辑配置文件/etc/trojan/config.json</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> <span class="attr">"run_type"</span>: <span class="string">"client"</span>,</span><br><span class="line"> <span class="attr">"local_addr"</span>: <span class="string">"127.0.0.1"</span>,</span><br><span class="line"> <span class="attr">"local_port"</span>: <span class="number">1080</span>,</span><br><span class="line"> <span class="attr">"remote_addr"</span>: <span class="string">"your addr"</span>,</span><br><span class="line"> <span class="attr">"remote_port"</span>: your addr port,</span><br><span class="line"> <span class="attr">"password"</span>: [</span><br><span class="line">     <span class="string">"your password"</span></span><br><span class="line"> ],</span><br><span class="line"> <span class="attr">"log_level"</span>: <span class="number">1</span>,</span><br><span class="line"> <span class="attr">"ssl"</span>: &#123;</span><br><span class="line">     <span class="attr">"verify"</span>: <span class="literal">true</span>,</span><br><span class="line">     <span class="attr">"verify_hostname"</span>: <span class="literal">true</span>,</span><br><span class="line">     <span class="attr">"cert"</span>: <span class="string">""</span>,</span><br><span class="line">     <span class="attr">"cipher"</span>: <span class="string">"ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES128-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA:AES128-SHA:AES256-SHA:DES-CBC3-SHA"</span>,</span><br><span class="line">     <span class="attr">"cipher_tls13"</span>: <span class="string">"TLS_AES_128_GCM_SHA256:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_256_GCM_SHA384"</span>,</span><br><span class="line">     <span class="attr">"sni"</span>: <span class="string">""</span>,</span><br><span class="line">     <span class="attr">"alpn"</span>: [</span><br><span class="line">         <span class="string">"h2"</span>,</span><br><span class="line">         <span class="string">"http/1.1"</span></span><br><span class="line">     ],</span><br><span class="line">     <span class="attr">"reuse_session"</span>: <span class="literal">true</span>,</span><br><span class="line">     <span class="attr">"session_ticket"</span>: <span class="literal">false</span>,</span><br><span class="line">     <span class="attr">"curves"</span>: <span class="string">""</span></span><br><span class="line"> &#125;,</span><br><span class="line"> <span class="attr">"tcp"</span>: &#123;</span><br><span class="line">     <span class="attr">"no_delay"</span>: <span class="literal">true</span>,</span><br><span class="line">     <span class="attr">"keep_alive"</span>: <span class="literal">true</span>,</span><br><span class="line">     <span class="attr">"reuse_port"</span>: <span class="literal">false</span>,</span><br><span class="line">     <span class="attr">"fast_open"</span>: <span class="literal">false</span>,</span><br><span class="line">     <span class="attr">"fast_open_qlen"</span>: <span class="number">20</span></span><br><span class="line"> &#125;</span><br><span class="line">&#125;//通常来说除了上面三个值以外不必修改</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br> <span class="hljs-attr">"run_type"</span>: <span class="hljs-string">"client"</span>,<br> <span class="hljs-attr">"local_addr"</span>: <span class="hljs-string">"127.0.0.1"</span>,<br> <span class="hljs-attr">"local_port"</span>: <span class="hljs-number">1080</span>,<br> <span class="hljs-attr">"remote_addr"</span>: <span class="hljs-string">"your addr"</span>,<br> <span class="hljs-attr">"remote_port"</span>: your addr port,<br> <span class="hljs-attr">"password"</span>: [<br>     <span class="hljs-string">"your password"</span><br> ],<br> <span class="hljs-attr">"log_level"</span>: <span class="hljs-number">1</span>,<br> <span class="hljs-attr">"ssl"</span>: &#123;<br>     <span class="hljs-attr">"verify"</span>: <span class="hljs-literal">true</span>,<br>     <span class="hljs-attr">"verify_hostname"</span>: <span class="hljs-literal">true</span>,<br>     <span class="hljs-attr">"cert"</span>: <span class="hljs-string">""</span>,<br>     <span class="hljs-attr">"cipher"</span>: <span class="hljs-string">"ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES128-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA:AES128-SHA:AES256-SHA:DES-CBC3-SHA"</span>,<br>     <span class="hljs-attr">"cipher_tls13"</span>: <span class="hljs-string">"TLS_AES_128_GCM_SHA256:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_256_GCM_SHA384"</span>,<br>     <span class="hljs-attr">"sni"</span>: <span class="hljs-string">""</span>,<br>     <span class="hljs-attr">"alpn"</span>: [<br>         <span class="hljs-string">"h2"</span>,<br>         <span class="hljs-string">"http/1.1"</span><br>     ],<br>     <span class="hljs-attr">"reuse_session"</span>: <span class="hljs-literal">true</span>,<br>     <span class="hljs-attr">"session_ticket"</span>: <span class="hljs-literal">false</span>,<br>     <span class="hljs-attr">"curves"</span>: <span class="hljs-string">""</span><br> &#125;,<br> <span class="hljs-attr">"tcp"</span>: &#123;<br>     <span class="hljs-attr">"no_delay"</span>: <span class="hljs-literal">true</span>,<br>     <span class="hljs-attr">"keep_alive"</span>: <span class="hljs-literal">true</span>,<br>     <span class="hljs-attr">"reuse_port"</span>: <span class="hljs-literal">false</span>,<br>     <span class="hljs-attr">"fast_open"</span>: <span class="hljs-literal">false</span>,<br>     <span class="hljs-attr">"fast_open_qlen"</span>: <span class="hljs-number">20</span><br> &#125;<br>&#125;//通常来说除了上面三个值以外不必修改<br></code></pre></td></tr></table></figure>
 <ol>
 <li>启动服务<code>sudo systemctl start trojan.service</code></li>
 <li>开机自启<code>sudo systemctl enable trojan.service</code></li>
@@ -374,7 +124,7 @@
 <li><p>安装<code>sudo pacman -S privoxy</code></p>
 </li>
 <li><p>编辑配置文件/etc/privoxy/config</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;只列出需要修改的值</span><br><span class="line">listem-address  127.0.0.1:8118</span><br><span class="line">forward-socks5  &#x2F;  127.0.0.1:1080 .</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-comment">//只列出需要修改的值</span><br>listem-address  <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">8118</span><br>forward-socks5  /  <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">1080</span> .<br></code></pre></td></tr></table></figure>
 <ul>
 <li>注意第二行末尾的点</li>
 </ul>
@@ -386,25 +136,25 @@
 </ol>
 <p>参照<a href="https://wiki.archlinux.org/index.php/Privoxy_(简体中文" target="_blank" rel="noopener">Privoxy - ArchWiki</a>)</p>
 <h4 id="配置命令行模式的代理"><a href="#配置命令行模式的代理" class="headerlink" title="配置命令行模式的代理"></a>配置命令行模式的代理</h4><p>将以下内容添加进终端的配置文件.bashrc或.zshrc</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">proxy_off</span></span>()&#123;</span><br><span class="line">	<span class="built_in">unset</span> http_proxy</span><br><span class="line">	<span class="built_in">unset</span> https_proxy</span><br><span class="line">	<span class="built_in">unset</span> ftp_proxy</span><br><span class="line">	<span class="built_in">unset</span> rsync_proxy</span><br><span class="line">	<span class="built_in">echo</span> -e <span class="string">"proxy off"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> proxy_on&#123;</span><br><span class="line">	<span class="built_in">export</span> no_proxy=<span class="string">"localhost,127.0.0.1,localaddress,.localdomain.com"</span></span><br><span class="line">	<span class="built_in">export</span> http_proxy=<span class="string">"http://127.0.0.1:8118"</span></span><br><span class="line">	<span class="built_in">export</span> https_proxy=<span class="string">"http://127.0.0.1:8118"</span></span><br><span class="line">	<span class="built_in">export</span> ftp_proxy=<span class="string">"http://127.0.0.1:8118"</span></span><br><span class="line">	<span class="built_in">export</span> rsync_proxy=<span class="string">"http://127.0.0.1:8118"</span></span><br><span class="line">	<span class="built_in">export</span> HTTP_PROXY=<span class="string">"http://127.0.0.1:8118"</span></span><br><span class="line">	<span class="built_in">export</span> HTTPS_PROXY=<span class="string">"http://127.0.0.1:8118"</span></span><br><span class="line">	<span class="built_in">export</span> FTP_PROXY=<span class="string">"http://127.0.0.1:8118"</span></span><br><span class="line">	<span class="built_in">export</span> RSYNC_PROXY=<span class="string">"http://127.0.0.1:8118"</span></span><br><span class="line">	<span class="built_in">echo</span> -e <span class="string">"proxy on"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">proxy_off</span></span>()&#123;<br> <span class="hljs-built_in">unset</span> http_proxy<br> <span class="hljs-built_in">unset</span> https_proxy<br> <span class="hljs-built_in">unset</span> ftp_proxy<br> <span class="hljs-built_in">unset</span> rsync_proxy<br> <span class="hljs-built_in">echo</span> -e <span class="hljs-string">"proxy off"</span><br>&#125;<br><br><span class="hljs-keyword">function</span> proxy_on&#123;<br> <span class="hljs-built_in">export</span> no_proxy=<span class="hljs-string">"localhost,127.0.0.1,localaddress,.localdomain.com"</span><br> <span class="hljs-built_in">export</span> http_proxy=<span class="hljs-string">"http://127.0.0.1:8118"</span><br> <span class="hljs-built_in">export</span> https_proxy=<span class="hljs-string">"http://127.0.0.1:8118"</span><br> <span class="hljs-built_in">export</span> ftp_proxy=<span class="hljs-string">"http://127.0.0.1:8118"</span><br> <span class="hljs-built_in">export</span> rsync_proxy=<span class="hljs-string">"http://127.0.0.1:8118"</span><br> <span class="hljs-built_in">export</span> HTTP_PROXY=<span class="hljs-string">"http://127.0.0.1:8118"</span><br> <span class="hljs-built_in">export</span> HTTPS_PROXY=<span class="hljs-string">"http://127.0.0.1:8118"</span><br> <span class="hljs-built_in">export</span> FTP_PROXY=<span class="hljs-string">"http://127.0.0.1:8118"</span><br> <span class="hljs-built_in">export</span> RSYNC_PROXY=<span class="hljs-string">"http://127.0.0.1:8118"</span><br> <span class="hljs-built_in">echo</span> -e <span class="hljs-string">"proxy on"</span><br>&#125;<br></code></pre></td></tr></table></figure>
 <p>重新登录就可以使用<code>proxy_on</code>/<code>proxy_off</code>来开启/关闭代理了</p>
 <p>如果在进入图形界面之前开启了代理，那么进入图形界面后即为全局代理；反之，则默认不走代理，需要为应用单独配置。</p>
 <h3 id="进军图形界面"><a href="#进军图形界面" class="headerlink" title="进军图形界面"></a>进军图形界面</h3><h4 id="安装前准备"><a href="#安装前准备" class="headerlink" title="安装前准备"></a>安装前准备</h4><ul>
 <li><p>安装xorg-xinit，并将配置文件复制到主目录：</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S xorg-xinit</span><br><span class="line">cp /etc/X11/xinit/xinitrc ~/.xinitrc</span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -S xorg-xinit<br>cp /etc/X11/xinit/xinitrc ~/.xinitrc<br></code></pre></td></tr></table></figure>
 <p>  完成下面任一环境的配置后，使用<code>startx</code>进入图形界面</p>
 <p>  <strong><em>不要用sudo来执行startx!</em></strong></p>
 </li>
 <li><p>安装一些字体</p>
 <ul>
 <li><p>基础</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S ttf-dejavu ttf-liberation wqy-microhei wqy--zenhei</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -S ttf-dejavu ttf-liberation wqy-microhei wqy--zenhei<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>等宽</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S ttf-monaco ttf-jetbrains-mono</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -S ttf-monaco ttf-jetbrains-mono<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>图形</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S ttf-font-awesome</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">yay -S ttf-font-awesome<br></code></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -423,7 +173,7 @@
 </ol>
 </li>
 <li><p>添加环境变量，在主目录新建一个文件~/.pam_environment，并加入以下内容</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GTK_IM_MODULE=fcitx</span><br><span class="line">QT_IM_MODULE=fcitx</span><br><span class="line">XMODIFIERS=@im=fcitx</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">GTK_IM_MODULE=fcitx<br>QT_IM_MODULE=fcitx<br>XMODIFIERS=@im=fcitx<br></code></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
@@ -453,230 +203,4 @@
 <h5 id="附配置文件与官方文档"><a href="#附配置文件与官方文档" class="headerlink" title="附配置文件与官方文档"></a>附配置文件与官方文档</h5><p><a href="https://github.com/VincentJan/Arch-i3_configfile" target="_blank" rel="noopener">VincentJan/Arch-i3_configfile</a></p>
 <p><a href="https://i3wm.org/docs/userguide.html" target="_blank" rel="noopener">i3 User’s Guide</a></p>
 <p><a href="https://github.com/polybar/polybar/wiki" target="_blank" rel="noopener">polybar wiki</a></p>
-
-    </div>
-
-    
-    
-    
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/Linux/" rel="tag"># Linux</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2020/02/26/CppDeclarationAndDefinition.html" rel="prev" title="C++的声明与定义">
-      <i class="fa fa-chevron-left"></i> C++的声明与定义
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/04/24/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84%E5%8F%8A%E5%85%B6%E9%9D%9E%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86.html" rel="next" title="二叉树的存储结构及其非层序遍历">
-      二叉树的存储结构及其非层序遍历 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始之前"><span class="nav-number">1.</span> <span class="nav-text">开始之前</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#检查你的硬件"><span class="nav-number">1.1.</span> <span class="nav-text">检查你的硬件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么选择Arch-Linux"><span class="nav-number">1.2.</span> <span class="nav-text">为什么选择Arch Linux</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装：基本系统的搭建"><span class="nav-number">2.</span> <span class="nav-text">安装：基本系统的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">2.1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对wiki的一些补充"><span class="nav-number">2.2.</span> <span class="nav-text">对wiki的一些补充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本配置"><span class="nav-number">3.1.</span> <span class="nav-text">基本配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#yay"><span class="nav-number">3.2.</span> <span class="nav-text">yay</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">3.2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-number">3.2.2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zsh-amp-amp-oh-my-zsh"><span class="nav-number">3.3.</span> <span class="nav-text">zsh &amp;&amp; oh-my-zsh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梯子"><span class="nav-number">3.4.</span> <span class="nav-text">梯子</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Trojan"><span class="nav-number">3.4.1.</span> <span class="nav-text">Trojan</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Privoxy"><span class="nav-number">3.4.2.</span> <span class="nav-text">Privoxy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置命令行模式的代理"><span class="nav-number">3.4.3.</span> <span class="nav-text">配置命令行模式的代理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进军图形界面"><span class="nav-number">3.5.</span> <span class="nav-text">进军图形界面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装前准备"><span class="nav-number">3.5.1.</span> <span class="nav-text">安装前准备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#i3-gaps"><span class="nav-number">3.5.2.</span> <span class="nav-text">i3-gaps</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装-1"><span class="nav-number">3.5.2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#附配置文件与官方文档"><span class="nav-number">3.5.2.2.</span> <span class="nav-text">附配置文件与官方文档</span></a></li></ol></li></ol></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Vincent Jan</p>
-  <div class="site-description" itemprop="description">飞光飞光，劝尔一杯酒。</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives">
-          <span class="site-state-item-count">17</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">9</span>
-        <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">10</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/vincentjan" title="GitHub → https://github.com/vincentjan" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:vincentjan200@163.com" title="E-Mail → mailto:vincentjan200@163.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
-      </span>
-  </div>
-
-
-   <div class="feed-link motion-element">
-        <a href="/atom.xml" rel="alternate">
-           <i class="fa fa-rss"></i>
-           RSS
-        </a>
-   </div>
-
-  <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
-  </div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 2019 – 
-  <span itemprop="copyrightYear">2020</span>
-  <span class="with-love">
-    <i class=" "></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Vincent Jan</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-area"></i>
-    </span>
-      <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">114k</span>
-</div>
-
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/muse.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
-
-  
-<script src="/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-</body>
-</html>
+</div></article><div class="post-view__sidebar"><div class="sidebar"><div class="tocbot"><h2>Toc</h2><div class="toc__content"></div></div><h2>Contact Me</h2><div class="sidebar__link"><ul><li><a href="https://github.com/VincentJan" target="_blank" rel="noopener">Github</a></li><li><a href="mailto:vincentjan200@163.com">Mail</a></li></ul></div><h2>Archives</h2><div class="sidebar__archives"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li></ul></div><h2>Categories</h2><div class="sidebar__categories"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C%E8%89%B9%E5%8F%97%E8%8B%A6%E4%B9%8B%E6%97%85/">C艹受苦之旅</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux%E6%8A%98%E8%85%BE%E8%AE%B0/">Linux折腾记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%8D%E5%86%99%E7%A8%8B%E5%BA%8F/">不写程序</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%98%E5%BD%95/">摘录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%A9%E5%84%BF%E8%9B%87/">玩儿蛇</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a></li></ul></div><h2>Tags</h2><div class="sidebar__tags"><ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%85%E4%BA%8B/" rel="tag">故事</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95/" rel="tag">方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%9E%84%E6%96%87%E5%AD%A6%E5%88%9B%E4%BD%9C%E7%BB%83%E4%B9%A0/" rel="tag">虚构文学创作练习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%97/" rel="tag">诗</a></li></ul></div></div></div></div><div class="horizontal-line" style="height: 1px"></div><div class="main__bottom"><div class="pre-next"><a class="pre-button" href="/2020/04/24/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84%E5%8F%8A%E5%85%B6%E9%9D%9E%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86.html">二叉树的存储结构及其非层序遍历</a><a class="next-button" href="/2020/02/26/CppDeclarationAndDefinition.html">C++的声明与定义</a></div></div></div></div><div class="footer"><span>©️2019-2020 Theme Designed By&nbsp;<strong><a href="https://github.com/random-yang" target="_blank" rel="noopener">RandomYang</a></strong> Powered By&nbsp;</span><strong><a href="https://hexo.io" target="_blank" rel="noopener">hexo</a></strong></div><div class="darkmode-mask" id="darkmode-mask"></div><div class="sidebar__button"></div></body></html>

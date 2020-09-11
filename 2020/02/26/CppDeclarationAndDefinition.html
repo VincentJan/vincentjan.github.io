@@ -1,283 +1,33 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon.png">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vincentjan.top","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
-
-  <meta name="description" content="偶然间看见一个声明: 1struct tm *(*(*Pfunc)[3])(int(*)(int, int), float(*[])(float)); 一时间感到云里雾里。为了弄懂此类复杂的声明学习一些相关的知识，在此总结。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="C++的声明与定义">
-<meta property="og:url" content="https://vincentjan.top/2020/02/26/CppDeclarationAndDefinition.html">
-<meta property="og:site_name" content="Vincent&#39;s Blog">
-<meta property="og:description" content="偶然间看见一个声明: 1struct tm *(*(*Pfunc)[3])(int(*)(int, int), float(*[])(float)); 一时间感到云里雾里。为了弄懂此类复杂的声明学习一些相关的知识，在此总结。">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-26T05:51:29.000Z">
-<meta property="article:modified_time" content="2020-07-23T07:33:35.999Z">
-<meta property="article:author" content="Vincent Jan">
-<meta property="article:tag" content="C++">
-<meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="https://vincentjan.top/2020/02/26/CppDeclarationAndDefinition.html">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'en-US'
-  };
-</script>
-
-  <title>C++的声明与定义 | Vincent's Blog</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Vincent's Blog</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-      <p class="site-subtitle" itemprop="description">Make life more fun!</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
-
-  </li>
-        <li class="menu-item menu-item-repositories">
-
-    <a href="/repositories/" rel="section"><i class="fa fa-database fa-fw"></i>Repositories</a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-  <div class="reading-progress-bar"></div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content post posts-expand">
-            
-
-    
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en-US">
-    <link itemprop="mainEntityOfPage" href="https://vincentjan.top/2020/02/26/CppDeclarationAndDefinition.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Vincent Jan">
-      <meta itemprop="description" content="飞光飞光，劝尔一杯酒。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vincent's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          C++的声明与定义
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-02-26 13:51:29" itemprop="dateCreated datePublished" datetime="2020-02-26T13:51:29+08:00">2020-02-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-23 15:33:35" itemprop="dateModified" datetime="2020-07-23T15:33:35+08:00">2020-07-23</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E7%82%B9%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">学点技术</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E7%82%B9%E6%8A%80%E6%9C%AF/%E5%85%B3%E4%BA%8EC%E8%89%B9%E9%82%A3%E4%BA%9B%E5%A4%A7%E5%A4%A7%E5%B0%8F%E5%B0%8F%E7%9A%84%E5%9D%91/" itemprop="url" rel="index"><span itemprop="name">关于C艹那些大大小小的坑</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.5k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <blockquote>
+<!DOCTYPE html><html lang="en-US"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"><meta name="description" content="C++的声明与定义 - Vincent's Blog"><meta name="theme-color" content="#ebc65a"><title>C++的声明与定义 - Vincent's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css"><script src="https://cdn.bootcss.com/highlight.js/9.6.0/highlight.min.js" defer></script><script src="/js/paper.js" defer></script><link rel="stylesheet" href="/css/tocbot.css"><script src="/js/tocbot.js" defer></script><script>window.addEventListener('DOMContentLoaded', () => {
+  tocbot.init({
+    // Where to render the table of contents.
+    tocSelector: '.toc__content',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: '.article__content',
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    // For headings inside relative or absolute positioned containers within content.
+    hasInnerContainers: false,
+    orderedList: false,
+    collapseDepth: 3,
+  });
+})</script><link rel="preload" href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css"><link rel="preload" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap"><meta name="generator" content="Hexo 4.2.0"></head><body><div class="mask-border"></div><div class="head"><div class="head__inner"><h1><a href="/">Vincent's Blog</a></h1><p>飞光飞光，劝尔一杯酒。</p></div></div><div class="paper-container"><div class="main"><div class="location-bar"><div class="line-1"><div class="horizontal-line" style="height: 3px"></div></div><div class="line-2"><div class="horizontal-line" style="height: 1px"></div></div><a class="text" href="/">Index</a><a class="text" href="/about">About</a><a class="text" href="/repositories">Repositories</a><a class="text" href="/links">Links</a><a class="text" href="/toolbox">Tool Box </a><div class="switch-button"><input class="container_toggle" type="checkbox" id="switch" name="mode"><label for="switch">Toggle</label></div><div class="line-3"><div class="horizontal-line" style="height: 1px"></div></div></div><div class="main__2-col"><article class="post-view__article"><div class="article__infomation"><div class="posts-item"><h2 class="posts-item__title"><a href="">C++的声明与定义</a></h2><span class="post__date">2020-02-26</span><a href="/tags/C/"><span class="post__tags">#C++</span></a></div></div><div class="article__content"><blockquote>
 <p>偶然间看见一个声明:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tm</span> *(*(*<span class="title">Pfunc</span>)[3])(<span class="title">int</span>(*)(<span class="title">int</span>, <span class="title">int</span>), <span class="title">float</span>(*[])(<span class="title">float</span>));</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">tm</span> *(*(*<span class="hljs-title">Pfunc</span>)[3])(<span class="hljs-title">int</span>(*)(<span class="hljs-title">int</span>, <span class="hljs-title">int</span>), <span class="hljs-title">float</span>(*[])(<span class="hljs-title">float</span>));</span><br></code></pre></td></tr></table></figure>
 <p>一时间感到云里雾里。为了弄懂此类复杂的声明学习一些相关的知识，在此总结。</p>
 </blockquote>
 <a id="more"></a>
 <h2 id="声明与定义的区别"><a href="#声明与定义的区别" class="headerlink" title="声明与定义的区别"></a>声明与定义的区别</h2><h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><p><strong>对于C++中的声明，比较通用的描述为：一条声明语句由一个基本数据类型和紧随其后的一个声明符列表组成。每个声明符命名一个变量并指定该变量为与基本数据类型有关的某种类型。</strong></p>
 <p><em>声明语句：  基本数据类型  声明符1&lt;, 声明符2, 声明符3 …&gt;</em></p>
 <p>例如：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a, b = <span class="number">2</span>; </span><br><span class="line"><span class="comment">//int为基本数据类型， a,b为一个含有2个声明符的声明符列表，a与b都是声明符，分别声明（并定义）了名称为a, b的int型变量， 并把2赋值给b。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">int</span> a, b = <span class="hljs-number">2</span>; <br><span class="hljs-comment">//int为基本数据类型， a,b为一个含有2个声明符的声明符列表，a与b都是声明符，分别声明（并定义）了名称为a, b的int型变量， 并把2赋值给b。</span><br></code></pre></td></tr></table></figure>
 <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>可以看出，这条语句在声明了a, b的同时定义了它们。这里引出了声明和定义的关系：</p>
 <p><strong>声明使得名字为程序所知，而定义负责建立名字与实体间的关系。</strong>声明规定了变量的类型与名字，而定义在此基础上为变量分配存储空间，还可能为其赋一个初始值。</p>
 <h2 id="extern关键字"><a href="#extern关键字" class="headerlink" title="extern关键字"></a>extern关键字</h2><p>extern关键字常用于表示一个变量已在其它文件中定义。</p>
 <ul>
 <li>如果要<strong>声明一个变量而不定义它</strong>，则在声明语句前加上extern</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> a; <span class="comment">//声明int型变量a，但未定义</span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> b = <span class="number">2</span>; <span class="comment">//声明并定义int型变量b，并为其赋初始值2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">extern</span> <span class="hljs-keyword">int</span> a; <span class="hljs-comment">//声明int型变量a，但未定义</span><br><span class="hljs-keyword">extern</span> <span class="hljs-keyword">int</span> b = <span class="hljs-number">2</span>; <span class="hljs-comment">//声明并定义int型变量b，并为其赋初始值2</span><br></code></pre></td></tr></table></figure>
 <p>​     <strong><em>任何显式初始化的声明即成为定义*</em></strong>。即使一个声明符已用extern标记，对其进行初始化仍会导致定义行为。*</p>
 <ul>
 <li><p>对于<strong>多文件</strong>程序，若要在多个文件中使用<strong>同一个变量</strong>，则必须在<strong>所有</strong>使用该变量的文件中<strong>声明</strong>它，但仅可在<strong>一个</strong>文件中<strong>定义</strong>该变量。</p>
@@ -294,11 +44,11 @@
 <li>基类的引用或指针可绑定到派生类对象上。</li>
 </ol>
 <p>例：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> &amp;r;	<span class="comment">//X, 引用必须初始化</span></span><br><span class="line"><span class="keyword">int</span> &amp;ri = i;</span><br><span class="line"><span class="keyword">double</span> &amp;rdi = i;<span class="comment">//X, 引用类型不匹配</span></span><br><span class="line"><span class="keyword">double</span> &amp;rd = <span class="number">3.14</span>;<span class="comment">//X, 非const引用必须绑定到对象上</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> &amp;crdi = i;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> &amp;crd = <span class="number">3.14</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>;<br><span class="hljs-keyword">int</span> &amp;r;	<span class="hljs-comment">//X, 引用必须初始化</span><br><span class="hljs-keyword">int</span> &amp;ri = i;<br><span class="hljs-keyword">double</span> &amp;rdi = i;<span class="hljs-comment">//X, 引用类型不匹配</span><br><span class="hljs-keyword">double</span> &amp;rd = <span class="hljs-number">3.14</span>;<span class="hljs-comment">//X, 非const引用必须绑定到对象上</span><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">double</span> &amp;crdi = i;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">double</span> &amp;crd = <span class="hljs-number">3.14</span>;<br></code></pre></td></tr></table></figure>
 <h3 id="2-指针"><a href="#2-指针" class="headerlink" title="2.指针"></a>2.指针</h3><p>指针存放对象的地址，通过将声明符写成<em>d的形式定义，其中d是变量名。由于指针存放的并非对象，而是对象的地址，故需要<strong>用取地址符&amp;取得对象地址。操作其绑定的对象时也要使用解引用符\</strong></em>。</p>
 <p>取地址符&amp;与引用声明符虽然使用同一个符号，但意义不同，一个作用于声明符，一个作用于对象。</p>
 <p>解引用符*与指针声明符亦然，另外解引用符和引用没有关系。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> *pa = &amp;a; <span class="comment">//pa是a的指针， &amp;是取地址符</span></span><br><span class="line"><span class="keyword">int</span> &amp;ra = a; <span class="comment">//ra是a的引用， &amp;是引用声明符</span></span><br><span class="line">ra = <span class="number">3</span>;	<span class="comment">//通过引用改变a的值</span></span><br><span class="line">*pa = <span class="number">0</span>;<span class="comment">//通过指针改变a的值</span></span><br><span class="line">pa = <span class="number">0</span>;<span class="comment">//改变指针本身的值</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">int</span> a = <span class="hljs-number">2</span>;<br><span class="hljs-keyword">int</span> *pa = &amp;a; <span class="hljs-comment">//pa是a的指针， &amp;是取地址符</span><br><span class="hljs-keyword">int</span> &amp;ra = a; <span class="hljs-comment">//ra是a的引用， &amp;是引用声明符</span><br>ra = <span class="hljs-number">3</span>;	<span class="hljs-comment">//通过引用改变a的值</span><br>*pa = <span class="hljs-number">0</span>;<span class="hljs-comment">//通过指针改变a的值</span><br>pa = <span class="hljs-number">0</span>;<span class="hljs-comment">//改变指针本身的值</span><br></code></pre></td></tr></table></figure>
 <p>指针与引用类似，但有两点不同：</p>
 <ol>
 <li>指针本身是一个对象，允许赋值和拷贝。</li>
@@ -306,24 +56,24 @@
 </ol>
 <h4 id="特别注意"><a href="#特别注意" class="headerlink" title="特别注意"></a>特别注意</h4><ol>
 <li><p>空指针: 不指向任何对象</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p1 = <span class="literal">nullptr</span>; <span class="comment">//C++11</span></span><br><span class="line"><span class="keyword">int</span> *p2 = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> *p3 = <span class="literal">NULL</span>; <span class="comment">//#include&lt;cstdlib&gt;, 值等于0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">int</span> *p1 = <span class="hljs-literal">nullptr</span>; <span class="hljs-comment">//C++11</span><br><span class="hljs-keyword">int</span> *p2 = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">int</span> *p3 = <span class="hljs-literal">NULL</span>; <span class="hljs-comment">//#include&lt;cstdlib&gt;, 值等于0</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>void*指针：可指向任何对象，且不能操作所指对象。</p>
 </li>
 <li><p>指向指针的指针</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p1;</span><br><span class="line"><span class="keyword">int</span> **p2 = p1;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">int</span> *p1;<br><span class="hljs-keyword">int</span> **p2 = p1;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>指向数组的指针</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> (*p1)[<span class="number">3</span>];</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">int</span> (*p1)[<span class="hljs-number">3</span>];<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>函数指针</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> (*p1)(&lt;参数列表&gt;) = test;</span><br><span class="line"><span class="keyword">int</span> (*p2)(&lt;参数列表&gt;) = &amp;test;<span class="comment">//函数指针赋值时可以不用取地址</span></span><br><span class="line">p1(&lt;&gt;);<span class="comment">//函数指针使用时可以不用解引用</span></span><br><span class="line">(*p1)(&lt;&gt;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">int</span> (*p1)(&lt;参数列表&gt;) = test;<br><span class="hljs-keyword">int</span> (*p2)(&lt;参数列表&gt;) = &amp;test;<span class="hljs-comment">//函数指针赋值时可以不用取地址</span><br>p1(&lt;&gt;);<span class="hljs-comment">//函数指针使用时可以不用解引用</span><br>(*p1)(&lt;&gt;);<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>指针的数组</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p1[<span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">int</span> *p1[<span class="hljs-number">5</span>]<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>常量指针</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *<span class="keyword">const</span> p1 = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">int</span> *<span class="hljs-keyword">const</span> p1 = <span class="hljs-number">0</span>;<br></code></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="const限定符"><a href="#const限定符" class="headerlink" title="const限定符"></a>const限定符</h2><ul>
@@ -339,7 +89,7 @@
 </li>
 <li>在<strong>类成员函数参数列表后使用const</strong>将该函数声明为const成员函数，其内在原理为作用于隐式参数<em>this</em>指针，从而使其能指向常量对象。因此<strong>类的const对象仅能调用const成员函数</strong>。</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">2</span>; <span class="comment">//i的值可变</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> &amp;ri = i; <span class="comment">//不可通过ri改变i的值</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *pib = &amp;i; <span class="comment">//不可通过pib改变i的值， 可改变pib的值</span></span><br><span class="line"><span class="keyword">int</span> *<span class="keyword">const</span> pib = &amp;i; <span class="comment">//可通过pib改变i的值， 不可改变pib的值</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *<span class="keyword">const</span> pib = &amp;i;<span class="comment">//不可通过pib改变i的值， 不可改变pib的值</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> j = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">int</span> &amp;rj = j; <span class="comment">//X</span></span><br><span class="line"><span class="keyword">int</span> *pj = j; <span class="comment">//X</span></span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span>* pj = j; <span class="comment">//X，必须是底层const才能绑定const对象。</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">class A&#123;</span></span><br><span class="line"><span class="comment">public:</span></span><br><span class="line"><span class="comment">	void HW()&#123;cout &lt;&lt; "HelloWorld" &lt;&lt; endl;&#125;</span></span><br><span class="line"><span class="comment">	void HW_c() const &#123;cout &lt;&lt; "HelloWorld" &lt;&lt; endl;&#125;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">A a1;</span><br><span class="line">a1.HW(); <span class="comment">//合法</span></span><br><span class="line">a1.HW_c();<span class="comment">//合法，普通对象可调用const成员函数</span></span><br><span class="line"><span class="keyword">const</span> A a2;</span><br><span class="line">a2.HW();<span class="comment">//非法，即使非常量成员函数内没有改变对象的操作，仍不能被const对象调用</span></span><br><span class="line">a2.HW_c();<span class="comment">//合法</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; <span class="hljs-comment">//i的值可变</span><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> &amp;ri = i; <span class="hljs-comment">//不可通过ri改变i的值</span><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> *pib = &amp;i; <span class="hljs-comment">//不可通过pib改变i的值， 可改变pib的值</span><br><span class="hljs-keyword">int</span> *<span class="hljs-keyword">const</span> pib = &amp;i; <span class="hljs-comment">//可通过pib改变i的值， 不可改变pib的值</span><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> *<span class="hljs-keyword">const</span> pib = &amp;i;<span class="hljs-comment">//不可通过pib改变i的值， 不可改变pib的值</span><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> j = <span class="hljs-number">3</span>;<br><span class="hljs-keyword">int</span> &amp;rj = j; <span class="hljs-comment">//X</span><br><span class="hljs-keyword">int</span> *pj = j; <span class="hljs-comment">//X</span><br><span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span>* pj = j; <span class="hljs-comment">//X，必须是底层const才能绑定const对象。</span><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">class A&#123;</span><br><span class="hljs-comment">public:</span><br><span class="hljs-comment">	void HW()&#123;cout &lt;&lt; "HelloWorld" &lt;&lt; endl;&#125;</span><br><span class="hljs-comment">	void HW_c() const &#123;cout &lt;&lt; "HelloWorld" &lt;&lt; endl;&#125;</span><br><span class="hljs-comment">&#125;</span><br><span class="hljs-comment">*/</span><br>A a1;<br>a1.HW(); <span class="hljs-comment">//合法</span><br>a1.HW_c();<span class="hljs-comment">//合法，普通对象可调用const成员函数</span><br><span class="hljs-keyword">const</span> A a2;<br>a2.HW();<span class="hljs-comment">//非法，即使非常量成员函数内没有改变对象的操作，仍不能被const对象调用</span><br>a2.HW_c();<span class="hljs-comment">//合法</span><br></code></pre></td></tr></table></figure>
 <h2 id="constexpr关键字"><a href="#constexpr关键字" class="headerlink" title="constexpr关键字"></a>constexpr关键字</h2><p>常量表达式指在编译时就能得到值且不会改变的表达式。常见的有字面值与用常量表达式初始化的const对象。</p>
 <p>实际使用时往往很难确定一个表达式是否是常量表达式。此时可用constexpr声明该变量， 以由编译器检查其是否为常量表达式。</p>
 <p>constexpr在声明指针时，会将指针设为顶层const。</p>
@@ -348,7 +98,7 @@
 <li>返回类型及所有形参类型都是字面值类型。</li>
 <li>函数体中有且只有一条return语句。</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> *p = null; <span class="comment">//p是指向整数的常量指针</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *p1 = null;	<span class="comment">//p1是指向整数常量的指针</span></span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keyword">int</span> *p2 = null;	<span class="comment">//p2是指向整数常量的常量指针</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *<span class="keyword">const</span> p3 = null;	<span class="comment">//p3是指向整数常量的常量指针</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">int</span> *p = null; <span class="hljs-comment">//p是指向整数的常量指针</span><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> *p1 = null;	<span class="hljs-comment">//p1是指向整数常量的指针</span><br><span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> *p2 = null;	<span class="hljs-comment">//p2是指向整数常量的常量指针</span><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> *<span class="hljs-keyword">const</span> p3 = null;	<span class="hljs-comment">//p3是指向整数常量的常量指针</span><br></code></pre></td></tr></table></figure>
 <h2 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h2><p>static将作用对象声明为静态对象，有四种主要用法：</p>
 <ol>
 <li>对于<strong>全局或命名空间</strong>作用域，使用static标记声明符使该对象<strong>仅在此文件可用</strong>。</li>
@@ -365,18 +115,18 @@
 <ul>
 <li>union的成员不能声明成static类型 。</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//a.cpp</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">2</span>;</span><br><span class="line"><span class="comment">//b.cpp</span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> a;	<span class="comment">//X, a.cpp内定义的a只能在本文件使用</span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> b;</span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> a = <span class="number">10</span>; <span class="comment">// 合法， 重新定义了一个a</span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> b = <span class="number">3</span>; <span class="comment">//非法， 重复定义</span></span><br><span class="line"><span class="keyword">int</span> a = <span class="number">4</span>;	<span class="comment">//合法</span></span><br><span class="line"><span class="keyword">int</span> b = <span class="number">5</span>; <span class="comment">//非法</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> c = <span class="number">0</span>; <span class="comment">//错误， 不可在类内初始化普通静态成员</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> d;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">int</span> e = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> f = <span class="number">10</span>; <span class="comment">//在确定表达式为常量表达式时也可以使用const</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">HelloWorld</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"HelloWorld!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">HW</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//错误，不可重复static</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> A::HW()&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"HW"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> A::HW()&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"HW"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> A::d = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">constexpr</span> A::e;</span><br><span class="line"></span><br><span class="line"><span class="comment">//void AnotherFunc(const int &amp;A);</span></span><br><span class="line">AnotherFunc(A::e); </span><br><span class="line">AnotherFunc(A::f);<span class="comment">//错误，未在类外定义</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//a.cpp</span><br><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> a = <span class="hljs-number">1</span>;<br><span class="hljs-keyword">int</span> b = <span class="hljs-number">2</span>;<br><span class="hljs-comment">//b.cpp</span><br><span class="hljs-keyword">extern</span> <span class="hljs-keyword">int</span> a;	<span class="hljs-comment">//X, a.cpp内定义的a只能在本文件使用</span><br><span class="hljs-keyword">extern</span> <span class="hljs-keyword">int</span> b;<br><span class="hljs-keyword">extern</span> <span class="hljs-keyword">int</span> a = <span class="hljs-number">10</span>; <span class="hljs-comment">// 合法， 重新定义了一个a</span><br><span class="hljs-keyword">extern</span> <span class="hljs-keyword">int</span> b = <span class="hljs-number">3</span>; <span class="hljs-comment">//非法， 重复定义</span><br><span class="hljs-keyword">int</span> a = <span class="hljs-number">4</span>;	<span class="hljs-comment">//合法</span><br><span class="hljs-keyword">int</span> b = <span class="hljs-number">5</span>; <span class="hljs-comment">//非法</span><br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span>&#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> c = <span class="hljs-number">0</span>; <span class="hljs-comment">//错误， 不可在类内初始化普通静态成员</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> d;<br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">int</span> e = <span class="hljs-number">10</span>;<br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> f = <span class="hljs-number">10</span>; <span class="hljs-comment">//在确定表达式为常量表达式时也可以使用const</span><br>    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">HelloWorld</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"HelloWorld!"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">HW</span><span class="hljs-params">()</span></span>;<br>&#125;<br><br><span class="hljs-comment">//错误，不可重复static</span><br><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> A::HW()&#123;<br>    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"HW"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;<br>&#125;<br><br><span class="hljs-keyword">void</span> A::HW()&#123;<br>    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"HW"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;<br>&#125;<br><br><span class="hljs-keyword">int</span> A::d = <span class="hljs-number">10</span>;<br><br><span class="hljs-keyword">constexpr</span> A::e;<br><br><span class="hljs-comment">//void AnotherFunc(const int &amp;A);</span><br>AnotherFunc(A::e); <br>AnotherFunc(A::f);<span class="hljs-comment">//错误，未在类外定义</span><br></code></pre></td></tr></table></figure>
 <h2 id="类型别名"><a href="#类型别名" class="headerlink" title="类型别名"></a>类型别名</h2><h3 id="typedef关键字"><a href="#typedef关键字" class="headerlink" title="typedef关键字"></a>typedef关键字</h3><p>typedef &lt;声明语句&gt;  &lt;别名&gt;</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">typedef int (*origin)[10] now; //将声明语句表示的类型用now指代</span><br><span class="line">now p2; <span class="comment">//等价于 int (*p2)[10]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++">typedef int (*origin)[10] now; //将声明语句表示的类型用now指代<br>now p2; <span class="hljs-comment">//等价于 int (*p2)[10]</span><br></code></pre></td></tr></table></figure>
 <h3 id="using关键字"><a href="#using关键字" class="headerlink" title="using关键字"></a>using关键字</h3><p>using  &lt;名称1&gt; = &lt;名称2&gt;</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> SI = StringItem; <span class="comment">//令SI等价于StringItem</span></span><br><span class="line">SI s; <span class="comment">//等价于 StringItem s;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">using</span> SI = StringItem; <span class="hljs-comment">//令SI等价于StringItem</span><br>SI s; <span class="hljs-comment">//等价于 StringItem s;</span><br></code></pre></td></tr></table></figure>
 <h2 id="类型推导"><a href="#类型推导" class="headerlink" title="类型推导"></a>类型推导</h2><h3 id="auto关键字"><a href="#auto关键字" class="headerlink" title="auto关键字"></a>auto关键字</h3><p>通过初始值推导类型，故而必须初始化。</p>
 <ul>
 <li>用引用初始化以auto声明的变量时，变量会以引用的对象类型作为变量类型。如需引用类型需要明确指出。</li>
 <li>以指针初始化auto声明的变量时，会忽略顶层const。如需顶层const需要明确指出。</li>
 <li>要在一条语句中声明多个变量，它们的初始值应该相同。</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> &amp;a = i;</span><br><span class="line"><span class="keyword">int</span> *p = i;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *p1 = i;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *<span class="keyword">const</span> p2 = i;</span><br><span class="line"><span class="keyword">auto</span> ii = i; <span class="comment">//ii为int</span></span><br><span class="line"><span class="keyword">auto</span> aa = a; <span class="comment">//aa为int</span></span><br><span class="line"><span class="keyword">auto</span> pp = p; <span class="comment">//pp为int*</span></span><br><span class="line"><span class="keyword">auto</span> pp1 = p1; <span class="comment">//pp1为 const int*</span></span><br><span class="line"><span class="keyword">auto</span> pp2 = p2; <span class="comment">//pp2为 const int*</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">auto</span> &amp;raa = a; <span class="comment">//raa为int&amp;</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">auto</span> cpp1 = p1; <span class="comment">//cpp1为 const int const*</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">auto</span> &amp;rii = i; <span class="comment">//rii为 const int&amp;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">auto</span> b = rii, c = raa;<span class="comment">//X, rii为const int, raa为int</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>;<br><span class="hljs-keyword">int</span> &amp;a = i;<br><span class="hljs-keyword">int</span> *p = i;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> *p1 = i;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> *<span class="hljs-keyword">const</span> p2 = i;<br><span class="hljs-keyword">auto</span> ii = i; <span class="hljs-comment">//ii为int</span><br><span class="hljs-keyword">auto</span> aa = a; <span class="hljs-comment">//aa为int</span><br><span class="hljs-keyword">auto</span> pp = p; <span class="hljs-comment">//pp为int*</span><br><span class="hljs-keyword">auto</span> pp1 = p1; <span class="hljs-comment">//pp1为 const int*</span><br><span class="hljs-keyword">auto</span> pp2 = p2; <span class="hljs-comment">//pp2为 const int*</span><br><br><span class="hljs-keyword">auto</span> &amp;raa = a; <span class="hljs-comment">//raa为int&amp;</span><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">auto</span> cpp1 = p1; <span class="hljs-comment">//cpp1为 const int const*</span><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">auto</span> &amp;rii = i; <span class="hljs-comment">//rii为 const int&amp;</span><br><br><span class="hljs-keyword">auto</span> b = rii, c = raa;<span class="hljs-comment">//X, rii为const int, raa为int</span><br></code></pre></td></tr></table></figure>
 <h3 id="decltype关键字"><a href="#decltype关键字" class="headerlink" title="decltype关键字"></a>decltype关键字</h3><p>decltype(表达式) &lt;声明符&gt;</p>
 <ul>
 <li><p>decltype检查表达式的值类型，但<strong>不实际计算该表达式</strong>。</p>
@@ -387,235 +137,9 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> &amp;r = i;</span><br><span class="line"><span class="keyword">int</span> *<span class="keyword">const</span> p = &amp;i;</span><br><span class="line"></span><br><span class="line"><span class="keyword">decltype</span>(r) rr = i; <span class="comment">//rr为 int&amp;</span></span><br><span class="line"><span class="keyword">decltype</span>(p) pp = null;<span class="comment">//pp为 int *const</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;<br><span class="hljs-keyword">int</span> &amp;r = i;<br><span class="hljs-keyword">int</span> *<span class="hljs-keyword">const</span> p = &amp;i;<br><br><span class="hljs-keyword">decltype</span>(r) rr = i; <span class="hljs-comment">//rr为 int&amp;</span><br><span class="hljs-keyword">decltype</span>(p) pp = null;<span class="hljs-comment">//pp为 int *const</span><br></code></pre></td></tr></table></figure>
 <h3 id="复杂声明的理解"><a href="#复杂声明的理解" class="headerlink" title="复杂声明的理解"></a>复杂声明的理解</h3><p><strong>由内而外，由右及左。</strong></p>
 <p>即优先找离声明符最近的复合类型声明。对于距离声明符距离相同的复合类型声明，优先处理声明符右边。</p>
 <p>例如：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tm</span> *(*(*<span class="title">Pfunc</span>)[3])(<span class="title">int</span>(*)(<span class="title">int</span>, <span class="title">int</span>), <span class="title">float</span>(*[])(<span class="title">float</span>));</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	1.首先，要找到主声明符的名字，这里是Pfunc</span></span><br><span class="line"><span class="comment">	2.找离Pfunc最近的复合类型声明，越近则影响越大，这里离Pfunc最近的是*，即Pfunc最本质上是一个指针。</span></span><br><span class="line"><span class="comment">	3.采用由内而外，由右及左的顺序分析，出于语序最好使用英文</span></span><br><span class="line"><span class="comment">	Pfunc is a pointer to an array(size 3) about pointer to function(C1, C2) return a pointer to struct tm.</span></span><br><span class="line"><span class="comment">	C1: a pointer to a function(int , int) return int</span></span><br><span class="line"><span class="comment">	C2: an array about pointer to a function(float) return float</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *(*&amp;i)[<span class="number">3</span>] = <span class="number">0</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	i is a reference for pointer to an array(size 3) about pointer to const int;</span></span><br><span class="line"><span class="comment">	const作用是修饰基本类型，不影响判断</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-    </div>
-
-    
-    
-    
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/C/" rel="tag"># C++</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2019/11/15/%E5%B0%8F%E5%BC%A0%E5%92%8C%E5%B0%8F%E4%B8%BD.html" rel="prev" title="小张和小丽 ——开开550">
-      <i class="fa fa-chevron-left"></i> 小张和小丽 ——开开550
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/03/20/ArchLinuxConfig.html" rel="next" title="Arch Linux安装与配置">
-      Arch Linux安装与配置 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#声明与定义的区别"><span class="nav-number">1.</span> <span class="nav-text">声明与定义的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#声明"><span class="nav-number">1.1.</span> <span class="nav-text">声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.2.</span> <span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#extern关键字"><span class="nav-number">2.</span> <span class="nav-text">extern关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复合类型"><span class="nav-number">3.</span> <span class="nav-text">复合类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-引用"><span class="nav-number">3.1.</span> <span class="nav-text">1.引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-指针"><span class="nav-number">3.2.</span> <span class="nav-text">2.指针</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#特别注意"><span class="nav-number">3.2.1.</span> <span class="nav-text">特别注意</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const限定符"><span class="nav-number">4.</span> <span class="nav-text">const限定符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#constexpr关键字"><span class="nav-number">5.</span> <span class="nav-text">constexpr关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static关键字"><span class="nav-number">6.</span> <span class="nav-text">static关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型别名"><span class="nav-number">7.</span> <span class="nav-text">类型别名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#typedef关键字"><span class="nav-number">7.1.</span> <span class="nav-text">typedef关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#using关键字"><span class="nav-number">7.2.</span> <span class="nav-text">using关键字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型推导"><span class="nav-number">8.</span> <span class="nav-text">类型推导</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#auto关键字"><span class="nav-number">8.1.</span> <span class="nav-text">auto关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#decltype关键字"><span class="nav-number">8.2.</span> <span class="nav-text">decltype关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复杂声明的理解"><span class="nav-number">8.3.</span> <span class="nav-text">复杂声明的理解</span></a></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Vincent Jan</p>
-  <div class="site-description" itemprop="description">飞光飞光，劝尔一杯酒。</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives">
-          <span class="site-state-item-count">17</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">9</span>
-        <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">10</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/vincentjan" title="GitHub → https://github.com/vincentjan" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:vincentjan200@163.com" title="E-Mail → mailto:vincentjan200@163.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
-      </span>
-  </div>
-
-
-   <div class="feed-link motion-element">
-        <a href="/atom.xml" rel="alternate">
-           <i class="fa fa-rss"></i>
-           RSS
-        </a>
-   </div>
-
-  <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
-  </div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 2019 – 
-  <span itemprop="copyrightYear">2020</span>
-  <span class="with-love">
-    <i class=" "></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Vincent Jan</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-area"></i>
-    </span>
-      <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">114k</span>
-</div>
-
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/muse.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
-
-  
-<script src="/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-</body>
-</html>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">tm</span> *(*(*<span class="hljs-title">Pfunc</span>)[3])(<span class="hljs-title">int</span>(*)(<span class="hljs-title">int</span>, <span class="hljs-title">int</span>), <span class="hljs-title">float</span>(*[])(<span class="hljs-title">float</span>));</span><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">	1.首先，要找到主声明符的名字，这里是Pfunc</span><br><span class="hljs-comment">	2.找离Pfunc最近的复合类型声明，越近则影响越大，这里离Pfunc最近的是*，即Pfunc最本质上是一个指针。</span><br><span class="hljs-comment">	3.采用由内而外，由右及左的顺序分析，出于语序最好使用英文</span><br><span class="hljs-comment">	Pfunc is a pointer to an array(size 3) about pointer to function(C1, C2) return a pointer to struct tm.</span><br><span class="hljs-comment">	C1: a pointer to a function(int , int) return int</span><br><span class="hljs-comment">	C2: an array about pointer to a function(float) return float</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> *(*&amp;i)[<span class="hljs-number">3</span>] = <span class="hljs-number">0</span>;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">	i is a reference for pointer to an array(size 3) about pointer to const int;</span><br><span class="hljs-comment">	const作用是修饰基本类型，不影响判断</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
+</div></article><div class="post-view__sidebar"><div class="sidebar"><div class="tocbot"><h2>Toc</h2><div class="toc__content"></div></div><h2>Contact Me</h2><div class="sidebar__link"><ul><li><a href="https://github.com/VincentJan" target="_blank" rel="noopener">Github</a></li><li><a href="mailto:vincentjan200@163.com">Mail</a></li></ul></div><h2>Archives</h2><div class="sidebar__archives"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li></ul></div><h2>Categories</h2><div class="sidebar__categories"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C%E8%89%B9%E5%8F%97%E8%8B%A6%E4%B9%8B%E6%97%85/">C艹受苦之旅</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux%E6%8A%98%E8%85%BE%E8%AE%B0/">Linux折腾记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%8D%E5%86%99%E7%A8%8B%E5%BA%8F/">不写程序</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%98%E5%BD%95/">摘录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%A9%E5%84%BF%E8%9B%87/">玩儿蛇</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a></li></ul></div><h2>Tags</h2><div class="sidebar__tags"><ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%85%E4%BA%8B/" rel="tag">故事</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95/" rel="tag">方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%9E%84%E6%96%87%E5%AD%A6%E5%88%9B%E4%BD%9C%E7%BB%83%E4%B9%A0/" rel="tag">虚构文学创作练习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%97/" rel="tag">诗</a></li></ul></div></div></div></div><div class="horizontal-line" style="height: 1px"></div><div class="main__bottom"><div class="pre-next"><a class="pre-button" href="/2020/03/20/ArchLinuxConfig.html">Arch Linux安装与配置</a><a class="next-button" href="/2019/11/15/%E5%B0%8F%E5%BC%A0%E5%92%8C%E5%B0%8F%E4%B8%BD.html">小张和小丽 ——开开550</a></div></div></div></div><div class="footer"><span>©️2019-2020 Theme Designed By&nbsp;<strong><a href="https://github.com/random-yang" target="_blank" rel="noopener">RandomYang</a></strong> Powered By&nbsp;</span><strong><a href="https://hexo.io" target="_blank" rel="noopener">hexo</a></strong></div><div class="darkmode-mask" id="darkmode-mask"></div><div class="sidebar__button"></div></body></html>
