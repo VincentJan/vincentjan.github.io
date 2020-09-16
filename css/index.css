@@ -655,7 +655,7 @@ article.post-view__article .article__content table th:first-child {
   content: '';
   width: 100%;
   height: 100vh;
-  border: 1rem #fff solid;
+  border: 0.5rem #fff solid;
   position: fixed;
   top: 0;
   left: 0;
