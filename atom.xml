@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://vincentjan.top/"/>
-  <updated>2020-09-11T09:31:38.430Z</updated>
+  <updated>2020-10-11T07:46:14.062Z</updated>
   <id>https://vincentjan.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《NC15553 数学考试》题解</title>
+    <link href="https://vincentjan.top/2020/10/11/NC15553-%E6%95%B0%E5%AD%A6%E8%80%83%E8%AF%95%E9%A2%98%E8%A7%A3.html"/>
+    <id>https://vincentjan.top/2020/10/11/NC15553-数学考试题解.html</id>
+    <published>2020-10-11T05:32:06.000Z</published>
+    <updated>2020-10-11T07:46:14.062Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;NC15553 数学考试，对理解前缀和与枚举很有好处。&lt;br&gt;题目链接：&lt;a href=&quot;https://ac.nowcoder.com/acm/problem/15553&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NC15553 数学考试——牛客网&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="算法笔记" scheme="https://vincentjan.top/categories/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="C++" scheme="https://vincentjan.top/tags/C/"/>
+    
+      <category term="算法" scheme="https://vincentjan.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="前缀和" scheme="https://vincentjan.top/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    
+      <category term="枚举" scheme="https://vincentjan.top/tags/%E6%9E%9A%E4%B8%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux平台下C++库的生成与使用</title>
@@ -45,11 +73,11 @@
   </entry>
   
   <entry>
-    <title>基于C++的Python3入门笔记（一）——基本语法篇</title>
+    <title>基于C++的Python3入门笔记</title>
     <link href="https://vincentjan.top/2020/06/07/%E5%9F%BA%E4%BA%8EC++%E7%9A%84Python3%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0.html"/>
     <id>https://vincentjan.top/2020/06/07/基于C++的Python3入门笔记.html</id>
     <published>2020-06-07T12:36:29.000Z</published>
-    <updated>2020-09-11T09:32:06.650Z</updated>
+    <updated>2020-10-08T12:37:54.137Z</updated>
     
     <summary type="html">
     
